@@ -1,0 +1,3490 @@
+{
+  "Compute d/dx [sin(2x)].##2sin(2x)##2cos(2x)##cos(2x)##2cos(x)": {
+    "answer": "A",
+    "confidence": 0.35
+  },
+  "Expand: (x + 9)(x + 2).##x^2 + 7x + 18##x^2 + 11x + 18##x^2 + 18x + 11##x^2 + 11x - 18": {
+    "answer": "B",
+    "confidence": 0.78
+  },
+  "Let z = 1 + 1i. What is |z| ? (Give a decimal with 2 digits)##2.00##1##0.00##2.00": {
+    "answer": "B",
+    "confidence": 0.65
+  },
+  "Compute: lim_(x-> 1) (x^2 - 1) / (x - 1).##1##1##2##2": {
+    "answer": "C",
+    "confidence": 0.78
+  },
+  "Compute: lim_(x-> 5) (x^2 - 25) / (x - 5).##50##5##25##10": {
+    "answer": "D",
+    "confidence": 0.81
+  },
+  "Simplify: (4x + 9) + (1x - 3).##5x - 6##5x + 6##5x + 12##3x + 6": {
+    "answer": "B",
+    "confidence": 0.97
+  },
+  "Factorize: x^2 - 121.##(x - 11)^2##(x - 11)(x + 11)##(x - 22)(x + 1)##(x + 11)^2": {
+    "answer": "C",
+    "confidence": 0.25
+  },
+  "Factorize: x^2 - 121.##(x + 11)^2##(x - 11)(x + 11)##(x - 22)(x + 1)##(x - 11)^2": {
+    "answer": "A",
+    "confidence": 0.34
+  },
+  "Expand: (x + 1)(x + 4).##x^2 + 5x + 4##x^2 + -3x + 4##x^2 + 5x - 4##x^2 + 4x + 5": {
+    "answer": "A",
+    "confidence": 0.73
+  },
+  "Compute d/dx [sin(4x)].##4cos(4x)##cos(4x)##4sin(4x)##4cos(x)": {
+    "answer": "A",
+    "confidence": 0.72
+  },
+  "Compute: lim_(x-> 2) (x^2 - 4) / (x - 2).##4##8##4##2": {
+    "answer": "A",
+    "confidence": 0.84
+  },
+  "Compute the distance between A(1,3) and B(0,-3). (2 decimals)##1.00##7.00##37.00##6": {
+    "answer": "D",
+    "confidence": 0.56
+  },
+  "Solve in C: x^2 + 1 = 0.##No solution##x = 1 or x = -1##x = i or x = -i##x = i only": {
+    "answer": "D",
+    "confidence": 0.34
+  },
+  "Compute: sin(pi/3).##1/2##0##sqrt(2)/2##sqrt(3)/2": {
+    "answer": "D",
+    "confidence": 0.94
+  },
+  "Compute d/dx [sin(3x)].##3cos(3x)##3sin(3x)##3cos(x)##cos(3x)": {
+    "answer": "B",
+    "confidence": 0.39
+  },
+  "A triangle has base 5 and height 4. What is its area?##9.0##10.0##20.0##5": {
+    "answer": "B",
+    "confidence": 0.97
+  },
+  "Simplify: (5x + 5) + (8x - 12).##13x + -7##13x + 17##-3x + -7##13x - -7": {
+    "answer": "A",
+    "confidence": 0.84
+  },
+  "Compute: (8/7) + (3/11).##109/18##67/77##11/18##109/77": {
+    "answer": "D",
+    "confidence": 0.8
+  },
+  "Let z = 3 + 2i. What is |z| ? (Give a decimal with 2 digits)##4##13.00##5.00##1.00": {
+    "answer": "A",
+    "confidence": 0.8
+  },
+  "Compute the distance between A(-3,-2) and B(3,2). (2 decimals)##6.00##10.00##7##52.00": {
+    "answer": "D",
+    "confidence": 0.3
+  },
+  "Compute: lim_(x->infty) (4x^2 + 3x - 1) / (3x^2 - x + 4).##3/4##1##4/3##5/3": {
+    "answer": "C",
+    "confidence": 0.79
+  },
+  "Expand: (x + 3)(x + 3).##x^2 + 9x + 6##x^2 + 6x + 9##x^2 + 6x - 9##x^2 + 0x + 9": {
+    "answer": "B",
+    "confidence": 0.73
+  },
+  "Compute: (8/11) + (3/6).##11/17##5/22##27/22##81/17": {
+    "answer": "C",
+    "confidence": 0.88
+  },
+  "What is the equation of a circle with center (2, ?3) and radius 5?##(x-2)^ +(y+3)^2 =5##(x-2)^ +(y+3)^2 =25##(x-2)^2 +(y-3)^2 =25##(x+2)^2 +(y+3)^2 =25": {
+    "answer": "B",
+    "confidence": 0.94
+  },
+  "Solve in R: x^2 + (-7)x + (10) = 0.##x = 7 only##x = -5 or x = 2##x = 5 or x = -2##x = 5 or x = 2": {
+    "answer": "D",
+    "confidence": 0.72
+  },
+  "Compute the indefinite integral: ? x^4 dx.##x^5 + C##x^4/4 + C##x^5/5 + C##5x^4 + C": {
+    "answer": "D",
+    "confidence": 0.53
+  },
+  "Compute the indefinite integral: ? x^1 dx.##2x^1 + C##x^2 + C##x^2/2 + C##x^1/1 + C": {
+    "answer": "C",
+    "confidence": 0.66
+  },
+  "A triangle has base 6 and height 4. What is its area?##24.0##12.0##10.0##5.0": {
+    "answer": "B",
+    "confidence": 0.82
+  },
+  "What is the center of the circle x^2  + y^2  ? 4x + 6y = 12?##(2;-3)##(-2;3)##(2;3)##(-2;-3)": {
+    "answer": "A",
+    "confidence": 0.68
+  },
+  "Compute the indefinite integral: ? 6x dx.##6x^2 + C##(6)x + C##(1/6)x^2 + C##(6/2)x^2 + C": {
+    "answer": "D",
+    "confidence": 0.83
+  },
+  "Compute the indefinite integral: ? x^2 dx.##x^3/3 + C##3x^2 + C##x^2/2 + C##x^3 + C": {
+    "answer": "A",
+    "confidence": 0.76
+  },
+  "Compute the distance between A(-3,-3) and B(3,3). (2 decimals)##8##72.00##12.00##6.00": {
+    "answer": "A",
+    "confidence": 0.68
+  },
+  "What is the radius of the circle (x ? 4)^2  + (y + 1)^2  = 9?##9##4##3##5": {
+    "answer": "C",
+    "confidence": 0.98
+  },
+  "Compute the distance between A(-2,4) and B(-4,-1). (2 decimals)##7.00##2.00##5##29.00": {
+    "answer": "D",
+    "confidence": 0.49
+  },
+  "Let f(x) = 7x^3 + 2x. Compute f'(x).##21x^2 + 2##7x^2 + 2##21x^2 - 2##21x + 2": {
+    "answer": "A",
+    "confidence": 0.82
+  },
+  "Compute: lim_(x-> 5) (x^2 - 25) / (x - 5).##25 pi##100 pi##50 pi##75?": {
+    "answer": "A",
+    "confidence": 0.87
+  },
+  "The diameter of a circle is 10 cm. What is its area?##4##4##2##75 pi": {
+    "answer": "C",
+    "confidence": 0.28
+  },
+  "Compute: (5/9) + (5/5).##14/9##-4/9##5/7##5": {
+    "answer": "A",
+    "confidence": 0.9
+  },
+  "Compute the indefinite integral: ? 2x dx.##(1/2)x^2 + C##(2)x + C##(2/2)x^2 + C##2x^2 + C": {
+    "answer": "C",
+    "confidence": 0.89
+  },
+  "If a point lies inside a circle, then its distance from the center is:##Greater than the radius##Equal to the radius##Less than the radius##Zero": {
+    "answer": "C",
+    "confidence": 0.88
+  },
+  "What is the equation of a circle centered at the origin with radius 7?##x^2 +y^2 =7##x^2 +y^2 =49##(x-7)^2 +y^2 =49##(x+7)^2 +y^2 =49": {
+    "answer": "B",
+    "confidence": 0.97
+  },
+  "Compute sin(2pi/3):##0##1/2##sqrt(3)/2##sqrt(2)/2": {
+    "answer": "C",
+    "confidence": 0.92
+  },
+  "A triangle has base 10 and height 14. What is its area?##140.0##24.0##12.0##70.0": {
+    "answer": "D",
+    "confidence": 0.81
+  },
+  "Solve in C: x^2 + 1 = 0.##No solution##x = i only##x = i or x = -i##x = 1 or x = -1": {
+    "answer": "C",
+    "confidence": 0.67
+  },
+  "A triangle has base 16 and height 13. What is its area?##104.0##29.0##15##208.0": {
+    "answer": "A",
+    "confidence": 0.85
+  },
+  "Compute the indefinite integral: ? 3x dx.##(1/3)x^2 + C##(3)x + C##(3/2)x^2 + C##3x^2 + C": {
+    "answer": "C",
+    "confidence": 0.96
+  },
+  "Factorize: x^2 - 100.##(x + 10)^2##(x - 10)(x + 10)##(x - 20)(x + 1)##(x - 10)^2": {
+    "answer": "B",
+    "confidence": 0.77
+  },
+  "Let z = 1 + 3i. What is |z| ? (Give a decimal with 2 digits)##10.00##3##4.00##2.00": {
+    "answer": "B",
+    "confidence": 0.64
+  },
+  "Compute d/dx [sin(3x)].##3sin(3x)##cos(3x)##3cos(3x)##3cos(x)": {
+    "answer": "C",
+    "confidence": 0.48
+  },
+  "Compute the indefinite integral: ? 5x dx.##5x^2 + C##(5/2)x^2 + C##(5)x + C##(1/5)x^2 + C": {
+    "answer": "B",
+    "confidence": 0.77
+  },
+  "Solve in R: x^2 + (-4)x + (4) = 0.##x = -2 or x = 2##x = 4 only##x = 2 or x = -2##x = 2 or x = 2": {
+    "answer": "D",
+    "confidence": 0.65
+  },
+  "Compute: (3/4) + (3/9).##6/13##5/12##3##13/12": {
+    "answer": "D",
+    "confidence": 0.94
+  },
+  "Compute d/dx [sin(6x)].##6sin(6x)##cos(6x)##6cos(6x)##6cos(x)": {
+    "answer": "B",
+    "confidence": 0.39
+  },
+  "Compute: lim_(x-> 2) (x^2 - 4) / (x - 2).##2##8##4##4": {
+    "answer": "C",
+    "confidence": 0.89
+  },
+  "A triangle has base 12 and height 3. What is its area?##15.0##8##36.0##18.0": {
+    "answer": "D",
+    "confidence": 0.82
+  },
+  "Let z = 6 + 3i. What is |z| ? (Give a decimal with 2 digits)##7##3.00##45.00##9.00": {
+    "answer": "A",
+    "confidence": 0.71
+  },
+  "Compute: lim_(x-> 5) (x^2 - 25) / (x - 5).##5##10##50##25": {
+    "answer": "A",
+    "confidence": 0.32
+  },
+  "A triangle has base 6 and height 9. What is its area?##15.0##8##54.0##27.0": {
+    "answer": "D",
+    "confidence": 0.94
+  },
+  "Compute d/dx [sin(1x)].##cos(1x)##1cos(1x)##1cos(x)##1sin(1x)": {
+    "answer": "D",
+    "confidence": 0.3
+  },
+  "Let z = 6 + 3i. What is |z| ? (Give a decimal with 2 digits)##45.00##3.00##9.00##7": {
+    "answer": "D",
+    "confidence": 0.75
+  },
+  "Solve in R: x^2 + (6)x + (8) = 0.##x = -2 or x = 4##x = 2 or x = -4##x = -2 or x = -4##x = -6 only": {
+    "answer": "C",
+    "confidence": 0.68
+  },
+  "Compute the indefinite integral: ? x^4 dx.##5x^4 + C##x^5/5 + C##x^5 + C##x^4/4 + C": {
+    "answer": "B",
+    "confidence": 0.65
+  },
+  "Solve in C: x^2 + 1 = 0.##x = i or x = -i##x = 1 or x = -1##x = i only##No solution": {
+    "answer": "A",
+    "confidence": 0.6
+  },
+  "Compute d/dx [sin(4x)].##4cos(4x)##cos(4x)##4cos(x)##4sin(4x)": {
+    "answer": "A",
+    "confidence": 0.66
+  },
+  "Expand: (x + 6)(x + 1).##x^2 + 7x + 6##x^2 + 5x + 6##x^2 + 6x + 7##x^2 + 7x - 6": {
+    "answer": "A",
+    "confidence": 0.67
+  },
+  "A triangle has base 15 and height 3. What is its area?##23##9.0##45.0##18.0": {
+    "answer": "A",
+    "confidence": 0.91
+  },
+  "Expand: (x + 2)(x + 4).##x^2 + 6x - 8##x^2 + -2x + 8##x^2 + 8x + 6##x^2 + 6x + 8": {
+    "answer": "D",
+    "confidence": 0.9
+  },
+  "Compute: lim_(x->infty) (1x^2 + 3x - 1) / (2x^2 - x + 4).##1##2##1/2##1/3": {
+    "answer": "C",
+    "confidence": 0.97
+  },
+  "Compute: lim_(x->infty) (4x^2 + 3x - 1) / (2x^2 - x + 4).##2##1/2##4/3##5/2": {
+    "answer": "A",
+    "confidence": 0.76
+  },
+  "Expand: (x + 5)(x + 1).##x^2 + 6x - 5##x^2 + 6x + 5##x^2 + 5x + 6##x^2 + 4x + 5": {
+    "answer": "B",
+    "confidence": 0.79
+  },
+  "Compute lim_(x?infty) (2x^2 + 3x - 1)/(x^2).##1##2##1##1/2": {
+    "answer": "A",
+    "confidence": 0.87
+  },
+  "Expand: (x + 5)(x + 2).##x^2 + 7x - 10##x^2 + 3x + 10##x^2 + 7x + 10##x^2 + 10x + 7": {
+    "answer": "C",
+    "confidence": 0.77
+  },
+  "Compute: sin(pi/3).##1/2##sqrt(3)/2##0##sqrt(2)/2": {
+    "answer": "B",
+    "confidence": 0.98
+  },
+  "Simplify: (9x + 2) + (4x - 3).##13x + 5##13x - -1##13x + -1##5x + -1": {
+    "answer": "C",
+    "confidence": 0.81
+  },
+  "Let z = 3 + 6i. What is |z| ? (Give a decimal with 2 digits)##3.00##7##9.00##45.00": {
+    "answer": "A",
+    "confidence": 0.44
+  },
+  "Let f(x) = 5x^3 + 9x. Compute f'(x).##15x^2 + 9##15x + 9##15x^2 - 9##5x^2 + 9": {
+    "answer": "A",
+    "confidence": 0.76
+  },
+  "Compute: (5/2) + (1/2).##3##2##3##3/2": {
+    "answer": "A",
+    "confidence": 0.94
+  },
+  "Compute: lim_(x-> 4) (x^2 - 16) / (x - 4).##32##4##16##8": {
+    "answer": "D",
+    "confidence": 0.66
+  },
+  "Compute the distance between A(4,2) and B(4,0). (2 decimals)##4.00##0.00##2.00##2.00": {
+    "answer": "C",
+    "confidence": 0.61
+  },
+  "Let z = 6 + 6i. What is |z| ? (Give a decimal with 2 digits)##8##72.00##12.00##0.00": {
+    "answer": "A",
+    "confidence": 0.6
+  },
+  "Simplify: (3x + 2) + (1x - 11).##4x - -9##4x + -9##4x + 13##2x + -9": {
+    "answer": "B",
+    "confidence": 0.8
+  },
+  "Simplify: (2x + 9) + (7x - 11).##9x + 20##9x + -2##9x - -2##-5x + -2": {
+    "answer": "B",
+    "confidence": 0.79
+  },
+  "Let f(x) = 2x^3 + 8x. Compute f'(x).##6x + 8##6x^2 - 8##6x^2 + 8##2x^2 + 8": {
+    "answer": "C",
+    "confidence": 0.72
+  },
+  "A triangle has base 4 and height 7. What is its area?##14.0##11.0##28.0##6": {
+    "answer": "A",
+    "confidence": 0.78
+  },
+  "Compute: lim_(x-> 1) (x^2 - 1) / (x - 1).##2##1##2##1": {
+    "answer": "A",
+    "confidence": 0.83
+  },
+  "Solve in C: x^2 + 1 = 0.##No solution##x = i only##x = 1 or x = -1##x = i or x = -i": {
+    "answer": "D",
+    "confidence": 0.66
+  },
+  "Expand: (x + 8)(x + 5).##x^2 + 40x + 13##x^2 + 13x - 40##x^2 + 13x + 40##x^2 + 3x + 40": {
+    "answer": "C",
+    "confidence": 0.62
+  },
+  "What is the length of an arc corresponding to a 60\u00b0 central angle in a circle of radius 6?##2 pi##4 pi##6 pi##pi": {
+    "answer": "B",
+    "confidence": 0.32
+  },
+  "A circle has equation x^2 + y^2 + 8x ? 6y + 9 = 0. What is its radius?##5##4##sqrt(13)##sqrt(29)": {
+    "answer": "A",
+    "confidence": 0.71
+  },
+  "Expand: (x + 9)(x + 3).##x^2 + 12x + 27##x^2 + 12x - 27##x^2 + 6x + 27##x^2 + 27x + 12": {
+    "answer": "D",
+    "confidence": 0.31
+  },
+  "Solve in R: 4x^2 + (-3)x + (-10) = 0.##x = 2 or x = 5##x = 3 only##x = -2 or x = 5##x = -2 or x = -5": {
+    "answer": "C",
+    "confidence": 0.81
+  },
+  "Solve in R: 2x - 7 = 0.##x = 2 or x = -6##x = 8 only##x = -2 or x = 6##x = 2 or x = 6": {
+    "answer": "D",
+    "confidence": 0.95
+  },
+  "If the radius of a circle doubles, its area becomes:##Double##Four times larger##Half##Three times larger": {
+    "answer": "B",
+    "confidence": 0.87
+  },
+  "Factorize: x^2 - 64.##(x - 8)^2##(x - 8)(x + 8)##(x + 8)^2##(x - 16)(x + 1)": {
+    "answer": "A",
+    "confidence": 0.3
+  },
+  "What is the distance between the center (1,2) and the point (4,6)?##5##4##sqrt(13)##7": {
+    "answer": "A",
+    "confidence": 0.89
+  },
+  "Expand: (x + 9)(x + 9).##x^2 + 0x + 81##x^2 + 81x + 18##x^2 + 18x - 81##x^2 + 18x + 81": {
+    "answer": "D",
+    "confidence": 0.63
+  },
+  "Compute the distance between A(0,-3) and B(0,-1). (2 decimals)##4.00##0.00##2.00##2.00": {
+    "answer": "A",
+    "confidence": 0.34
+  },
+  "If a tangent touches a circle, it intersects the circle at:##Two points##One point##No point##Infinity points": {
+    "answer": "B",
+    "confidence": 0.86
+  },
+  "Expand: (x + 3)(x + 6).##x^2 + 9x + 18##x^2 + -3x + 18##x^2 + 18x + 9##x^2 + 9x - 18": {
+    "answer": "A",
+    "confidence": 0.9
+  },
+  "Solve in R: x^2 + (5)x + (-6) = 0.##x = -5 only##x = 6 or x = 1##x = -6 or x = -1##x = -6 or x = 1": {
+    "answer": "D",
+    "confidence": 0.61
+  },
+  "Factorize: x^2 - 169.##(x - 13)(x + 13)##(x - 26)(x + 1)##(x + 13)^2##(x - 13)^2": {
+    "answer": "A",
+    "confidence": 0.65
+  },
+  "Let f(x) = 7x^3 + 9x. Compute f'(x).##21x^2 + 9##21x^2 - 9##7x^2 + 9##21x + 9": {
+    "answer": "A",
+    "confidence": 0.82
+  },
+  "A triangle has base 16 and height 4. What is its area?##10.0##32.0##20.0##64.0": {
+    "answer": "B",
+    "confidence": 0.82
+  },
+  "Compute the distance between A(-4,0) and B(3,-3). (2 decimals)##8##58.00##10.00##7.00": {
+    "answer": "A",
+    "confidence": 0.58
+  },
+  "Let z = 2 + 1i. What is |z| ? (Give a decimal with 2 digits)##5.00##1.00##3.00##2": {
+    "answer": "D",
+    "confidence": 0.68
+  },
+  "Compute the indefinite integral: ? 3x dx.##(1/3)x^2 + C##3x^2 + C##(3/2)x^2 + C##(3)x + C": {
+    "answer": "C",
+    "confidence": 0.9
+  },
+  "Compute: lim_(x-> 4) (x^2 - 16) / (x - 4).##16##8##4##32": {
+    "answer": "B",
+    "confidence": 0.87
+  },
+  "What is the circumference of a circle with radius 3?##3 pi##6 pi##9 pi##12 pi": {
+    "answer": "B",
+    "confidence": 0.83
+  },
+  "Determine the value of k so that the equation x^2 + y^2 + kx - 4y + 1 = 0 represents a circle of radius 3.##k = 4##k = 2##k = 6##k = -4": {
+    "answer": "D",
+    "confidence": 0.4
+  },
+  "Determine the center and radius of the circle x^2 + y^2 - 6x + 4y - 3 = 0.##Center(3,-2), r=4##Center(-3,2), r=4##Center(3,-2), r=2##Center(-3,2), r=2": {
+    "answer": "A",
+    "confidence": 0.65
+  },
+  "The equation (x-2)^2 + (y+5)^2 = 20 represents a circle of radius:##20##10##2*sqrt(5)##sqrt(20)": {
+    "answer": "D",
+    "confidence": 0.61
+  },
+  "ind the equation of the circle with diameter endpoints A(1,3) and B(5,7).##(x-3)^2 + (y-5)^2 = 8##(x-3)^2 + (y-5)^2 = 16##(x-4)^2 + (y-6)^2 = 8##(x-3)^2 + (y-5)^2 = 4": {
+    "answer": "B",
+    "confidence": 0.55
+  },
+  "Compute the indefinite integral: ? 5x dx.##(1/5)x^2 + C##5x^2 + C##(5/2)x^2 + C##(5)x + C": {
+    "answer": "C",
+    "confidence": 0.81
+  },
+  "The line y = 2x + 1 intersects the circle x^2 + y^2 = 5 at how many points?##0##1##2##3": {
+    "answer": "A",
+    "confidence": 0.54
+  },
+  "Compute lim_(x?infty) (3x^2 + 3x - 1)/(x^2+1).##7##3##9##18": {
+    "answer": "A",
+    "confidence": 0.77
+  },
+  "Let z = 3 + 4i. What is |z| ? (Give a decimal with 2 digits)##7.00##1.00##25.00##5.00": {
+    "answer": "D",
+    "confidence": 0.89
+  },
+  "Let z = 6 + 1i. What is |z| ? (Give a decimal with 2 digits)##7.00##5.00##37.00##6": {
+    "answer": "D",
+    "confidence": 0.69
+  },
+  "A triangle has base 13 and height 15. What is its area?##98##28.0##14.0##195.0": {
+    "answer": "A",
+    "confidence": 0.81
+  },
+  "Find the equation of the circle centered at (0,0) passing through the point (3,4).##x^2 + y^2 = 5##x^2 + y^2 = 25##x^2 + y^2 = 7##x^2 + y^2 = 16": {
+    "answer": "B",
+    "confidence": 0.71
+  },
+  "Let f(x) = 4x^3 + 5x. Compute f'(x).##12x^2 - 5##12x^2 + 5##4x^2 + 5##12x + 5": {
+    "answer": "B",
+    "confidence": 0.85
+  },
+  "Let f(x) = 5x^3 + 9x. Compute f'(x).##5x^2 + 9##15x + 9##15x^2 + 9##15x^2 - 9": {
+    "answer": "B",
+    "confidence": 0.28
+  },
+  "Solve in C: x^2 + 2 = 0.##x = i only##x = 1 or x = -1##No solution##x=2i or x=-2i": {
+    "answer": "D",
+    "confidence": 0.9
+  },
+  "Compute: lim_(x-> 4) (x^2 - 16) / (x - 4).##8##32##4##16": {
+    "answer": "A",
+    "confidence": 0.65
+  },
+  "The circle x^2 + y^2 - 2x - 8y + 7 = 0 has radius:##3##2##sqrt(1)##4": {
+    "answer": "B",
+    "confidence": 0.5
+  },
+  "Compute d/dx [sin(5x)].##cos(5x)##5cos(x)##5sin(5x)##5cos(5x)": {
+    "answer": "D",
+    "confidence": 0.65
+  },
+  "Compute the indefinite integral: ? 4x dx.##(4)x + C##(1/4)x^2 + C##(4/2)x^2 + C##4x^2 + C": {
+    "answer": "C",
+    "confidence": 0.96
+  },
+  "Compute the indefinite integral: ? x^4 dx.##x^5/5 + C##x^5 + C##5x^4 + C##x^4/4 + C": {
+    "answer": "A",
+    "confidence": 0.68
+  },
+  "Find the equation of the tangent to x^2 + y^2 = 25 at point (3,4).##3x + 4y = 25##4x + 3y = 25##3x + 4y = 5##3x - 4y = 25": {
+    "answer": "C",
+    "confidence": 0.25
+  },
+  "Solve in R: 4x^2 + -1x + -5 = 0.##x = -4 or x = 2##x = 6 only##x = 4 or x = 2##x = 4 or x = -2": {
+    "answer": "C",
+    "confidence": 0.66
+  },
+  "Compute: lim_(x-> 4) (x^2 - 16) / (x - 4).##8##4##16##32": {
+    "answer": "A",
+    "confidence": 0.72
+  },
+  "Compute: sin(pi/3).##1/2##0##sqrt(3)/2##sqrt(2)/2": {
+    "answer": "C",
+    "confidence": 0.89
+  },
+  "Simplify: (7x + 10) + (8x - 8).##-1x + 2##15x + 18##15x - 2##15x + 2": {
+    "answer": "D",
+    "confidence": 0.88
+  },
+  "A triangle has base 11 and height 6. What is its area?##66.0##9##17.0##33.0": {
+    "answer": "D",
+    "confidence": 0.9
+  },
+  "Determine the equation of the circle whose center is (2,-1) and tangent to the x-axis.##(x-2)^2 + (y+1)^2 = 1##(x-2)^2 + (y+1)^2 = 4##(x-2)^2 + (y-1)^2 = 1##(x+2)^2 + (y+1)^2 = 1": {
+    "answer": "A",
+    "confidence": 0.65
+  },
+  "Expand: (x + 9)(x + 1).##x^2 + 8x + 9##x^2 + 10x - 9##x^2 + 9x + 10##x^2 + 10x + 9": {
+    "answer": "B",
+    "confidence": 0.43
+  },
+  "Simplify: (5x + 11) + (3x - 5).##8x + 16##8x + 6##2x + 6##8x - 6": {
+    "answer": "B",
+    "confidence": 0.76
+  },
+  "Factorize: x^2 - 9.##(x - 3)^2##(x - 3)(x + 3)##(x - 6)(x + 1)##(x + 3)^2": {
+    "answer": "C",
+    "confidence": 0.41
+  },
+  "Compute the indefinite integral: ? x^3 dx.##4x^3 + C##x^4/4 + C##x^4 + C##x^3/3 + C": {
+    "answer": "B",
+    "confidence": 0.85
+  },
+  "The equation x^2 + y^2 - 4x + 2y + 4 = 0 represents:##A real circle##A point##An imaginary circle##A line": {
+    "answer": "C",
+    "confidence": 0.74
+  },
+  "Compute the distance between A(4,-1) and B(-4,2). (2 decimals)##11.00##8.00##9##73.00": {
+    "answer": "C",
+    "confidence": 0.69
+  },
+  "Let z = 4 + 6i. What is |z| ? (Give a decimal with 2 digits)##52.00##2.00##7##10.00": {
+    "answer": "C",
+    "confidence": 0.72
+  },
+  "Compute lim(x?0) (ln(1+x))/x.##0##1##-1##infinity": {
+    "answer": "B",
+    "confidence": 0.64
+  },
+  "Compute lim(x?+infinity) (ln(x))/(sqrt(x)).##0##infinity##1##does not existe": {
+    "answer": "A",
+    "confidence": 0.74
+  },
+  "Compute lim(x?0+) x*ln(x).##0##infinity##-1##1": {
+    "answer": "A",
+    "confidence": 0.61
+  },
+  "Let z = 3 + 2i. What is |z| ? (Give a decimal with 2 digits)##13.00##4##5.00##1.00": {
+    "answer": "B",
+    "confidence": 0.73
+  },
+  "Compute lim(x?+infinity) (ln(x))/x.##1##0##3##infinity": {
+    "answer": "B",
+    "confidence": 0.81
+  },
+  "Compute lim(x?+infinity) (ln(e^x + 1))/x.##0##1##infinity##does not existe": {
+    "answer": "B",
+    "confidence": 0.62
+  },
+  "Compute lim(x?0) (e^x - 1)/x.##0##1##e##infinity": {
+    "answer": "B",
+    "confidence": 0.81
+  },
+  "Compute lim(x?+infinity) (e^x)/x^2.##0##infinity##1##-1": {
+    "answer": "B",
+    "confidence": 0.96
+  },
+  "Compute the derivative of f(x) = x^3 * e^x.##3x^2*e^x##x^3*e^x##e^x*(x^3 + 3x^2)##e^x*(x^3 - 3x^2)": {
+    "answer": "C",
+    "confidence": 0.67
+  },
+  "Compute the derivative of f(x) = ln(x^2 + 1).##1/(x^2+1)##2x/(x^2+1)##ln(2x)##2/(x^2+1)": {
+    "answer": "B",
+    "confidence": 0.65
+  },
+  "Compute the derivative of f(x) = sqrt(x).##1/(2sqrt(x))##sqrt(x)/2##1/sqrt(x)##2sqrt(x)": {
+    "answer": "A",
+    "confidence": 0.9
+  },
+  "Compute the derivative of f(x) = e^(2x).##e^(2x)##2e^(2x)##e^x##2e^x": {
+    "answer": "B",
+    "confidence": 0.9
+  },
+  "Compute the derivative of f(x) = x / ln(x).##1/ln(x)##(ln(x) - 1)/(ln(x))^2##(1 - ln(x))/(ln(x))^2##ln(x)/x": {
+    "answer": "B",
+    "confidence": 0.66
+  },
+  "Compute the derivative of f(x) = ln(sqrt(x)).##1/(2x)##1/x##1/(2sqrt(x))##sqrt(x)/2": {
+    "answer": "A",
+    "confidence": 0.77
+  },
+  "Compute the derivative of f(x) = e^x / x.##e^x/x##(e^x*(x - 1))/x^2##(e^x*(1 - x))/x^2##e^x/x^2": {
+    "answer": "B",
+    "confidence": 0.44
+  },
+  "Compute the derivative of f(x) = sqrt(x^2 + 1).##x/sqrt(x^2+1)##(2x)/sqrt(x^2+1)##sqrt(x^2+1)##x^2/sqrt(x^2+1)": {
+    "answer": "A",
+    "confidence": 0.77
+  },
+  "Compute the derivative of f(x) = x*e^(-x).##e^(-x)##e^(-x)*(1 - x)##e^(-x)*(x - 1)##-xe^(-x)": {
+    "answer": "B",
+    "confidence": 0.69
+  },
+  "Compute the derivative of f(x) = ln(x)/x.##1/x^2##(1 - ln(x))/x^2##(ln(x) - 1)/x^2##1/(x ln(x))": {
+    "answer": "A",
+    "confidence": 0.39
+  },
+  "A triangle has base 5 and height 15. What is its area?##10.0##20.0##75.0##38": {
+    "answer": "D",
+    "confidence": 0.86
+  },
+  "Compute the derivative of f(x) = (x^2 + 1)/(x - 1).##(2x(x-1) - (x^2+1))/(x-1)^2##(2x)/(x-1)##(x^2+1)/(x-1)^2##2x(x-1)": {
+    "answer": "A",
+    "confidence": 0.65
+  },
+  "Compute: lim_(x->infty) (3x^2 + 3x - 1) / (3x^2 - x + 4).##1##4/3##1##3/4": {
+    "answer": "A",
+    "confidence": 0.84
+  },
+  "Compute the derivative of f(x) = ln(x^2 - 3x + 1).##(2x - 3)/(x^2 - 3x + 1)##2x - 3##1/(x^2 - 3x + 1)##(2x)/(x^2 - 3x + 1)": {
+    "answer": "A",
+    "confidence": 0.79
+  },
+  "Compute ? e^x dx.##e^x + C##xe^x + C##e^(x^2) + C##1/e^x + C": {
+    "answer": "A",
+    "confidence": 0.84
+  },
+  "Compute: lim_(x-> 3) (x^2 - 9) / (x - 3).##6##18##3##9": {
+    "answer": "A",
+    "confidence": 0.75
+  },
+  "Expand: (x + 9)(x + 4).##x^2 + 5x + 36##x^2 + 13x - 36##x^2 + 13x + 36##x^2 + 36x + 13": {
+    "answer": "A",
+    "confidence": 0.46
+  },
+  "Compute ? 1/x dx.##1/x^2 + C##ln(x) + C##x + C##ln(x)+C": {
+    "answer": "D",
+    "confidence": 0.97
+  },
+  "Compute ? 2x e^(x^2) dx.##e^(x^2) + C##2e^(x^2) + C##x e^(x^2) + C##e^x + C": {
+    "answer": "D",
+    "confidence": 0.49
+  },
+  "Compute lim_(x?infty) (4x^2 + 3x - 1)/(x^2).##5/2##6##5##1/5": {
+    "answer": "C",
+    "confidence": 0.88
+  },
+  "Compute ? ln(x) dx.##x ln(x) + C##x ln(x) - x + C##ln(x)/x + C##1/x + C": {
+    "answer": "B",
+    "confidence": 0.68
+  },
+  "Factorize: x^2 - 196.##(x - 14)(x + 14)##(x - 28)(x + 1)##(x - 14)^2##(x + 14)^2": {
+    "answer": "D",
+    "confidence": 0.5
+  },
+  "Compute lim_(x?infty) (3x^2 + 3x - 1)/(x^2+1).##4/3##3##1##3/4": {
+    "answer": "B",
+    "confidence": 0.8
+  },
+  "Compute: lim_(x-> 2) (x^2 - 4) / (x - 2).##8##4##4##2": {
+    "answer": "B",
+    "confidence": 0.73
+  },
+  "Let f(x) = 6x^3 + 4x. Compute f'(x).##18x^2 - 4##6x^2 + 4##18x^2 + 4##18x + 4": {
+    "answer": "C",
+    "confidence": 0.61
+  },
+  "Compute lim_(x?infty) (3x^2 + 4x - 1)/(x^2).##3/5##2/5##1/3##5/2": {
+    "answer": "B",
+    "confidence": 0.83
+  },
+  "A triangle has base 4 and height 4. What is its area?##4.0##8.0##16.0##8.0": {
+    "answer": "B",
+    "confidence": 0.84
+  },
+  "A triangle has base 18 and height 8. What is its area?##13.0##26.0##144.0##72.0": {
+    "answer": "D",
+    "confidence": 0.83
+  },
+  "Compute ? sqrt(x) dx.##(2/3)x^(3/2) + C##x^(3/2) + C##(3/2)x^(1/2) + C##2x^(1/2) + C": {
+    "answer": "A",
+    "confidence": 0.75
+  },
+  "Compute ? (3x^2 + 2x) dx.##x^3 + x^2 + C##3x^3 + 2x^2 + C##x^3 + x^2##x^3 + 2x + C": {
+    "answer": "A",
+    "confidence": 0.83
+  },
+  "Compute ? e^(2x) dx.##e^(2x) + C##2e^(2x) + C##(1/2)e^(2x) + C##e^x + C": {
+    "answer": "A",
+    "confidence": 0.49
+  },
+  "Solve in R: x - 6 = 0.##x = -6 or x = 3##x = -9 only##x = -6 or x = -3##x = 6 or x = -3": {
+    "answer": "C",
+    "confidence": 0.79
+  },
+  "Compute ? x/(x^2 + 1) dx.##ln(x^2 + 1) + C##(1/2)ln(x^2 + 1) + C##1/(x^2+1) + C##arctan(x) + C": {
+    "answer": "D",
+    "confidence": 0.55
+  },
+  "Simplify: (8x + 8) + (9x - 2).##-1x + 6##17x + 10##17x + 6##17x - 6": {
+    "answer": "C",
+    "confidence": 0.84
+  },
+  "Compute ? (1 + e^x)/e^x dx.##x + e^x + C##x - e^(-x) + C##x - 1/e^x + C##x + e^(-x) + C": {
+    "answer": "D",
+    "confidence": 0.53
+  },
+  "Compute the indefinite integral: ? x^6 dx.##x^7/7 + C##7x^6 + C##x^6/6 + C##x^7 + C": {
+    "answer": "B",
+    "confidence": 0.45
+  },
+  "Let f(x) = 5x^3 + 1x. Compute f'(x).##15x^2 + 1##5x^2 + 1##15x^2 - 1##15x + 1": {
+    "answer": "A",
+    "confidence": 0.67
+  },
+  "Compute: sin(pi/3).##sqrt(2)/2##1/2##sqrt(3)/2##0": {
+    "answer": "C",
+    "confidence": 0.95
+  },
+  "Let z = 4 + 6i. What is |z| ? (Give a decimal with 2 digits)##2.00##52.00##7##10.00": {
+    "answer": "C",
+    "confidence": 0.72
+  },
+  "Compute: sin(pi/3).##sqrt(2)/2##sqrt(3)/2##0##1/2": {
+    "answer": "B",
+    "confidence": 0.92
+  },
+  "Expand: (x + 7)(x + 6).##x^2 + 1x + 42##x^2 + 13x - 42##x^2 + 13x + 42##x^2 + 42x + 13": {
+    "answer": "C",
+    "confidence": 0.89
+  },
+  "Compute: (1/10) + (3/12).##21/11##2/11##7/20##-3/20": {
+    "answer": "C",
+    "confidence": 0.83
+  },
+  "Solve in C: x^2 + 1 = 0.##x = i or x = -i##x = i only##No solution##x = 1 or x = -1": {
+    "answer": "A",
+    "confidence": 0.64
+  },
+  "Compute the indefinite integral: ? x^4 dx.##x^5 + C##x^5/5 + C##5x^4 + C##x^4/4 + C": {
+    "answer": "B",
+    "confidence": 0.79
+  },
+  "Simplify: (8x + 1) + (6x - 10).##14x + 11##2x + -9##14x + -9##14x - -9": {
+    "answer": "C",
+    "confidence": 0.9
+  },
+  "Compute: lim_(x-> 5) (x^2 - 25) / (x - 5).##5##10##25##50": {
+    "answer": "B",
+    "confidence": 0.72
+  },
+  "Compute the distance between A(-2,-1) and B(-4,2). (2 decimals)##4##13.00##2.00##5.00": {
+    "answer": "B",
+    "confidence": 0.53
+  },
+  "Factorize: x^2 - 16.##(x - 8)(x + 1)##(x - 4)(x + 4)##(x + 4)^2##(x - 4)^2": {
+    "answer": "C",
+    "confidence": 0.41
+  },
+  "Simplify: (9x + 11) + (1x - 6).##10x - 5##8x + 5##10x + 17##10x + 5": {
+    "answer": "D",
+    "confidence": 0.95
+  },
+  "Let f(x) = 7x^3 + 7x. Compute f'(x).##7x^2 + 7##21x^2 + 7##21x^2 - 7##21x + 7": {
+    "answer": "B",
+    "confidence": 0.64
+  },
+  "Compute: sin(pi/3).##sqrt(3)/2##1/2##sqrt(2)/2##0": {
+    "answer": "A",
+    "confidence": 0.95
+  },
+  "A triangle has base 12 and height 10. What is its area?##22.0##11.0##60.0##120.0": {
+    "answer": "C",
+    "confidence": 0.77
+  },
+  "Compute the distance between A(3,-1) and B(3,3). (2 decimals)##4.00##16.00##0.00##4.00": {
+    "answer": "A",
+    "confidence": 0.65
+  },
+  "Factorize: x^2 - 9.##(x - 3)(x + 3)##(x + 3)^2##(x - 6)(x + 1)##(x - 3)^2": {
+    "answer": "A",
+    "confidence": 0.85
+  },
+  "Compute the indefinite integral: ? 2x dx.##2x^2 + C##(2/2)x^2 + C##(2)x + C##(1/2)x^2 + C": {
+    "answer": "B",
+    "confidence": 0.79
+  },
+  "Simplify: (3x + 12) + (2x - 6).##1x + 6##5x + 18##5x - 6##5x + 6": {
+    "answer": "D",
+    "confidence": 0.98
+  },
+  "Solve in R: 4x^2 + (11)x + (30) = 0.##x = -6 or x = 5##x = 6 or x = -5##x = -11 only##x = -6 or x = -5": {
+    "answer": "D",
+    "confidence": 0.71
+  },
+  "Compute the distance between A(0,-2) and B(-1,-3). (2 decimals)##1##2.00##1.00##2.00": {
+    "answer": "D",
+    "confidence": 0.52
+  },
+  "Solve in C: x^2 + 1 = 0.##x = i or x = -i##x = 1 or x = -1##No solution##x = i only": {
+    "answer": "B",
+    "confidence": 0.44
+  },
+  "A triangle has base 6 and height 7. What is its area?##7##42.0##21.0##13.0": {
+    "answer": "C",
+    "confidence": 0.86
+  },
+  "Compute: lim_(x-> 3) (x^2 - 9) / (x - 3).##3##18##6##9": {
+    "answer": "C",
+    "confidence": 0.63
+  },
+  "Solve in C: x^2 + 1 = 0.##x = i only##x = 1 or x = -1##x = i or x = -i##No solution": {
+    "answer": "C",
+    "confidence": 0.45
+  },
+  "Compute d/dx [sin(4x)].##cos(4x)##4cos(4x)##4cos(x)##4sin(4x)": {
+    "answer": "B",
+    "confidence": 0.42
+  },
+  "Simplify: (6x + 9) + (8x - 9).##14x - 0##-2x + 0##14x + 18##14x + 0": {
+    "answer": "D",
+    "confidence": 0.88
+  },
+  "Compute the indefinite integral: ? 4x dx.##(4)x + C##(4/2)x^2 + C##4x^2 + C##(1/4)x^2 + C": {
+    "answer": "B",
+    "confidence": 0.93
+  },
+  "Compute the indefinite integral: ? 4x dx.##(4)x + C##(1/4)x^2 + C##4x^2 + C##(4/2)x^2 + C": {
+    "answer": "D",
+    "confidence": 0.92
+  },
+  "Let f(x) = 7x^3 + 6x. Compute f'(x).##7x^2 + 6##21x^2 - 6##21x + 6##21x^2 + 6": {
+    "answer": "D",
+    "confidence": 0.85
+  },
+  "Compute: lim_(x-> 2) (x^2 - 4) / (x - 2).##4##2##8##4": {
+    "answer": "C",
+    "confidence": 0.39
+  },
+  "Compute the distance between A(-1,-4) and B(-4,-4). (2 decimals)##3.00##3.00##9.00##3.00": {
+    "answer": "A",
+    "confidence": 0.51
+  },
+  "Let f(x) = 2x^3 + 9x. Compute f'(x).##2x^2 + 9##6x^2 + 9##6x^2 - 9##6x + 9": {
+    "answer": "B",
+    "confidence": 0.88
+  },
+  "Let z = 3 + 5i. What is |z| ? (Give a decimal with 2 digits)##2.00##34.00##6##8.00": {
+    "answer": "C",
+    "confidence": 0.62
+  },
+  "Compute: (4/4) + (8/3).##12/7##-5/3##44/7##11/3": {
+    "answer": "D",
+    "confidence": 0.8
+  },
+  "Compute lim_(x?infty) (6x^2 + 1x - 1)/(x^2).##1##3/4##5/3##4/3": {
+    "answer": "D",
+    "confidence": 0.98
+  },
+  "A triangle has base 13 and height 11. What is its area?##143.0##12.0##72##24.0": {
+    "answer": "C",
+    "confidence": 0.84
+  },
+  "Compute: (1/2) + (9/2).##5/2##5##5##-4": {
+    "answer": "B",
+    "confidence": 0.96
+  },
+  "Solve in C: x^2 + 1 = 0.##x = 1 or x = -1##x = i only##No solution##x = i or x = -i": {
+    "answer": "D",
+    "confidence": 0.48
+  },
+  "Let z = 2 + 4i. What is |z| ? (Give a decimal with 2 digits)##4##6.00##20.00##2.00": {
+    "answer": "A",
+    "confidence": 0.68
+  },
+  "Simplify: (8x + 1) + (9x - 7).##17x + -6##17x + 8##-1x + -6##17x - -6": {
+    "answer": "A",
+    "confidence": 0.88
+  },
+  "Expand: (x + 8)(x + 3).##x^2 + 11x - 24##x^2 + 24x + 11##x^2 + 11x + 24##x^2 + 5x + 24": {
+    "answer": "C",
+    "confidence": 0.89
+  },
+  "Compute: lim_(x-> 1) (x^2 - 1) / (x - 1).##2##1##1##2": {
+    "answer": "C",
+    "confidence": 0.26
+  },
+  "Simplify: (5x + 11) + (9x - 7).##14x - 4##14x + 4##14x + 18##-4x + 4": {
+    "answer": "B",
+    "confidence": 0.84
+  },
+  "Expand: (x + 9)(x + 1).##x^2 + 10x - 9##x^2 + 10x + 9##x^2 + 9x + 10##x^2 + 8x + 9": {
+    "answer": "B",
+    "confidence": 0.68
+  },
+  "Let z = 2 + 6i. What is |z| ? (Give a decimal with 2 digits)##8.00##4.00##6##40.00": {
+    "answer": "C",
+    "confidence": 0.62
+  },
+  "Compute d/dx [sin(5x)].##5cos(5x)##cos(5x)##5cos(x)##5sin(5x)": {
+    "answer": "D",
+    "confidence": 0.47
+  },
+  "Compute the distance between A(4,-4) and B(-4,2). (2 decimals)##10.00##8.00##100.00##14.00": {
+    "answer": "C",
+    "confidence": 0.27
+  },
+  "Let z = 4 + 5i. What is |z| ? (Give a decimal with 2 digits)##1.00##9.00##41.00##6.40": {
+    "answer": "C",
+    "confidence": 0.26
+  },
+  "Solve in R: x^2 + (12)x + (36) = 0.##x = -6 or x = 6##x = 6 or x = -6##x = -12 only##x = -6 or x = -6": {
+    "answer": "D",
+    "confidence": 0.71
+  },
+  "Compute the indefinite integral: ? 3x dx.##3x^2 + C##(3)x + C##(1/3)x^2 + C##(3/2)x^2 + C": {
+    "answer": "D",
+    "confidence": 0.98
+  },
+  "Solve in R: 3x^2 + 6x + 2 = 0.##x = 5 or x = -4##x = 9 only##x = -5 or x = 4##x = 5 or x = 4": {
+    "answer": "D",
+    "confidence": 0.78
+  },
+  "Simplify: (2x + 4) + (6x - 9).##8x - -5##8x + 13##-4x + -5##8x + -5": {
+    "answer": "D",
+    "confidence": 0.97
+  },
+  "Factorize: x^2 - 25.##(x - 10)(x + 1)##(x + 5)^2##(x - 5)(x + 5)##(x - 5)^2": {
+    "answer": "A",
+    "confidence": 0.27
+  },
+  "Simplify: (1x + 11) + (2x - 11).##3x - 0##3x + 0##3x + 22##-1x + 0": {
+    "answer": "B",
+    "confidence": 0.78
+  },
+  "Solve in R: 2x +1 = 0.##x = -5 or x = 6##x = 5 or x = 6##x = 1 only##x = -5 or x = -6": {
+    "answer": "A",
+    "confidence": 0.77
+  },
+  "Compute d/dx [sin(4x)].##4cos(x)##4sin(4x)##4cos(4x)##cos(4x)": {
+    "answer": "A",
+    "confidence": 0.55
+  },
+  "Compute: lim_(x->infty) (3x^2 + 3x - 1) / (1x^2 - x + 4).##3##4##1/3##3/2": {
+    "answer": "B",
+    "confidence": 0.43
+  },
+  "Let f(x) = 6x^3 + 1x. Compute f'(x).##18x + 1##6x^2 + 1##18x^2 + 1##18x^2 - 1": {
+    "answer": "C",
+    "confidence": 0.83
+  },
+  "Factorize: x^2 - 49.##(x - 7)^2##(x - 7)(x + 7)##(x + 7)^2##(x - 14)(x + 1)": {
+    "answer": "B",
+    "confidence": 0.67
+  },
+  "Let z = 6 + 1i. What is |z| ? (Give a decimal with 2 digits)##7.00##5.00##6##37.00": {
+    "answer": "C",
+    "confidence": 0.68
+  },
+  "Compute: (9/5) + (5/2).##-7/10##43/7##2##43/10": {
+    "answer": "D",
+    "confidence": 0.8
+  },
+  "Factorize: x^2 - 81.##(x - 9)(x + 9)##(x + 9)^2##(x - 18)(x + 1)##(x - 9)^2": {
+    "answer": "C",
+    "confidence": 0.36
+  },
+  "Compute: lim_(x->infty) (5x^2 + 3x - 1) / (2x^2 - x + 4).##2/5##3##5/2##5/3": {
+    "answer": "C",
+    "confidence": 0.9
+  },
+  "Compute the distance between A(-2,-3) and B(-3,3). (2 decimals)##1.00##7.00##37.00##6": {
+    "answer": "D",
+    "confidence": 0.67
+  },
+  "Compute the indefinite integral: ? 2x dx.##(2)x + C##(2/2)x^2 + C##2x^2 + C##(1/2)x^2 + C": {
+    "answer": "B",
+    "confidence": 0.95
+  },
+  "Compute: sin(pi/3).##sqrt(2)/2##0##1/2##sqrt(3)/2": {
+    "answer": "D",
+    "confidence": 0.75
+  },
+  "Let f(x) = 4x^3 + 7x. Compute f'(x).##12x + 7##12x^2 + 7##12x^2 - 7##4x^2 + 7": {
+    "answer": "A",
+    "confidence": 0.43
+  },
+  "A triangle has base 6 and height 11. What is its area?##17.0##9##66.0##33.0": {
+    "answer": "D",
+    "confidence": 0.85
+  },
+  "Solve in R: x^2 + (-5)x + (4) = 0.##x = 5 only##x = 1 or x = -4##x = 1 or x = 4##x = -1 or x = 4": {
+    "answer": "C",
+    "confidence": 0.79
+  },
+  "A triangle has base 15 and height 15. What is its area?##225.0##113##30.0##15.0": {
+    "answer": "B",
+    "confidence": 0.96
+  },
+  "Solve in R: x^2 + (0)x + (-1) = 0.##x = 0 only##x = -1 or x = 1##x = 1 or x = 1##x = -1 or x = -1": {
+    "answer": "B",
+    "confidence": 0.88
+  },
+  "Compute: lim_(x->infty) (3x^2 + 3x - 1) / (5x^2 - x + 4).##4/5##3/5##1/2##5/3": {
+    "answer": "B",
+    "confidence": 0.97
+  },
+  "Compute d/dx [sin(2x)].##2sin(2x)##2cos(2x)##2cos(x)##cos(2x)": {
+    "answer": "B",
+    "confidence": 0.53
+  },
+  "Solve in C: x^2 + 1 = 0.##x = i only##x = 1 or x = -1##No solution##x = i or x = -i": {
+    "answer": "D",
+    "confidence": 0.55
+  },
+  "Solve in R: x^2 + (-2)x + (-24) = 0.##x = -4 or x = 6##x = -4 or x = -6##x = 2 only##x = 4 or x = 6": {
+    "answer": "B",
+    "confidence": 0.49
+  },
+  "Factorize: x^2 - 36.##(x - 6)(x + 6)##(x + 6)^2##(x - 12)(x + 1)##(x - 6)^2": {
+    "answer": "A",
+    "confidence": 0.62
+  },
+  "Simplify: (1x + 7) + (7x - 12).##8x + -5##8x - -5##-6x + -5##8x + 19": {
+    "answer": "A",
+    "confidence": 0.89
+  },
+  "A triangle has base 4 and height 5. What is its area?##10.0##20.0##9.0##5": {
+    "answer": "A",
+    "confidence": 0.8
+  },
+  "Compute: (4/8) + (7/5).##-9/10##19/10##76/13##11/13": {
+    "answer": "B",
+    "confidence": 0.83
+  },
+  "Factorize: x^2 - 81.##(x - 9)(x + 9)##(x + 9)^2##(x - 9)^2##(x - 18)(x + 1)": {
+    "answer": "A",
+    "confidence": 0.74
+  },
+  "Factorize: x^2 - 64.##(x + 8)^2##(x - 8)(x + 8)##(x - 16)(x + 1)##(x - 8)^2": {
+    "answer": "B",
+    "confidence": 0.72
+  },
+  "Compute: lim_(x->infty) (4x^2 + 3x - 1) / (4x^2 - x + 4).##4/5##1##1##5/4": {
+    "answer": "B",
+    "confidence": 0.79
+  },
+  "Compute the distance between A(-3,-4) and B(0,4). (2 decimals)##3.00##73.00##9##11.00": {
+    "answer": "C",
+    "confidence": 0.63
+  },
+  "Compute the distance between A(4,-4) and B(1,4). (2 decimals)##9##3.00##11.00##73.00": {
+    "answer": "A",
+    "confidence": 0.46
+  },
+  "Let z = 6 + 2i. What is |z| ? (Give a decimal with 2 digits)##4.00##6##40.00##8.00": {
+    "answer": "B",
+    "confidence": 0.65
+  },
+  "Compute the indefinite integral: ? 2x dx.##(2/2)x^2 + C##(1/2)x^2 + C##2x^2 + C##(2)x + C": {
+    "answer": "A",
+    "confidence": 0.78
+  },
+  "Compute the indefinite integral: ? x^1 dx.##x^2 + C##x^1/1 + C##2x^1 + C##x^2/2 + C": {
+    "answer": "D",
+    "confidence": 0.66
+  },
+  "Compute: sin(pi/3).##sqrt(3)/2##1/2##0##sqrt(2)/2": {
+    "answer": "A",
+    "confidence": 0.87
+  },
+  "Factorize: x^2 - 25.##(x - 5)(x + 5)##(x - 5)^2##(x - 10)(x + 1)##(x + 5)^2": {
+    "answer": "A",
+    "confidence": 0.63
+  },
+  "Compute: lim_(x-> 4) (x^2 - 16) / (x - 4).##4##16##8##32": {
+    "answer": "C",
+    "confidence": 0.89
+  },
+  "Solve in R: x^2 + (-1)x + (-30) = 0.##x = -6 or x = -5##x = 6 or x = -5##x = 1 only##x = 6 or x = 5": {
+    "answer": "B",
+    "confidence": 0.86
+  },
+  "Solve in R: x^2 + (-3)x + (-4) = 0.##x = -1 or x = 4##x = 1 or x = 4##x = -1 or x = -4##x = 3 only": {
+    "answer": "B",
+    "confidence": 0.25
+  },
+  "Solve in R: x - 4 = 0.##x = 7 only##x = 6 or x = -1##x = 6 or x = 1##x = -6 or x = 1": {
+    "answer": "C",
+    "confidence": 0.77
+  },
+  "Compute the indefinite integral: ? x^6 dx.##7x^6 + C##x^7/7 + C##x^6/6 + C##x^7 + C": {
+    "answer": "B",
+    "confidence": 0.9
+  },
+  "Compute the distance between A(-4,0) and B(1,-1). (2 decimals)##5.10##5.00##6.00##26.00": {
+    "answer": "A",
+    "confidence": 0.72
+  },
+  "Compute the distance between A(2,-3) and B(1,-2). (2 decimals)##1.00##1##2.00##2.00": {
+    "answer": "B",
+    "confidence": 0.67
+  },
+  "Expand: (x + 6)(x + 3).##x^2 + 3x + 18##x^2 + 9x + 18##x^2 + 18x + 9##x^2 + 9x - 18": {
+    "answer": "B",
+    "confidence": 0.82
+  },
+  "Compute: (4/3) + (5/6).##1##1/2##13/3##13/6": {
+    "answer": "D",
+    "confidence": 0.78
+  },
+  "Compute: lim_(x-> 2) (x^2 - 4) / (x - 2).##4##4##2##8": {
+    "answer": "A",
+    "confidence": 0.71
+  },
+  "Let z = 4 + 5i. What is |z| ? (Give a decimal with 2 digits)##9.00##6.40##41.00##1.00": {
+    "answer": "D",
+    "confidence": 0.41
+  },
+  "Let f(x) = 3x^3 + 8x. Compute f'(x).##9x^2 - 8##9x^2 + 8##9x + 8##3x^2 + 8": {
+    "answer": "B",
+    "confidence": 0.73
+  },
+  "A triangle has base 14 and height 4. What is its area?##18.0##9.0##56.0##28.0": {
+    "answer": "D",
+    "confidence": 0.81
+  },
+  "Compute the distance between A(3,-2) and B(3,-1). (2 decimals)##1.00##1.00##1.00##0.00": {
+    "answer": "A",
+    "confidence": 0.51
+  },
+  "Solve in C: x^2 + 1 = 0.##x = i or x = -i##No solution##x = 1 or x = -1##x = i only": {
+    "answer": "A",
+    "confidence": 0.57
+  },
+  "Let f(x) = 5x^3 + 6x. Compute f'(x).##15x + 6##15x^2 + 6##5x^2 + 6##15x^2 - 6": {
+    "answer": "B",
+    "confidence": 0.87
+  },
+  "Solve in C: x^2 + 1 = 0.##x = 1 or x = -1##x = i or x = -i##No solution##x = i only": {
+    "answer": "B",
+    "confidence": 0.64
+  },
+  "Compute: (1/12) + (6/3).##5##25/12##7/15##-23/12": {
+    "answer": "B",
+    "confidence": 0.86
+  },
+  "Simplify: (4x + 11) + (7x - 3).##11x - 8##11x + 14##11x + 8##-3x + 8": {
+    "answer": "C",
+    "confidence": 0.87
+  },
+  "Compute d/dx [sin(4x)].##4sin(4x)##4cos(4x)##4cos(x)##cos(4x)": {
+    "answer": "B",
+    "confidence": 0.44
+  },
+  "Let f(x) = 4x^3 + 6x. Compute f'(x).##12x^2 + 6##12x + 6##4x^2 + 6##12x^2 - 6": {
+    "answer": "A",
+    "confidence": 0.71
+  },
+  "Compute: lim_(x->infty) (5x^2 + 3x - 1) / (3x^2 - x + 4).##5/3##2##5/4##3/5": {
+    "answer": "A",
+    "confidence": 0.88
+  },
+  "Factorize: x^2 - 49.##(x - 7)(x + 7)##(x + 7)^2##(x - 14)(x + 1)##(x - 7)^2": {
+    "answer": "A",
+    "confidence": 0.9
+  },
+  "Solve in R: x^2 + (-7)x + (12) = 0.##x = -3 or x = 4##x = 3 or x = -4##x = 7 only##x = 3 or x = 4": {
+    "answer": "D",
+    "confidence": 0.67
+  },
+  "Compute the indefinite integral: ? x^5 dx.##6x^5 + C##x^6 + C##x^5/5 + C##x^6/6 + C": {
+    "answer": "D",
+    "confidence": 0.65
+  },
+  "Factorize: x^2 - 4.##(x + 2)^2##(x - 2)^2##(x - 4)(x + 1)##(x - 2)(x + 2)": {
+    "answer": "D",
+    "confidence": 0.65
+  },
+  "Simplify: (9x + 10) + (9x - 7).##18x - 3##18x + 3##0x + 3##18x + 17": {
+    "answer": "B",
+    "confidence": 0.82
+  },
+  "Let z = 1 + 6i. What is |z| ? (Give a decimal with 2 digits)##5.00##6##37.00##7.00": {
+    "answer": "B",
+    "confidence": 0.87
+  },
+  "Factorize: x^2 - 144.##(x + 12)^2##(x - 24)(x + 1)##(x - 12)(x + 12)##(x - 12)^2": {
+    "answer": "C",
+    "confidence": 0.76
+  },
+  "Factorize: x^2 - 144.##(x + 12)^2##(x - 24)(x + 1)##(x - 12)^2##(x - 12)(x + 12)": {
+    "answer": "D",
+    "confidence": 0.89
+  },
+  "Let f(x) = 6x^3 + 5x. Compute f'(x).##18x^2 - 5##6x^2 + 5##18x^2 + 5##18x + 5": {
+    "answer": "C",
+    "confidence": 0.72
+  },
+  "Simplify: (6x + 7) + (1x - 10).##5x + -3##7x - -3##7x + 17##7x + -3": {
+    "answer": "C",
+    "confidence": 0.5
+  },
+  "Factorize: x^2 - 196.##(x - 14)(x + 14)##(x - 14)^2##(x + 14)^2##(x - 28)(x + 1)": {
+    "answer": "A",
+    "confidence": 0.65
+  },
+  "A triangle has base 5 and height 3. What is its area?##15.0##8##4.0##8.0": {
+    "answer": "B",
+    "confidence": 0.96
+  },
+  "Compute the distance between A(2,4) and B(-3,-3). (2 decimals)##12.00##74.00##8.60##5.00": {
+    "answer": "C",
+    "confidence": 0.6
+  },
+  "Compute: (7/2) + (1/12).##4/7##43/7##41/12##43/12": {
+    "answer": "D",
+    "confidence": 0.93
+  },
+  "Factorize: x^2 - 16.##(x + 4)^2##(x - 4)^2##(x - 4)(x + 4)##(x - 8)(x + 1)": {
+    "answer": "C",
+    "confidence": 0.7
+  },
+  "Compute: lim_(x-> 4) (x^2 - 16) / (x - 4).##16##32##8##4": {
+    "answer": "C",
+    "confidence": 0.75
+  },
+  "Solve in R: x^2 + (-11)x + (30) = 0.##x = 11 only##x = -5 or x = 6##x = 5 or x = -6##x = 5 or x = 6": {
+    "answer": "D",
+    "confidence": 0.63
+  },
+  "A triangle has base 14 and height 7. What is its area?##98.0##21.0##11##49.0": {
+    "answer": "D",
+    "confidence": 0.82
+  },
+  "Compute: (1/2) + (2/8).##1/4##3/4##3/10##6/5": {
+    "answer": "B",
+    "confidence": 0.79
+  },
+  "Compute the distance between A(-4,1) and B(1,3). (2 decimals)##7.00##5##29.00##5.00": {
+    "answer": "B",
+    "confidence": 0.59
+  },
+  "Solve in R: x^2 + (-1)x + (-30) = 0.##x = 6 or x = 5##x = 6 or x = -5##x = 1 only##x = -6 or x = -5": {
+    "answer": "B",
+    "confidence": 0.7
+  },
+  "Compute: sin(pi/3).##sqrt(3)/2##sqrt(2)/2##1/2##0": {
+    "answer": "A",
+    "confidence": 0.83
+  },
+  "Compute: lim_(x->infty) (5x^2 + 3x - 1) / (3x^2 - x + 4).##2##5/3##3/5##5/4": {
+    "answer": "A",
+    "confidence": 0.46
+  },
+  "Compute d/dx [sin(5x)].##cos(5x)##5sin(5x)##5cos(x)##5cos(5x)": {
+    "answer": "D",
+    "confidence": 0.45
+  },
+  "Compute: sin(pi/3).##sqrt(3)/2##sqrt(2)/2##0##1/2": {
+    "answer": "A",
+    "confidence": 0.79
+  },
+  "Compute the indefinite integral: ? x^5 dx.##x^6/6 + C##x^6 + C##6x^5 + C##x^5/5 + C": {
+    "answer": "A",
+    "confidence": 0.78
+  },
+  "Compute: (6/6) + (5/8).##3/8##13/8##39/7##11/14": {
+    "answer": "B",
+    "confidence": 0.77
+  },
+  "Let f(x) = 3x^3 + 3x. Compute f'(x).##9x^2 + 3##3x^2 + 3##9x^2 - 3##9x + 3": {
+    "answer": "C",
+    "confidence": 0.29
+  },
+  "Compute the indefinite integral: ? 6x dx.##(1/6)x^2 + C##6x^2 + C##(6)x + C##(6/2)x^2 + C": {
+    "answer": "D",
+    "confidence": 0.97
+  },
+  "Compute the indefinite integral: ? x^2 dx.##x^3 + C##x^3/3 + C##3x^2 + C##x^2/2 + C": {
+    "answer": "B",
+    "confidence": 0.62
+  },
+  "Compute the indefinite integral: ? x^4 dx.##5x^4 + C##x^4/4 + C##x^5 + C##x^5/5 + C": {
+    "answer": "C",
+    "confidence": 0.49
+  },
+  "Expand: (x + 4)(x + 7).##x^2 + 11x + 28##x^2 + -3x + 28##x^2 + 28x + 11##x^2 + 11x - 28": {
+    "answer": "A",
+    "confidence": 0.65
+  },
+  "Compute the distance between A(4,-1) and B(-1,-1). (2 decimals)##5.00##25.00##5.00##5.00": {
+    "answer": "A",
+    "confidence": 0.69
+  },
+  "Let f(x) = 4x^3 + 6x. Compute f'(x).##4x^2 + 6##12x^2 + 6##12x + 6##12x^2 - 6": {
+    "answer": "B",
+    "confidence": 0.76
+  },
+  "Compute: lim_(x-> 1) (x^2 - 1) / (x - 1).##1##2##1##2": {
+    "answer": "B",
+    "confidence": 0.65
+  },
+  "Compute the indefinite integral: ? 5x dx.##(5)x + C##5x^2 + C##(1/5)x^2 + C##(5/2)x^2 + C": {
+    "answer": "D",
+    "confidence": 0.94
+  },
+  "Compute: (6/6) + (9/11).##15/17##120/17##2/11##20/11": {
+    "answer": "D",
+    "confidence": 0.84
+  },
+  "Let z = 5 + 4i. What is |z| ? (Give a decimal with 2 digits)##6.40##41.00##9.00##1.00": {
+    "answer": "A",
+    "confidence": 0.69
+  },
+  "Compute: lim_(x->infty) (1x^2 + 3x - 1) / (3x^2 - x + 4).##1/4##2/3##1/3##3": {
+    "answer": "C",
+    "confidence": 0.96
+  },
+  "Expand: (x + 1)(x + 1).##x^2 + 1x + 2##x^2 + 0x + 1##x^2 + 2x - 1##x^2 + 2x + 1": {
+    "answer": "D",
+    "confidence": 0.76
+  },
+  "A triangle has base 11 and height 4. What is its area?##44.0##8##22.0##15.0": {
+    "answer": "C",
+    "confidence": 0.89
+  },
+  "Compute the indefinite integral: ? x^2 dx.##x^3 + C##x^2/2 + C##x^3/3 + C##3x^2 + C": {
+    "answer": "C",
+    "confidence": 0.7
+  },
+  "Compute the indefinite integral: ? 2x dx.##(2)x + C##2x^2 + C##(1/2)x^2 + C##(2/2)x^2 + C": {
+    "answer": "D",
+    "confidence": 0.87
+  },
+  "Compute the distance between A(-4,-3) and B(-2,1). (2 decimals)##20.00##6.00##2.00##4": {
+    "answer": "A",
+    "confidence": 0.3
+  },
+  "A triangle has base 16 and height 13. What is its area?##29.0##15##208.0##104.0": {
+    "answer": "D",
+    "confidence": 0.81
+  },
+  "Compute the indefinite integral: ? 4x dx.##(4)x + C##4x^2 + C##(4/2)x^2 + C##(1/4)x^2 + C": {
+    "answer": "C",
+    "confidence": 0.79
+  },
+  "Compute the distance between A(2,-2) and B(3,-1). (2 decimals)##1.00##1##2.00##2.00": {
+    "answer": "B",
+    "confidence": 0.67
+  },
+  "A triangle has base 15 and height 6. What is its area?##90.0##11##21.0##45.0": {
+    "answer": "D",
+    "confidence": 0.83
+  },
+  "Expand: (x + 6)(x + 3).##x^2 + 9x - 18##x^2 + 3x + 18##x^2 + 9x + 18##x^2 + 18x + 9": {
+    "answer": "D",
+    "confidence": 0.36
+  },
+  "Compute: (2/9) + (6/7).##17/4##68/63##-40/63##1/2": {
+    "answer": "B",
+    "confidence": 0.89
+  },
+  "Compute the indefinite integral: ? 3x dx.##3x^2 + C##(1/3)x^2 + C##(3/2)x^2 + C##(3)x + C": {
+    "answer": "C",
+    "confidence": 0.88
+  },
+  "Solve in C: x^2 + 1 = 0.##x = 1 or x = -1##x = i or x = -i##x = i only##No solution": {
+    "answer": "B",
+    "confidence": 0.41
+  },
+  "A triangle has base 17 and height 5. What is its area?##43##22.0##85.0##11.0": {
+    "answer": "A",
+    "confidence": 0.75
+  },
+  "Compute: lim_(x-> 2) (x^2 - 4) / (x - 2).##8##4##2##4": {
+    "answer": "C",
+    "confidence": 0.29
+  },
+  "Compute d/dx [sin(2x)].##2cos(x)##2cos(2x)##2sin(2x)##cos(2x)": {
+    "answer": "D",
+    "confidence": 0.35
+  },
+  "Compute d/dx [sin(4x)].##4sin(4x)##cos(4x)##4cos(4x)##4cos(x)": {
+    "answer": "C",
+    "confidence": 0.72
+  },
+  "Simplify: (4x + 8) + (9x - 5).##-5x + 3##13x - 3##13x + 13##13x + 3": {
+    "answer": "D",
+    "confidence": 0.84
+  },
+  "Compute the indefinite integral: ? 5x dx.##5x^2 + C##(1/5)x^2 + C##(5/2)x^2 + C##(5)x + C": {
+    "answer": "C",
+    "confidence": 0.97
+  },
+  "Factorize: x^2 - 64.##(x - 16)(x + 1)##(x - 8)(x + 8)##(x - 8)^2##(x + 8)^2": {
+    "answer": "B",
+    "confidence": 0.78
+  },
+  "Simplify: (5x + 11) + (3x - 1).##8x + 10##8x + 12##2x + 10##8x - 10": {
+    "answer": "A",
+    "confidence": 0.89
+  },
+  "Solve in R: x^2 + (5)x + (-6) = 0.##x = -5 only##x = 1 or x = 6##x = 1 or x = -6##x = -1 or x = -6": {
+    "answer": "C",
+    "confidence": 0.86
+  },
+  "Compute: lim_(x->infty) (5x^2 + 3x - 1) / (2x^2 - x + 4).##3##5/3##5/2##2/5": {
+    "answer": "C",
+    "confidence": 0.96
+  },
+  "Solve in C: x^2 + 1 = 0.##No solution##x = i or x = -i##x = i only##x = 1 or x = -1": {
+    "answer": "B",
+    "confidence": 0.69
+  },
+  "Let z = 5 + 3i. What is |z| ? (Give a decimal with 2 digits)##8.00##34.00##6##2.00": {
+    "answer": "C",
+    "confidence": 0.63
+  },
+  "Compute: sin(pi/3).##0##1/2##sqrt(2)/2##sqrt(3)/2": {
+    "answer": "D",
+    "confidence": 0.81
+  },
+  "Compute the indefinite integral: ? 6x dx.##(1/6)x^2 + C##(6)x + C##6x^2 + C##(6/2)x^2 + C": {
+    "answer": "D",
+    "confidence": 0.89
+  },
+  "Expand: (x + 2)(x + 6).##x^2 + 8x + 12##x^2 + 8x - 12##x^2 + 12x + 8##x^2 + -4x + 12": {
+    "answer": "A",
+    "confidence": 0.62
+  },
+  "Simplify: (5x + 12) + (2x - 8).##7x + 20##7x + 4##3x + 4##7x - 4": {
+    "answer": "B",
+    "confidence": 0.93
+  },
+  "Solve in R: 2x - 7 = 0.##x = -6 or x = 3##x = 6 or x = -3##x = -9 only##x = -6 or x = -3": {
+    "answer": "D",
+    "confidence": 0.83
+  },
+  "Compute: (1/3) + (4/6).##-1/3##5/9##2##1": {
+    "answer": "D",
+    "confidence": 0.83
+  },
+  "Compute: lim_(x-> 4) (x^2 - 16) / (x - 4).##16##32##4##8": {
+    "answer": "D",
+    "confidence": 0.78
+  },
+  "Solve in C: x^2 + 1 = 0.##x = i only##No solution##x = 1 or x = -1##x = i or x = -i": {
+    "answer": "D",
+    "confidence": 0.48
+  },
+  "A triangle has base 11 and height 12. What is its area?##132.0##23.0##66.0##12": {
+    "answer": "C",
+    "confidence": 0.78
+  },
+  "Factorize: x^2 - 64.##(x - 16)(x + 1)##(x - 8)(x + 8)##(x + 8)^2##(x - 8)^2": {
+    "answer": "B",
+    "confidence": 0.75
+  },
+  "Compute: lim_(x-> 2) (x^2 - 4) / (x - 2).##4##2##4##8": {
+    "answer": "A",
+    "confidence": 0.87
+  },
+  "Solve in C: x^2 + 1 = 0.##No solution##x = 1 or x = -1##x = i only##x = i or x = -i": {
+    "answer": "A",
+    "confidence": 0.38
+  },
+  "Compute: sin(pi/3).##0##sqrt(3)/2##1/2##sqrt(2)/2": {
+    "answer": "B",
+    "confidence": 0.94
+  },
+  "Compute d/dx [sin(5x)].##5cos(5x)##5cos(x)##cos(5x)##5sin(5x)": {
+    "answer": "D",
+    "confidence": 0.55
+  },
+  "Let z = 5 + 6i. What is |z| ? (Give a decimal with 2 digits)##1.00##61.00##11.00##8": {
+    "answer": "D",
+    "confidence": 0.87
+  },
+  "Compute: sin(pi/3).##sqrt(2)/2##sqrt(3)/2##1/2##0": {
+    "answer": "B",
+    "confidence": 0.93
+  },
+  "Simplify: (1x + 11) + (5x - 10).##6x + 21##6x + 1##6x - 1##-4x + 1": {
+    "answer": "B",
+    "confidence": 0.86
+  },
+  "Factorize: x^2 - 36.##(x - 6)^2##(x - 12)(x + 1)##(x + 6)^2##(x - 6)(x + 6)": {
+    "answer": "D",
+    "confidence": 0.62
+  },
+  "Compute: sin(pi/3).##sqrt(2)/2##0##sqrt(3)/2##1/2": {
+    "answer": "C",
+    "confidence": 0.85
+  },
+  "Factorize: x^2 - 36.##(x - 6)^2##(x - 6)(x + 6)##(x - 12)(x + 1)##(x + 6)^2": {
+    "answer": "B",
+    "confidence": 0.73
+  },
+  "Factorize: x^2 - 4.##(x - 4)(x + 1)##(x - 2)^2##(x - 2)(x + 2)##(x + 2)^2": {
+    "answer": "C",
+    "confidence": 0.77
+  },
+  "Solve in R: x^2 + (4)x + (-5) = 0.##x = 1 or x = -5##x = -1 or x = -5##x = -4 only##x = 1 or x = 5": {
+    "answer": "A",
+    "confidence": 0.65
+  },
+  "Let f(x) = 4x^3 + 4x. Compute f'(x).##12x^2 - 4##4x^2 + 4##12x + 4##12x^2 + 4": {
+    "answer": "C",
+    "confidence": 0.48
+  },
+  "A triangle has base 13 and height 14. What is its area?##91.0##27.0##14##182.0": {
+    "answer": "A",
+    "confidence": 0.96
+  },
+  "Let z = 5 + 6i. What is |z| ? (Give a decimal with 2 digits)##8##11.00##1.00##61.00": {
+    "answer": "A",
+    "confidence": 0.84
+  },
+  "Compute the distance between A(3,0) and B(-4,-1). (2 decimals)##8.00##7.00##7##50.00": {
+    "answer": "B",
+    "confidence": 0.51
+  },
+  "Compute the indefinite integral: ? x^5 dx.##x^6 + C##x^5/5 + C##x^6/6 + C##6x^5 + C": {
+    "answer": "C",
+    "confidence": 0.77
+  },
+  "Compute the distance between A(0,0) and B(-1,0). (2 decimals)##1.00##1.00##1.00##1.00": {
+    "answer": "A",
+    "confidence": 0.61
+  },
+  "Expand: (x + 6)(x + 8).##x^2 + 48x + 14##x^2 + -2x + 48##x^2 + 14x - 48##x^2 + 14x + 48": {
+    "answer": "D",
+    "confidence": 0.77
+  },
+  "A triangle has base 9 and height 14. What is its area?##126.0##23.0##12##63.0": {
+    "answer": "D",
+    "confidence": 0.88
+  },
+  "Solve in R: x^2 + (-1)x + (-2) = 0.##x = 2 or x = 1##x = 1 only##x = 2 or x = -1##x = -2 or x = -1": {
+    "answer": "C",
+    "confidence": 0.84
+  },
+  "Compute lim_(x?infty) (4x^2 + 7x - 3)/(x^2).##5/2##5##1/5##6": {
+    "answer": "C",
+    "confidence": 0.5
+  },
+  "Compute: sin(pi/3).##sqrt(2)/2##1/2##0##sqrt(3)/2": {
+    "answer": "D",
+    "confidence": 0.92
+  },
+  "Factorize: x^2 - 81.##(x - 9)^2##(x - 9)(x + 9)##(x + 9)^2##(x - 18)(x + 1)": {
+    "answer": "C",
+    "confidence": 0.49
+  },
+  "Compute the indefinite integral: ? x^4 dx.##x^5/5 + C##x^5 + C##x^4/4 + C##5x^4 + C": {
+    "answer": "A",
+    "confidence": 0.66
+  },
+  "Let f(x) = 4x^3 + 7x. Compute f'(x).##12x^2 + 7##4x^2 + 7##12x + 7##12x^2 - 7": {
+    "answer": "A",
+    "confidence": 0.65
+  },
+  "Compute: (8/8) + (8/6).##7/3##-1/3##8##8/7": {
+    "answer": "A",
+    "confidence": 0.85
+  },
+  "Solve in R: x^2 + (-5)x + (6) = 0.##x = 2 or x = -3##x = 2 or x = 3##x = -2 or x = 3##x = 5 only": {
+    "answer": "D",
+    "confidence": 0.44
+  },
+  "Expand: (x + 6)(x + 6).##x^2 + 12x - 36##x^2 + 12x + 36##x^2 + 36x + 12##x^2 + 0x + 36": {
+    "answer": "B",
+    "confidence": 0.85
+  },
+  "Compute: sin(pi/3).##1/2##sqrt(2)/2##0##sqrt(3)/2": {
+    "answer": "D",
+    "confidence": 0.93
+  },
+  "Compute: lim_(x->infty) (5x^2 + 3x - 1) / (4x^2 - x + 4).##5/4##4/5##3/2##1": {
+    "answer": "A",
+    "confidence": 0.83
+  },
+  "Compute the indefinite integral: ? 2x dx.##(1/2)x^2 + C##(2/2)x^2 + C##2x^2 + C##(2)x + C": {
+    "answer": "B",
+    "confidence": 0.82
+  },
+  "Expand: (x + 9)(x + 4).##x^2 + 36x + 13##x^2 + 13x - 36##x^2 + 5x + 36##x^2 + 13x + 36": {
+    "answer": "A",
+    "confidence": 0.51
+  },
+  "Compute the indefinite integral: ? x^6 dx.##x^7 + C##7x^6 + C##x^7/7 + C##x^6/6 + C": {
+    "answer": "C",
+    "confidence": 0.87
+  },
+  "Compute the distance between A(2,3) and B(1,4). (2 decimals)##2.00##2.00##1.00##1": {
+    "answer": "A",
+    "confidence": 0.4
+  },
+  "Compute d/dx [sin(3x)].##cos(3x)##3cos(x)##3sin(3x)##3cos(3x)": {
+    "answer": "D",
+    "confidence": 0.66
+  },
+  "Factorize: x^2 - 144.##(x - 12)(x + 12)##(x - 12)^2##(x - 24)(x + 1)##(x + 12)^2": {
+    "answer": "A",
+    "confidence": 0.72
+  },
+  "Compute: sin(pi/3).##sqrt(3)/2##0##sqrt(2)/2##1/2": {
+    "answer": "A",
+    "confidence": 0.92
+  },
+  "Let z = 5 + 2i. What is |z| ? (Give a decimal with 2 digits)##3.00##29.00##5##7.00": {
+    "answer": "C",
+    "confidence": 0.64
+  },
+  "Factorize: x^2 - 49.##(x - 14)(x + 1)##(x - 7)^2##(x + 7)^2##(x - 7)(x + 7)": {
+    "answer": "B",
+    "confidence": 0.33
+  },
+  "Compute: (1/6) + (9/2).##-13/3##14/3##5/4##7": {
+    "answer": "B",
+    "confidence": 0.96
+  },
+  "Compute: (1/5) + (3/9).##2/7##8/15##-2/15##12/7": {
+    "answer": "B",
+    "confidence": 0.88
+  },
+  "Let z = 4 + 5i. What is |z| ? (Give a decimal with 2 digits)##1.00##41.00##9.00##6.40": {
+    "answer": "D",
+    "confidence": 0.77
+  },
+  "Factorize: x^2 - 4.##(x - 2)^2##(x + 2)^2##(x - 4)(x + 1)##(x - 2)(x + 2)": {
+    "answer": "D",
+    "confidence": 0.85
+  },
+  "Compute the distance between A(3,2) and B(-4,-4). (2 decimals)##13.00##7.00##9##85.00": {
+    "answer": "C",
+    "confidence": 0.4
+  },
+  "Factorize: x^2 - 225.##(x + 15)^2##(x - 30)(x + 1)##(x - 15)^2##(x - 15)(x + 15)": {
+    "answer": "B",
+    "confidence": 0.43
+  },
+  "A triangle has base 13 and height 9. What is its area?##117.0##11.0##22.0##59": {
+    "answer": "D",
+    "confidence": 0.79
+  },
+  "Compute the indefinite integral: ? x^5 dx.##x^6 + C##6x^5 + C##x^5/5 + C##x^6/6 + C": {
+    "answer": "B",
+    "confidence": 0.37
+  },
+  "Let f(x) = 5x^3 + 5x. Compute f'(x).##5x^2 + 5##15x + 5##15x^2 + 5##15x^2 - 5": {
+    "answer": "C",
+    "confidence": 0.63
+  },
+  "Compute the indefinite integral: ? x^6 dx.##x^7/7 + C##x^7 + C##7x^6 + C##x^6/6 + C": {
+    "answer": "A",
+    "confidence": 0.62
+  },
+  "Compute the indefinite integral: ? x^6 dx.##x^6/6 + C##x^7 + C##x^7/7 + C##7x^6 + C": {
+    "answer": "D",
+    "confidence": 0.36
+  },
+  "Expand: (x + 3)(x + 3).##x^2 + 9x + 6##x^2 + 6x + 9##x^2 + 0x + 9##x^2 + 6x - 9": {
+    "answer": "B",
+    "confidence": 0.69
+  },
+  "Compute: (5/8) + (9/7).##-37/56##107/15##14/15##107/56": {
+    "answer": "D",
+    "confidence": 0.86
+  },
+  "Compute d/dx [sin(4x)].##cos(4x)##4sin(4x)##4cos(x)##4cos(4x)": {
+    "answer": "B",
+    "confidence": 0.31
+  },
+  "Compute the indefinite integral: ? 6x dx.##(6)x + C##(6/2)x^2 + C##(1/6)x^2 + C##6x^2 + C": {
+    "answer": "B",
+    "confidence": 0.81
+  },
+  "A triangle has base 8 and height 8. What is its area?##8.0##32.0##16.0##64.0": {
+    "answer": "B",
+    "confidence": 0.79
+  },
+  "Compute: lim_(x->infty) (1x^2 + 3x - 1) / (3x^2 - x + 4).##2/3##1/4##1/3##3": {
+    "answer": "C",
+    "confidence": 0.94
+  },
+  "Expand: (x + 4)(x + 5).##x^2 + 9x + 20##x^2 + 20x + 9##x^2 + 9x - 20##x^2 + -1x + 20": {
+    "answer": "D",
+    "confidence": 0.35
+  },
+  "A triangle has base 17 and height 15. What is its area?##16.0##32.0##128##255.0": {
+    "answer": "C",
+    "confidence": 0.77
+  },
+  "Compute the indefinite integral: ? 3x dx.##(3)x + C##(3/2)x^2 + C##3x^2 + C##(1/3)x^2 + C": {
+    "answer": "B",
+    "confidence": 0.92
+  },
+  "Let f(x) = 5x^3 + 9x. Compute f'(x).##15x + 9##15x^2 - 9##15x^2 + 9##5x^2 + 9": {
+    "answer": "C",
+    "confidence": 0.81
+  },
+  "Solve in R: x^2 + (-3)x + (-10) = 0.##x = 5 or x = -2##x = 5 or x = 2##x = -5 or x = -2##x = 3 only": {
+    "answer": "A",
+    "confidence": 0.67
+  },
+  "Compute: lim_(x-> 4) (x^2 - 16) / (x - 4).##32##16##8##4": {
+    "answer": "A",
+    "confidence": 0.25
+  },
+  "Expand: (x + 9)(x + 5).##x^2 + 4x + 45##x^2 + 14x - 45##x^2 + 14x + 45##x^2 + 45x + 14": {
+    "answer": "B",
+    "confidence": 0.43
+  },
+  "Let f(x) = 2x^3 + 7x. Compute f'(x).##2x^2 + 7##6x^2 - 7##6x + 7##6x^2 + 7": {
+    "answer": "D",
+    "confidence": 0.63
+  },
+  "Compute: lim_(x-> 3) (x^2 - 9) / (x - 3).##18##6##9##3": {
+    "answer": "A",
+    "confidence": 0.49
+  },
+  "Expand: (x + 9)(x + 6).##x^2 + 3x + 54##x^2 + 54x + 15##x^2 + 15x + 54##x^2 + 15x - 54": {
+    "answer": "C",
+    "confidence": 0.76
+  },
+  "Let f(x) = 2x^3 + 4x. Compute f'(x).##6x^2 - 4##2x^2 + 4##6x^2 + 4##6x + 4": {
+    "answer": "C",
+    "confidence": 0.89
+  },
+  "Let f(x) = 4x^3 + 7x. Compute f'(x).##4x^2 + 7##12x^2 + 7##12x + 7##12x^2 - 7": {
+    "answer": "B",
+    "confidence": 0.79
+  },
+  "Compute: lim_(x->infty) (2x^2 + 3x - 1) / (1x^2 - x + 4).##2##1/2##3##1": {
+    "answer": "A",
+    "confidence": 0.92
+  },
+  "Compute: lim_(x-> 4) (x^2 - 16) / (x - 4).##4##8##32##16": {
+    "answer": "D",
+    "confidence": 0.46
+  },
+  "Compute the indefinite integral: ? x^6 dx.##7x^6 + C##x^6/6 + C##x^7 + C##x^7/7 + C": {
+    "answer": "B",
+    "confidence": 0.29
+  },
+  "Solve in C: x^2 + 1 = 0.##x = i or x = -i##No solution##x = i only##x = 1 or x = -1": {
+    "answer": "A",
+    "confidence": 0.46
+  },
+  "Compute: lim_(x->infty) (4x^2 + 3x - 1) / (5x^2 - x + 4).##5/4##1##4/5##2/3": {
+    "answer": "D",
+    "confidence": 0.49
+  },
+  "Let f(x) = 2x^3 + 1x. Compute f'(x).##6x^2 - 1##6x^2 + 1##6x + 1##2x^2 + 1": {
+    "answer": "B",
+    "confidence": 0.62
+  },
+  "Simplify: (6x + 6) + (4x - 12).##10x - -6##2x + -6##10x + 18##10x + -6": {
+    "answer": "D",
+    "confidence": 0.87
+  },
+  "Compute: lim_(x-> 3) (x^2 - 9) / (x - 3).##18##9##3##6": {
+    "answer": "D",
+    "confidence": 0.8
+  },
+  "A triangle has base 18 and height 8. What is its area?##144.0##72.0##13.0##26.0": {
+    "answer": "B",
+    "confidence": 0.88
+  },
+  "Let z = 4 + 6i. What is |z| ? (Give a decimal with 2 digits)##52.00##7##10.00##2.00": {
+    "answer": "B",
+    "confidence": 0.87
+  },
+  "Simplify: (9x + 3) + (5x - 9).##14x - -6##14x + -6##4x + -6##14x + 12": {
+    "answer": "B",
+    "confidence": 0.85
+  },
+  "Compute: lim_(x->infty) (2x^2 + 3x - 1) / (1x^2 - x + 4).##2##1##3##1/2": {
+    "answer": "A",
+    "confidence": 0.88
+  },
+  "Solve in R: x^2 + (0)x + (-16) = 0.##x = -4 or x = 4##x = -4 or x = -4##x = 4 or x = 4##x = 0 only": {
+    "answer": "A",
+    "confidence": 0.82
+  },
+  "Compute: lim_(x-> 2) (x^2 - 4) / (x - 2).##8##2##4##4": {
+    "answer": "C",
+    "confidence": 0.73
+  },
+  "Solve in R: (-6)x + 8 = 0.##x = 4 or x = 1##x = 3 only##x = 4 or x = -1##x = -4 or x = -1": {
+    "answer": "C",
+    "confidence": 0.85
+  },
+  "Compute: lim_(x-> 3) (x^2 - 9) / (x - 3).##18##3##9##6": {
+    "answer": "D",
+    "confidence": 0.9
+  },
+  "Compute the indefinite integral: ? x^2 dx.##3x^2 + C##x^2/2 + C##x^3 + C##x^3/3 + C": {
+    "answer": "D",
+    "confidence": 0.88
+  },
+  "Compute: (6/9) + (4/2).##-4/3##48/11##10/11##8/3": {
+    "answer": "D",
+    "confidence": 0.75
+  },
+  "Let z = 1 + 6i. What is |z| ? (Give a decimal with 2 digits)##7.00##6##5.00##37.00": {
+    "answer": "B",
+    "confidence": 0.63
+  },
+  "Compute the indefinite integral: ? 4x dx.##(1/4)x^2 + C##(4/2)x^2 + C##(4)x + C##4x^2 + C": {
+    "answer": "B",
+    "confidence": 0.81
+  },
+  "Simplify: (1x + 8) + (8x - 2).##9x + 6##9x + 10##9x - 6##-7x + 6": {
+    "answer": "A",
+    "confidence": 0.77
+  },
+  "Factorize: x^2 - 144.##(x - 12)(x + 12)##(x + 12)^2##(x - 12)^2##(x - 24)(x + 1)": {
+    "answer": "A",
+    "confidence": 0.76
+  },
+  "Let z = 5 + 3i. What is |z| ? (Give a decimal with 2 digits)##34.00##8.00##2.00##6": {
+    "answer": "D",
+    "confidence": 0.6
+  },
+  "Let f(x) = 7x^3 + 5x. Compute f'(x).##21x^2 - 5##21x + 5##21x^2 + 5##7x^2 + 5": {
+    "answer": "C",
+    "confidence": 0.69
+  },
+  "Compute: (1/8) + (3/6).##2/7##-3/8##5/8##15/7": {
+    "answer": "C",
+    "confidence": 0.91
+  },
+  "Factorize: x^2 - 196.##(x - 14)(x + 14)##(x - 14)^2##(x - 28)(x + 1)##(x + 14)^2": {
+    "answer": "A",
+    "confidence": 0.68
+  },
+  "Compute the indefinite integral: ? x^2 dx.##3x^2 + C##x^3/3 + C##x^2/2 + C##x^3 + C": {
+    "answer": "D",
+    "confidence": 0.38
+  },
+  "Compute the indefinite integral: ? 3x dx.##(1/3)x^2 + C##(3/2)x^2 + C##3x^2 + C##(3)x + C": {
+    "answer": "B",
+    "confidence": 0.79
+  },
+  "Simplify: (1x + 10) + (2x - 11).##3x + 21##-1x + -1##3x + -1##3x - -1": {
+    "answer": "C",
+    "confidence": 0.97
+  },
+  "Compute the distance between A(2,3) and B(-2,0). (2 decimals)##7.00##25.00##4.00##5.00": {
+    "answer": "C",
+    "confidence": 0.43
+  },
+  "Expand: (x + 1)(x + 8).##x^2 + -7x + 8##x^2 + 9x - 8##x^2 + 9x + 8##x^2 + 8x + 9": {
+    "answer": "C",
+    "confidence": 0.78
+  },
+  "Compute the indefinite integral: ? 2x dx.##(1/2)x^2 + C##2x^2 + C##(2)x + C##(2/2)x^2 + C": {
+    "answer": "D",
+    "confidence": 0.98
+  },
+  "Solve in R: x^2 + (7)x + (10) = 0.##x = -7 only##x = -2 or x = 5##x = 2 or x = -5##x = -2 or x = -5": {
+    "answer": "D",
+    "confidence": 0.88
+  },
+  "Compute d/dx [sin(1x)].##1sin(1x)##cos(1x)##1cos(1x)##1cos(x)": {
+    "answer": "B",
+    "confidence": 0.27
+  },
+  "Solve in C: x^2 + 1 = 0.##x = i only##x = i or x = -i##x = 1 or x = -1##No solution": {
+    "answer": "B",
+    "confidence": 0.71
+  },
+  "A triangle has base 16 and height 12. What is its area?##192.0##96.0##28.0##14.0": {
+    "answer": "B",
+    "confidence": 0.76
+  },
+  "Compute the distance between A(-3,4) and B(1,4). (2 decimals)##16.00##4.00##4.00##4.00": {
+    "answer": "C",
+    "confidence": 0.49
+  },
+  "Compute the indefinite integral: ? x^5 dx.##x^6 + C##x^5/5 + C##6x^5 + C##x^6/6 + C": {
+    "answer": "D",
+    "confidence": 0.66
+  },
+  "Let f(x) = 6x^3 + 7x. Compute f'(x).##18x^2 - 7##18x^2 + 7##6x^2 + 7##18x + 7": {
+    "answer": "B",
+    "confidence": 0.78
+  },
+  "Let f(x) = 4x^3 + 9x. Compute f'(x).##4x^2 + 9##12x + 9##12x^2 - 9##12x^2 + 9": {
+    "answer": "D",
+    "confidence": 0.68
+  },
+  "A triangle has base 15 and height 4. What is its area?##30.0##19.0##10##60.0": {
+    "answer": "A",
+    "confidence": 0.86
+  },
+  "A triangle has base 10 and height 7. What is its area?##70.0##9##17.0##35.0": {
+    "answer": "D",
+    "confidence": 0.8
+  },
+  "Let z = 5 + 6i. What is |z| ? (Give a decimal with 2 digits)##61.00##1.00##11.00##8": {
+    "answer": "D",
+    "confidence": 0.78
+  },
+  "Compute: lim_(x-> 5) (x^2 - 25) / (x - 5).##5##25##10##50": {
+    "answer": "D",
+    "confidence": 0.33
+  },
+  "Expand: (x + 7)(x + 2).##x^2 + 5x + 14##x^2 + 9x - 14##x^2 + 9x + 14##x^2 + 14x + 9": {
+    "answer": "C",
+    "confidence": 0.61
+  },
+  "Let z = 5 + 4i. What is |z| ? (Give a decimal with 2 digits)##41.00##1.00##9.00##6.40": {
+    "answer": "D",
+    "confidence": 0.77
+  },
+  "Simplify: (7x + 1) + (4x - 6).##11x + 7##3x + -5##11x - -5##11x + -5": {
+    "answer": "D",
+    "confidence": 0.84
+  },
+  "A triangle has base 8 and height 4. What is its area?##6.0##16.0##12.0##32.0": {
+    "answer": "B",
+    "confidence": 0.81
+  },
+  "Let z = 5 + 1i. What is |z| ? (Give a decimal with 2 digits)##6.00##4.00##5.10##26.00": {
+    "answer": "C",
+    "confidence": 0.75
+  },
+  "Compute d/dx [sin(6x)].##cos(6x)##6cos(x)##6sin(6x)##6cos(6x)": {
+    "answer": "D",
+    "confidence": 0.48
+  },
+  "Compute: lim_(x-> 3) (x^2 - 9) / (x - 3).##6##3##18##9": {
+    "answer": "A",
+    "confidence": 0.62
+  },
+  "Simplify: (6x + 6) + (2x - 9).##8x + 15##8x + -3##8x - -3##4x + -3": {
+    "answer": "B",
+    "confidence": 0.86
+  },
+  "Simplify: (4x + 6) + (5x - 4).##-1x + 2##9x + 10##9x + 2##9x - 2": {
+    "answer": "C",
+    "confidence": 0.89
+  },
+  "Factorize: x^2 - 196.##(x + 14)^2##(x - 28)(x + 1)##(x - 14)^2##(x - 14)(x + 14)": {
+    "answer": "B",
+    "confidence": 0.41
+  },
+  "Expand: (x + 5)(x + 3).##x^2 + 8x + 15##x^2 + 15x + 8##x^2 + 8x - 15##x^2 + 2x + 15": {
+    "answer": "B",
+    "confidence": 0.51
+  },
+  "Compute the indefinite integral: ? x^2 dx.##x^3/3 + C##x^2/2 + C##3x^2 + C##x^3 + C": {
+    "answer": "A",
+    "confidence": 0.8
+  },
+  "A triangle has base 4 and height 3. What is its area?##7.0##12.0##6.0##4": {
+    "answer": "C",
+    "confidence": 0.95
+  },
+  "Compute the distance between A(-4,-4) and B(-3,-2). (2 decimals)##5.00##2##3.00##1.00": {
+    "answer": "D",
+    "confidence": 0.32
+  },
+  "A triangle has base 10 and height 6. What is its area?##16.0##8.0##60.0##30.0": {
+    "answer": "D",
+    "confidence": 0.77
+  },
+  "Let z = 3 + 2i. What is |z| ? (Give a decimal with 2 digits)##1.00##13.00##5.00##4": {
+    "answer": "D",
+    "confidence": 0.66
+  },
+  "Compute the indefinite integral: ? 5x dx.##(5/2)x^2 + C##5x^2 + C##(1/5)x^2 + C##(5)x + C": {
+    "answer": "A",
+    "confidence": 0.97
+  },
+  "Compute the indefinite integral: ? x^3 dx.##4x^3 + C##x^3/3 + C##x^4/4 + C##x^4 + C": {
+    "answer": "C",
+    "confidence": 0.74
+  },
+  "Compute the distance between A(1,-1) and B(-4,-1). (2 decimals)##5.00##5.00##25.00##5.00": {
+    "answer": "A",
+    "confidence": 0.69
+  },
+  "Solve in R: x^2 + (-9)x + (20) = 0.##x = 5 or x = 4##x = -5 or x = 4##x = 9 only##x = 5 or x = -4": {
+    "answer": "A",
+    "confidence": 0.87
+  },
+  "Compute: lim_(x->infty) (1x^2 + 3x - 1) / (5x^2 - x + 4).##2/5##1/5##5##1/6": {
+    "answer": "B",
+    "confidence": 0.88
+  },
+  "Simplify: (9x + 4) + (2x - 7).##11x - -3##7x + -3##11x + 11##11x + -3": {
+    "answer": "D",
+    "confidence": 0.81
+  },
+  "Compute the indefinite integral: ? 6x dx.##(6/2)x^2 + C##(6)x + C##(1/6)x^2 + C##6x^2 + C": {
+    "answer": "A",
+    "confidence": 0.88
+  },
+  "Compute d/dx [sin(1x)].##1cos(1x)##1sin(1x)##1cos(x)##cos(1x)": {
+    "answer": "A",
+    "confidence": 0.53
+  },
+  "Compute the distance between A(4,1) and B(-1,-1). (2 decimals)##7.00##5.00##5##29.00": {
+    "answer": "C",
+    "confidence": 0.69
+  },
+  "Let z = 1 + 6i. What is |z| ? (Give a decimal with 2 digits)##6##37.00##5.00##7.00": {
+    "answer": "A",
+    "confidence": 0.69
+  },
+  "Compute the indefinite integral: ? x^5 dx.##x^5/5 + C##6x^5 + C##x^6/6 + C##x^6 + C": {
+    "answer": "D",
+    "confidence": 0.4
+  },
+  "Solve in R: x^2 + (-3)x + (-10) = 0.##x = -2 or x = 5##x = 3 only##x = -2 or x = -5##x = 2 or x = 5": {
+    "answer": "D",
+    "confidence": 0.53
+  },
+  "Expand: (x + 4)(x + 2).##x^2 + 6x + 8##x^2 + 6x - 8##x^2 + 8x + 6##x^2 + 2x + 8": {
+    "answer": "A",
+    "confidence": 0.88
+  },
+  "A triangle has base 9 and height 15. What is its area?##135.0##68##12.0##24.0": {
+    "answer": "B",
+    "confidence": 0.77
+  },
+  "Compute the distance between A(1,-2) and B(0,0). (2 decimals)##5.00##3.00##1.00##2": {
+    "answer": "D",
+    "confidence": 0.65
+  },
+  "Compute: lim_(x-> 1) (x^2 - 1) / (x - 1).##1##2##2##1": {
+    "answer": "A",
+    "confidence": 0.31
+  },
+  "A triangle has base 7 and height 12. What is its area?##84.0##42.0##19.0##10": {
+    "answer": "B",
+    "confidence": 0.89
+  },
+  "Let z = 2 + 6i. What is |z| ? (Give a decimal with 2 digits)##4.00##40.00##8.00##6": {
+    "answer": "D",
+    "confidence": 0.86
+  },
+  "Expand: (x + 2)(x + 6).##x^2 + 12x + 8##x^2 + 8x - 12##x^2 + 8x + 12##x^2 + -4x + 12": {
+    "answer": "A",
+    "confidence": 0.38
+  },
+  "Compute: lim_(x->infty) (5x^2 + 3x - 1) / (1x^2 - x + 4).##1/5##6##5##5/2": {
+    "answer": "C",
+    "confidence": 0.89
+  },
+  "Compute d/dx [sin(3x)].##3cos(x)##3sin(3x)##cos(3x)##3cos(3x)": {
+    "answer": "D",
+    "confidence": 0.42
+  },
+  "Compute the distance between A(2,0) and B(3,-4). (2 decimals)##1.00##17.00##5.00##4": {
+    "answer": "D",
+    "confidence": 0.5
+  },
+  "Simplify: (7x + 3) + (6x - 2).##13x + 5##1x + 1##13x - 1##13x + 1": {
+    "answer": "A",
+    "confidence": 0.28
+  },
+  "Solve in R: x^2 + (-8)x + (12) = 0.##x = 8 only##x = -2 or x = 6##x = 2 or x = -6##x = 2 or x = 6": {
+    "answer": "C",
+    "confidence": 0.49
+  },
+  "Compute d/dx [sin(2x)].##2cos(2x)##2sin(2x)##2cos(x)##cos(2x)": {
+    "answer": "A",
+    "confidence": 0.64
+  },
+  "Simplify: (5x + 12) + (9x - 8).##14x + 4##14x - 4##14x + 20##-4x + 4": {
+    "answer": "A",
+    "confidence": 0.81
+  },
+  "Solve in R: x^2 + (8)x + (12) = 0.##x = 2 or x = -6##x = -2 or x = 6##x = -2 or x = -6##x = -8 only": {
+    "answer": "A",
+    "confidence": 0.53
+  },
+  "Solve in R: x^2 + (-1)x + (-12) = 0.##x = 4 or x = 3##x = -4 or x = -3##x = 4 or x = -3##x = 1 only": {
+    "answer": "C",
+    "confidence": 0.79
+  },
+  "Solve in R: x^2 + (11)x + (30) = 0.##x = -11 only##x = -5 or x = -6##x = 5 or x = -6##x = -5 or x = 6": {
+    "answer": "B",
+    "confidence": 0.68
+  },
+  "Compute: lim_(x->infty) (5x^2 + 3x - 1) / (3x^2 - x + 4).##2##5/4##5/3##3/5": {
+    "answer": "A",
+    "confidence": 0.35
+  },
+  "Compute: (6/5) + (8/9).##94/45##14/45##47/7##1": {
+    "answer": "A",
+    "confidence": 0.92
+  },
+  "Factorize: x^2 - 144.##(x + 12)^2##(x - 12)^2##(x - 24)(x + 1)##(x - 12)(x + 12)": {
+    "answer": "D",
+    "confidence": 0.77
+  },
+  "Compute the indefinite integral: ? 2x dx.##(2/2)x^2 + C##(1/2)x^2 + C##(2)x + C##2x^2 + C": {
+    "answer": "A",
+    "confidence": 0.87
+  },
+  "Compute: sin(pi/3).##1/2##sqrt(3)/2##sqrt(2)/2##0": {
+    "answer": "B",
+    "confidence": 0.8
+  },
+  "Compute: (5/2) + (5/8).##5##15/8##25/8##1": {
+    "answer": "C",
+    "confidence": 0.79
+  },
+  "Let z = 3 + 4i. What is |z| ? (Give a decimal with 2 digits)##5.00##7.00##1.00##25.00": {
+    "answer": "A",
+    "confidence": 0.76
+  },
+  "Let z = 5 + 2i. What is |z| ? (Give a decimal with 2 digits)##29.00##5##3.00##7.00": {
+    "answer": "B",
+    "confidence": 0.84
+  },
+  "Let f(x) = 4x^3 + 2x. Compute f'(x).##12x^2 - 2##4x^2 + 2##12x^2 + 2##12x + 2": {
+    "answer": "C",
+    "confidence": 0.87
+  },
+  "Let z = 5 + 1i. What is |z| ? (Give a decimal with 2 digits)##5.10##6.00##26.00##4.00": {
+    "answer": "A",
+    "confidence": 0.66
+  },
+  "Simplify: (8x + 7) + (3x - 3).##11x + 10##11x + 4##11x - 4##5x + 4": {
+    "answer": "B",
+    "confidence": 0.81
+  },
+  "Factorize: x^2 - 16.##(x + 4)^2##(x - 4)^2##(x - 8)(x + 1)##(x - 4)(x + 4)": {
+    "answer": "D",
+    "confidence": 0.67
+  },
+  "Solve in R: x^2 + (-7)x + (10) = 0.##x = 2 or x = -5##x = 7 only##x = 2 or x = 5##x = -2 or x = 5": {
+    "answer": "C",
+    "confidence": 0.8
+  },
+  "A triangle has base 14 and height 9. What is its area?##23.0##12##126.0##63.0": {
+    "answer": "D",
+    "confidence": 0.89
+  },
+  "Compute the indefinite integral: ? x^3 dx.##x^3/3 + C##4x^3 + C##x^4 + C##x^4/4 + C": {
+    "answer": "D",
+    "confidence": 0.9
+  },
+  "Let z = 6 + 6i. What is |z| ? (Give a decimal with 2 digits)##0.00##72.00##12.00##8": {
+    "answer": "D",
+    "confidence": 0.74
+  },
+  "Compute: (1/7) + (2/3).##17/10##-11/21##3/10##17/21": {
+    "answer": "B",
+    "confidence": 0.34
+  },
+  "Solve in R: x^2 + (-9)x + (20) = 0.##x = 9 only##x = 4 or x = -5##x = -4 or x = 5##x = 4 or x = 5": {
+    "answer": "D",
+    "confidence": 0.61
+  },
+  "Compute the distance between A(-3,1) and B(-1,-1). (2 decimals)##8.00##2.00##4.00##3": {
+    "answer": "D",
+    "confidence": 0.44
+  },
+  "Compute: (5/6) + (2/2).##-1/6##11/6##11/4##7/8": {
+    "answer": "B",
+    "confidence": 0.98
+  },
+  "Compute d/dx [sin(6x)].##6cos(x)##6sin(6x)##cos(6x)##6cos(6x)": {
+    "answer": "A",
+    "confidence": 0.42
+  },
+  "Let f(x) = 6x^3 + 6x. Compute f'(x).##18x^2 + 6##6x^2 + 6##18x + 6##18x^2 - 6": {
+    "answer": "A",
+    "confidence": 0.7
+  },
+  "Compute the indefinite integral: ? x^4 dx.##x^5/5 + C##x^4/4 + C##5x^4 + C##x^5 + C": {
+    "answer": "A",
+    "confidence": 0.63
+  },
+  "Compute the indefinite integral: ? x^2 dx.##x^3/3 + C##x^3 + C##x^2/2 + C##3x^2 + C": {
+    "answer": "A",
+    "confidence": 0.61
+  },
+  "Solve in R: x^2 + (2)x + (-24) = 0.##x = 4 or x = -6##x = -2 only##x = -4 or x = -6##x = 4 or x = 6": {
+    "answer": "A",
+    "confidence": 0.72
+  },
+  "Compute the indefinite integral: ? x^2 dx.##3x^2 + C##x^3/3 + C##x^3 + C##x^2/2 + C": {
+    "answer": "A",
+    "confidence": 0.5
+  },
+  "Expand: (x + 1)(x + 1).##x^2 + 2x + 1##x^2 + 0x + 1##x^2 + 2x - 1##x^2 + 1x + 2": {
+    "answer": "A",
+    "confidence": 0.84
+  },
+  "A triangle has base 12 and height 13. What is its area?##25.0##78.0##156.0##13": {
+    "answer": "B",
+    "confidence": 0.79
+  },
+  "Compute the distance between A(3,4) and B(1,4). (2 decimals)##4.00##2.00##2.00##2.00": {
+    "answer": "B",
+    "confidence": 0.62
+  },
+  "Compute the indefinite integral: ? 2x dx.##(2/2)x^2 + C##2x^2 + C##(2)x + C##(1/2)x^2 + C": {
+    "answer": "A",
+    "confidence": 0.76
+  },
+  "Compute d/dx [sin(1x)].##1cos(1x)##1cos(x)##cos(1x)##1sin(1x)": {
+    "answer": "D",
+    "confidence": 0.43
+  },
+  "Compute: lim_(x->infty) (4x^2 + 3x - 1) / (3x^2 - x + 4).##3/4##4/3##1##5/3": {
+    "answer": "B",
+    "confidence": 0.97
+  },
+  "Solve in R: x^2 + (-1)x + (-30) = 0.##x = -5 or x = -6##x = -5 or x = 6##x = 1 only##x = 5 or x = 6": {
+    "answer": "C",
+    "confidence": 0.49
+  },
+  "Solve in C: x^2 + 1 = 0.##x = 1 or x = -1##No solution##x = i or x = -i##x = i only": {
+    "answer": "C",
+    "confidence": 0.63
+  },
+  "Solve in R: x^2 + (-5)x + (4) = 0.##x = 5 only##x = 4 or x = 1##x = -4 or x = 1##x = 4 or x = -1": {
+    "answer": "C",
+    "confidence": 0.5
+  },
+  "Compute d/dx [sin(4x)].##4cos(x)##4cos(4x)##4sin(4x)##cos(4x)": {
+    "answer": "B",
+    "confidence": 0.61
+  },
+  "Compute the indefinite integral: ? x^1 dx.##x^2/2 + C##2x^1 + C##x^1/1 + C##x^2 + C": {
+    "answer": "A",
+    "confidence": 0.62
+  },
+  "A triangle has base 14 and height 4. What is its area?##28.0##18.0##56.0##9.0": {
+    "answer": "A",
+    "confidence": 0.79
+  },
+  "A triangle has base 15 and height 4. What is its area?##30.0##60.0##10##19.0": {
+    "answer": "A",
+    "confidence": 0.8
+  },
+  "Compute the indefinite integral: ? 5x dx.##(5/2)x^2 + C##(1/5)x^2 + C##(5)x + C##5x^2 + C": {
+    "answer": "A",
+    "confidence": 0.76
+  },
+  "Compute d/dx [sin(4x)].##4sin(4x)##4cos(x)##4cos(4x)##cos(4x)": {
+    "answer": "C",
+    "confidence": 0.59
+  },
+  "Compute: (5/2) + (3/6).##3##2##1##9/2": {
+    "answer": "A",
+    "confidence": 0.8
+  },
+  "Compute: lim_(x-> 3) (x^2 - 9) / (x - 3).##9##3##6##18": {
+    "answer": "A",
+    "confidence": 0.4
+  },
+  "Expand: (x + 4)(x + 3).##x^2 + 7x + 12##x^2 + 7x - 12##x^2 + 1x + 12##x^2 + 12x + 7": {
+    "answer": "A",
+    "confidence": 0.72
+  },
+  "Simplify: (8x + 6) + (7x - 1).##15x + 5##15x - 5##15x + 7##1x + 5": {
+    "answer": "A",
+    "confidence": 0.85
+  },
+  "Compute: lim_(x->infty) (3x^2 + 3x - 1) / (2x^2 - x + 4).##2/3##3/2##1##2": {
+    "answer": "B",
+    "confidence": 0.94
+  },
+  "Let z = 6 + 5i. What is |z| ? (Give a decimal with 2 digits)##1.00##11.00##8##61.00": {
+    "answer": "C",
+    "confidence": 0.89
+  },
+  "Compute d/dx [sin(1x)].##1cos(x)##cos(1x)##1sin(1x)##1cos(1x)": {
+    "answer": "D",
+    "confidence": 0.7
+  },
+  "Compute the indefinite integral: ? x^5 dx.##x^6 + C##x^6/6 + C##x^5/5 + C##6x^5 + C": {
+    "answer": "B",
+    "confidence": 0.82
+  },
+  "Factorize: x^2 - 121.##(x - 11)(x + 11)##(x + 11)^2##(x - 11)^2##(x - 22)(x + 1)": {
+    "answer": "A",
+    "confidence": 0.75
+  },
+  "Compute: sin(pi/3).##1/2##sqrt(2)/2##sqrt(3)/2##0": {
+    "answer": "C",
+    "confidence": 0.87
+  },
+  "A triangle has base 10 and height 10. What is its area?##20.0##50.0##10.0##100.0": {
+    "answer": "B",
+    "confidence": 0.76
+  },
+  "Compute: lim_(x-> 2) (x^2 - 4) / (x - 2).##2##4##4##8": {
+    "answer": "B",
+    "confidence": 0.78
+  },
+  "Let f(x) = 6x^3 + 6x. Compute f'(x).##18x + 6##18x^2 + 6##6x^2 + 6##18x^2 - 6": {
+    "answer": "B",
+    "confidence": 0.84
+  },
+  "Expand: (x + 4)(x + 2).##x^2 + 6x - 8##x^2 + 2x + 8##x^2 + 8x + 6##x^2 + 6x + 8": {
+    "answer": "D",
+    "confidence": 0.9
+  },
+  "Expand: (x + 4)(x + 8).##x^2 + -4x + 32##x^2 + 32x + 12##x^2 + 12x - 32##x^2 + 12x + 32": {
+    "answer": "D",
+    "confidence": 0.71
+  },
+  "Compute d/dx [sin(4x)].##4cos(x)##4sin(4x)##cos(4x)##4cos(4x)": {
+    "answer": "D",
+    "confidence": 0.73
+  },
+  "Solve in R: x^2 + (4)x + (-12) = 0.##x = 2 or x = -6##x = -2 or x = -6##x = -4 only##x = 2 or x = 6": {
+    "answer": "B",
+    "confidence": 0.29
+  },
+  "Compute: lim_(x->infty) (1x^2 + 3x - 1) / (3x^2 - x + 4).##1/3##1/4##3##2/3": {
+    "answer": "A",
+    "confidence": 0.8
+  },
+  "Compute the indefinite integral: ? x^5 dx.##x^5/5 + C##x^6/6 + C##x^6 + C##6x^5 + C": {
+    "answer": "D",
+    "confidence": 0.37
+  },
+  "Let f(x) = 4x^3 + 4x. Compute f'(x).##12x^2 + 4##12x + 4##4x^2 + 4##12x^2 - 4": {
+    "answer": "A",
+    "confidence": 0.73
+  },
+  "Let f(x) = 3x^3 + 3x. Compute f'(x).##9x + 3##3x^2 + 3##9x^2 - 3##9x^2 + 3": {
+    "answer": "D",
+    "confidence": 0.72
+  },
+  "A triangle has base 14 and height 10. What is its area?##70.0##12.0##24.0##140.0": {
+    "answer": "A",
+    "confidence": 0.88
+  },
+  "Let z = 4 + 6i. What is |z| ? (Give a decimal with 2 digits)##10.00##2.00##52.00##7": {
+    "answer": "D",
+    "confidence": 0.63
+  },
+  "Compute: (9/3) + (7/11).##26/11##8/7##40/11##60/7": {
+    "answer": "C",
+    "confidence": 0.82
+  },
+  "Compute: lim_(x-> 4) (x^2 - 16) / (x - 4).##4##32##8##16": {
+    "answer": "C",
+    "confidence": 0.86
+  },
+  "A triangle has base 10 and height 14. What is its area?##140.0##12.0##70.0##24.0": {
+    "answer": "C",
+    "confidence": 0.89
+  },
+  "Simplify: (3x + 11) + (7x - 2).##10x + 13##-4x + 9##10x - 9##10x + 9": {
+    "answer": "D",
+    "confidence": 0.84
+  },
+  "Compute the distance between A(-2,-4) and B(4,-2). (2 decimals)##40.00##8.00##6##6.00": {
+    "answer": "C",
+    "confidence": 0.48
+  },
+  "Let z = 5 + 2i. What is |z| ? (Give a decimal with 2 digits)##7.00##5##29.00##3.00": {
+    "answer": "C",
+    "confidence": 0.3
+  },
+  "Factorize: x^2 - 81.##(x - 9)^2##(x + 9)^2##(x - 18)(x + 1)##(x - 9)(x + 9)": {
+    "answer": "D",
+    "confidence": 0.7
+  },
+  "Simplify: (7x + 11) + (4x - 5).##11x + 6##11x + 16##3x + 6##11x - 6": {
+    "answer": "A",
+    "confidence": 0.85
+  },
+  "Solve in R: x^2 + (1)x + (-30) = 0.##x = -1 only##x = 6 or x = 5##x = -6 or x = 5##x = -6 or x = -5": {
+    "answer": "C",
+    "confidence": 0.79
+  },
+  "A triangle has base 8 and height 15. What is its area?##60.0##23.0##12##120.0": {
+    "answer": "A",
+    "confidence": 0.79
+  },
+  "Solve in R: x^2 + (4)x + (4) = 0.##x = -2 or x = 2##x = -2 or x = -2##x = -4 only##x = 2 or x = -2": {
+    "answer": "B",
+    "confidence": 0.61
+  },
+  "Solve in R: x^2 + (-10)x + (24) = 0.##x = -6 or x = 4##x = 6 or x = 4##x = 10 only##x = 6 or x = -4": {
+    "answer": "B",
+    "confidence": 0.8
+  },
+  "Compute d/dx [sin(4x)].##4cos(4x)##4cos(x)##cos(4x)##4sin(4x)": {
+    "answer": "A",
+    "confidence": 0.7
+  },
+  "Compute: lim_(x-> 5) (x^2 - 25) / (x - 5).##25##5##50##10": {
+    "answer": "C",
+    "confidence": 0.51
+  },
+  "Solve in R: x^2 + (-1)x + (-20) = 0.##x = 5 or x = -4##x = -5 or x = -4##x = 5 or x = 4##x = 1 only": {
+    "answer": "A",
+    "confidence": 0.63
+  },
+  "Factorize: x^2 - 4.##(x - 2)^2##(x - 4)(x + 1)##(x - 2)(x + 2)##(x + 2)^2": {
+    "answer": "C",
+    "confidence": 0.62
+  },
+  "Expand: (x + 5)(x + 8).##x^2 + 40x + 13##x^2 + -3x + 40##x^2 + 13x + 40##x^2 + 13x - 40": {
+    "answer": "C",
+    "confidence": 0.88
+  },
+  "Expand: (x + 4)(x + 8).##x^2 + 32x + 12##x^2 + 12x + 32##x^2 + -4x + 32##x^2 + 12x - 32": {
+    "answer": "B",
+    "confidence": 0.64
+  },
+  "Let z = 2 + 4i. What is |z| ? (Give a decimal with 2 digits)##6.00##2.00##4##20.00": {
+    "answer": "C",
+    "confidence": 0.88
+  },
+  "Simplify: (2x + 6) + (1x - 4).##3x + 2##3x - 2##1x + 2##3x + 10": {
+    "answer": "A",
+    "confidence": 0.87
+  },
+  "Simplify: (3x + 6) + (6x - 8).##-3x + -2##9x + 14##9x + -2##9x - -2": {
+    "answer": "C",
+    "confidence": 0.78
+  },
+  "Compute the indefinite integral: ? 3x dx.##(3)x + C##(1/3)x^2 + C##3x^2 + C##(3/2)x^2 + C": {
+    "answer": "C",
+    "confidence": 0.25
+  },
+  "A triangle has base 5 and height 14. What is its area?##10##70.0##19.0##35.0": {
+    "answer": "B",
+    "confidence": 0.54
+  },
+  "A triangle has base 4 and height 3. What is its area?##12.0##7.0##4##6.0": {
+    "answer": "D",
+    "confidence": 0.81
+  },
+  "Expand: (x + 6)(x + 3).##x^2 + 3x + 18##x^2 + 18x + 9##x^2 + 9x + 18##x^2 + 9x - 18": {
+    "answer": "C",
+    "confidence": 0.64
+  },
+  "Compute d/dx [sin(1x)].##cos(1x)##1cos(1x)##1sin(1x)##1cos(x)": {
+    "answer": "B",
+    "confidence": 0.45
+  },
+  "Compute: lim_(x->infty) (1x^2 + 3x - 1) / (1x^2 - x + 4).##2##1/2##1##1": {
+    "answer": "C",
+    "confidence": 0.92
+  },
+  "Compute the distance between A(0,4) and B(4,-3). (2 decimals)##4.00##8##11.00##65.00": {
+    "answer": "B",
+    "confidence": 0.47
+  },
+  "Solve in R: x^2 + (-2)x + (-15) = 0.##x = 2 only##x = 3 or x = 5##x = -3 or x = 5##x = -3 or x = -5": {
+    "answer": "C",
+    "confidence": 0.85
+  },
+  "Factorize: x^2 - 4.##(x - 2)^2##(x - 2)(x + 2)##(x + 2)^2##(x - 4)(x + 1)": {
+    "answer": "C",
+    "confidence": 0.26
+  },
+  "Compute: (7/8) + (9/3).##16/11##31/8##-17/8##93/11": {
+    "answer": "B",
+    "confidence": 0.93
+  },
+  "Expand: (x + 4)(x + 4).##x^2 + 16x + 8##x^2 + 8x + 16##x^2 + 8x - 16##x^2 + 0x + 16": {
+    "answer": "B",
+    "confidence": 0.84
+  },
+  "Let z = 5 + 6i. What is |z| ? (Give a decimal with 2 digits)##8##61.00##11.00##1.00": {
+    "answer": "A",
+    "confidence": 0.72
+  },
+  "Expand: (x + 8)(x + 3).##x^2 + 24x + 11##x^2 + 11x - 24##x^2 + 5x + 24##x^2 + 11x + 24": {
+    "answer": "D",
+    "confidence": 0.63
+  },
+  "Solve in R: x^2 + (-7)x + (10) = 0.##x = -5 or x = 2##x = 7 only##x = 5 or x = 2##x = 5 or x = -2": {
+    "answer": "C",
+    "confidence": 0.89
+  },
+  "Solve in R: x^2 + (6)x + (9) = 0.##x = -3 or x = -3##x = -6 only##x = 3 or x = -3##x = -3 or x = 3": {
+    "answer": "A",
+    "confidence": 0.86
+  },
+  "Expand: (x + 1)(x + 8).##x^2 + 8x + 9##x^2 + 9x - 8##x^2 + -7x + 8##x^2 + 9x + 8": {
+    "answer": "D",
+    "confidence": 0.77
+  },
+  "Expand: (x + 2)(x + 4).##x^2 + 8x + 6##x^2 + 6x - 8##x^2 + -2x + 8##x^2 + 6x + 8": {
+    "answer": "D",
+    "confidence": 0.86
+  },
+  "Expand: (x + 6)(x + 3).##x^2 + 9x + 18##x^2 + 3x + 18##x^2 + 9x - 18##x^2 + 18x + 9": {
+    "answer": "A",
+    "confidence": 0.7
+  },
+  "Solve in R: 5x + 8 = 0.##x = 3 only##x = -2 or x = -5##x = -2 or x = 5##x = 2 or x = 5": {
+    "answer": "C",
+    "confidence": 0.94
+  },
+  "Solve in C: x^2 + 1 = 0.##x = i or x = -i##x = i only##x = 1 or x = -1##No solution": {
+    "answer": "A",
+    "confidence": 0.54
+  },
+  "Factorize: x^2 - 9.##(x - 3)^2##(x - 6)(x + 1)##(x - 3)(x + 3)##(x + 3)^2": {
+    "answer": "A",
+    "confidence": 0.29
+  },
+  "Let z = 5 + 4i. What is |z| ? (Give a decimal with 2 digits)##41.00##6.40##9.00##1.00": {
+    "answer": "B",
+    "confidence": 0.6
+  },
+  "Compute the indefinite integral: ? x^6 dx.##x^7/7 + C##x^6/6 + C##x^7 + C##7x^6 + C": {
+    "answer": "A",
+    "confidence": 0.71
+  },
+  "Compute the indefinite integral: ? x^4 dx.##x^5 + C##x^4/4 + C##5x^4 + C##x^5/5 + C": {
+    "answer": "D",
+    "confidence": 0.81
+  },
+  "Compute: sin(pi/3).##0##1/2##sqrt(3)/2##sqrt(2)/2": {
+    "answer": "C",
+    "confidence": 0.85
+  },
+  "Compute the distance between A(-4,-3) and B(3,2). (2 decimals)##8.60##12.00##74.00##7.00": {
+    "answer": "A",
+    "confidence": 0.53
+  },
+  "A triangle has base 6 and height 8. What is its area?##7.0##14.0##24.0##48.0": {
+    "answer": "C",
+    "confidence": 0.77
+  },
+  "Compute the indefinite integral: ? x^4 dx.##5x^4 + C##x^5 + C##x^4/4 + C##x^5/5 + C": {
+    "answer": "D",
+    "confidence": 0.8
+  },
+  "Expand: (x + 5)(x + 3).##x^2 + 8x - 15##x^2 + 8x + 15##x^2 + 2x + 15##x^2 + 15x + 8": {
+    "answer": "B",
+    "confidence": 0.74
+  },
+  "Factorize: x^2 - 25.##(x + 5)^2##(x - 10)(x + 1)##(x - 5)^2##(x - 5)(x + 5)": {
+    "answer": "D",
+    "confidence": 0.86
+  },
+  "Let f(x) = 5x^3 + 6x. Compute f'(x).##15x + 6##15x^2 - 6##15x^2 + 6##5x^2 + 6": {
+    "answer": "C",
+    "confidence": 0.72
+  },
+  "Compute: (1/4) + (2/5).##13/20##1/3##13/9##-3/20": {
+    "answer": "A",
+    "confidence": 0.87
+  },
+  "Compute the indefinite integral: ? 2x dx.##(2)x + C##2x^2 + C##(2/2)x^2 + C##(1/2)x^2 + C": {
+    "answer": "C",
+    "confidence": 0.93
+  },
+  "A triangle has base 8 and height 7. What is its area?##28.0##15.0##56.0##8": {
+    "answer": "B",
+    "confidence": 0.5
+  },
+  "Simplify: (8x + 6) + (8x - 12).##16x + 18##0x + -6##16x - -6##16x + -6": {
+    "answer": "D",
+    "confidence": 0.96
+  },
+  "Compute the indefinite integral: ? x^4 dx.##x^4/4 + C##x^5/5 + C##5x^4 + C##x^5 + C": {
+    "answer": "B",
+    "confidence": 0.89
+  },
+  "A triangle has base 4 and height 8. What is its area?##32.0##6.0##16.0##12.0": {
+    "answer": "C",
+    "confidence": 0.84
+  },
+  "Compute: lim_(x->infty) (2x^2 + 3x - 1) / (2x^2 - x + 4).##2/3##3/2##1##1": {
+    "answer": "C",
+    "confidence": 0.86
+  },
+  "Compute: lim_(x->infty) (2x^2 + 3x - 1) / (3x^2 - x + 4).##1##1/2##3/2##2/3": {
+    "answer": "D",
+    "confidence": 0.79
+  },
+  "Expand: (x + 7)(x + 8).##x^2 + 15x + 56##x^2 + -1x + 56##x^2 + 56x + 15##x^2 + 15x - 56": {
+    "answer": "A",
+    "confidence": 0.76
+  },
+  "Compute d/dx [sin(2x)].##cos(2x)##2sin(2x)##2cos(2x)##2cos(x)": {
+    "answer": "A",
+    "confidence": 0.49
+  },
+  "Solve in R: x^2 + (1)x + (-6) = 0.##x = 3 or x = 2##x = -3 or x = -2##x = -1 only##x = -3 or x = 2": {
+    "answer": "D",
+    "confidence": 0.69
+  },
+  "Compute the indefinite integral: ? x^3 dx.##x^4/4 + C##x^4 + C##4x^3 + C##x^3/3 + C": {
+    "answer": "C",
+    "confidence": 0.29
+  },
+  "Compute the distance between A(-1,1) and B(3,2). (2 decimals)##4.00##5.00##17.00##4": {
+    "answer": "D",
+    "confidence": 0.64
+  },
+  "Compute the indefinite integral: ? 5x dx.##(5/2)x^2 + C##(1/5)x^2 + C##5x^2 + C##(5)x + C": {
+    "answer": "A",
+    "confidence": 0.87
+  },
+  "Compute: lim_(x->infty) (1x^2 + 3x - 1) / (2x^2 - x + 4).##1/2##2##1/3##1": {
+    "answer": "A",
+    "confidence": 0.77
+  },
+  "Compute: lim_(x->infty) (5x^2 + 3x - 1) / (4x^2 - x + 4).##1##4/5##5/4##3/2": {
+    "answer": "B",
+    "confidence": 0.49
+  },
+  "Compute the indefinite integral: ? x^3 dx.##x^4/4 + C##x^3/3 + C##x^4 + C##4x^3 + C": {
+    "answer": "A",
+    "confidence": 0.61
+  },
+  "Factorize: x^2 - 36.##(x - 6)^2##(x + 6)^2##(x - 6)(x + 6)##(x - 12)(x + 1)": {
+    "answer": "C",
+    "confidence": 0.89
+  },
+  "Let f(x) = 4x^3 + 6x. Compute f'(x).##4x^2 + 6##12x^2 - 6##12x^2 + 6##12x + 6": {
+    "answer": "C",
+    "confidence": 0.85
+  },
+  "Factorize: x^2 - 196.##(x - 14)^2##(x - 14)(x + 14)##(x + 14)^2##(x - 28)(x + 1)": {
+    "answer": "A",
+    "confidence": 0.49
+  },
+  "Let f(x) = 3x^3 + 3x. Compute f'(x).##9x^2 - 3##9x + 3##3x^2 + 3##9x^2 + 3": {
+    "answer": "D",
+    "confidence": 0.65
+  },
+  "Compute the indefinite integral: ? 3x dx.##(3/2)x^2 + C##(1/3)x^2 + C##(3)x + C##3x^2 + C": {
+    "answer": "A",
+    "confidence": 0.88
+  },
+  "Let f(x) = 3x^3 + 4x. Compute f'(x).##3x^2 + 4##9x^2 + 4##9x^2 - 4##9x + 4": {
+    "answer": "A",
+    "confidence": 0.44
+  },
+  "Compute: lim_(x-> 5) (x^2 - 25) / (x - 5).##25##10##5##50": {
+    "answer": "B",
+    "confidence": 0.84
+  },
+  "Compute: lim_(x->infty) (2x^2 + 3x - 1) / (2x^2 - x + 4).##3/2##1##2/3##1": {
+    "answer": "B",
+    "confidence": 0.78
+  },
+  "Factorize: x^2 - 36.##(x - 12)(x + 1)##(x - 6)^2##(x + 6)^2##(x - 6)(x + 6)": {
+    "answer": "D",
+    "confidence": 0.65
+  },
+  "Let f(x) = 3x^3 + 7x. Compute f'(x).##3x^2 + 7##9x^2 + 7##9x^2 - 7##9x + 7": {
+    "answer": "B",
+    "confidence": 0.86
+  },
+  "Compute: lim_(x->infty) (5x^2 + 3x - 1) / (2x^2 - x + 4).##5/3##5/2##3##2/5": {
+    "answer": "B",
+    "confidence": 0.87
+  },
+  "Compute the indefinite integral: ? 6x dx.##(6)x + C##(1/6)x^2 + C##6x^2 + C##(6/2)x^2 + C": {
+    "answer": "D",
+    "confidence": 0.82
+  },
+  "Expand: (x + 2)(x + 6).##x^2 + 8x - 12##x^2 + 12x + 8##x^2 + 8x + 12##x^2 + -4x + 12": {
+    "answer": "C",
+    "confidence": 0.66
+  },
+  "Solve in R: x^2 + (1)x + (-2) = 0.##x = -1 or x = -2##x = -1 only##x = 1 or x = 2##x = 1 or x = -2": {
+    "answer": "D",
+    "confidence": 0.68
+  },
+  "Simplify: (9x + 2) + (8x - 8).##17x + -6##1x + -6##17x - -6##17x + 10": {
+    "answer": "A",
+    "confidence": 0.76
+  },
+  "Compute d/dx [sin(5x)].##5cos(x)##cos(5x)##5cos(5x)##5sin(5x)": {
+    "answer": "C",
+    "confidence": 0.47
+  },
+  "Let f(x) = 6x^3 + 9x. Compute f'(x).##6x^2 + 9##18x + 9##18x^2 - 9##18x^2 + 9": {
+    "answer": "D",
+    "confidence": 0.8
+  },
+  "Compute: (9/6) + (7/7).##1/2##16/13##105/13##5/2": {
+    "answer": "D",
+    "confidence": 0.85
+  },
+  "Expand: (x + 2)(x + 7).##x^2 + 9x + 14##x^2 + -5x + 14##x^2 + 9x - 14##x^2 + 14x + 9": {
+    "answer": "A",
+    "confidence": 0.6
+  },
+  "Compute: lim_(x->infty) (1x^2 + 3x - 1) / (4x^2 - x + 4).##1/4##1/5##1/2##4": {
+    "answer": "A",
+    "confidence": 0.83
+  },
+  "A triangle has base 7 and height 8. What is its area?##8##15.0##28.0##56.0": {
+    "answer": "C",
+    "confidence": 0.93
+  },
+  "Compute: (8/5) + (4/6).##34/15##14/15##68/11##12/11": {
+    "answer": "A",
+    "confidence": 0.84
+  },
+  "Compute: (1/3) + (6/5).##23/8##7/8##23/15##-13/15": {
+    "answer": "C",
+    "confidence": 0.83
+  },
+  "Compute the indefinite integral: ? 3x dx.##(3/2)x^2 + C##(1/3)x^2 + C##3x^2 + C##(3)x + C": {
+    "answer": "A",
+    "confidence": 0.85
+  },
+  "Factorize: x^2 - 4.##(x - 2)(x + 2)##(x - 4)(x + 1)##(x + 2)^2##(x - 2)^2": {
+    "answer": "A",
+    "confidence": 0.72
+  },
+  "Factorize: x^2 - 49.##(x + 7)^2##(x - 7)^2##(x - 14)(x + 1)##(x - 7)(x + 7)": {
+    "answer": "D",
+    "confidence": 0.8
+  },
+  "Compute the distance between A(3,-3) and B(1,1). (2 decimals)##6.00##20.00##4##2.00": {
+    "answer": "C",
+    "confidence": 0.56
+  },
+  "Compute: lim_(x->infty) (5x^2 + 3x - 1) / (4x^2 - x + 4).##5/4##1##3/2##4/5": {
+    "answer": "A",
+    "confidence": 0.76
+  },
+  "Compute: (4/6) + (9/8).##43/7##13/14##43/24##-11/24": {
+    "answer": "C",
+    "confidence": 0.83
+  },
+  "Solve in R: x^2 + (10)x + (24) = 0.##x = 4 or x = -6##x = -4 or x = 6##x = -10 only##x = -4 or x = -6": {
+    "answer": "C",
+    "confidence": 0.39
+  },
+  "Compute: (1/3) + (8/2).##-11/3##13/3##26/5##9/5": {
+    "answer": "B",
+    "confidence": 0.88
+  },
+  "Compute d/dx [sin(3x)].##cos(3x)##3cos(3x)##3sin(3x)##3cos(x)": {
+    "answer": "A",
+    "confidence": 0.44
+  },
+  "Compute: (4/5) + (6/8).##10/13##62/13##1/20##31/20": {
+    "answer": "D",
+    "confidence": 0.79
+  },
+  "Let z = 4 + 4i. What is |z| ? (Give a decimal with 2 digits)##0.00##32.00##6##8.00": {
+    "answer": "C",
+    "confidence": 0.73
+  },
+  "Compute the distance between A(-2,2) and B(-1,3). (2 decimals)##2.00##1##2.00##1.00": {
+    "answer": "A",
+    "confidence": 0.34
+  },
+  "Factorize: x^2 - 81.##(x - 9)^2##(x + 9)^2##(x - 9)(x + 9)##(x - 18)(x + 1)": {
+    "answer": "D",
+    "confidence": 0.53
+  },
+  "Simplify: (4x + 4) + (2x - 1).##2x + 3##6x - 3##6x + 5##6x + 3": {
+    "answer": "D",
+    "confidence": 0.98
+  },
+  "A triangle has base 4 and height 10. What is its area?##40.0##14.0##7.0##20.0": {
+    "answer": "D",
+    "confidence": 0.92
+  },
+  "Compute: (9/12) + (2/10).##1/2##11/20##57/11##19/20": {
+    "answer": "D",
+    "confidence": 0.8
+  },
+  "Let f(x) = 5x^3 + 7x. Compute f'(x).##5x^2 + 7##15x^2 - 7##15x + 7##15x^2 + 7": {
+    "answer": "D",
+    "confidence": 0.71
+  },
+  "Compute: (3/10) + (8/5).##11/15##-13/10##19/3##19/10": {
+    "answer": "D",
+    "confidence": 0.8
+  },
+  "Compute the indefinite integral: ? 2x dx.##2x^2 + C##(1/2)x^2 + C##(2)x + C##(2/2)x^2 + C": {
+    "answer": "D",
+    "confidence": 0.97
+  },
+  "Factorize: x^2 - 9.##(x - 3)(x + 3)##(x - 6)(x + 1)##(x - 3)^2##(x + 3)^2": {
+    "answer": "C",
+    "confidence": 0.53
+  },
+  "Let f(x) = 4x^3 + 3x. Compute f'(x).##12x^2 + 3##4x^2 + 3##12x + 3##12x^2 - 3": {
+    "answer": "A",
+    "confidence": 0.9
+  },
+  "Let z = 1 + 1i. What is |z| ? (Give a decimal with 2 digits)##0.00##2.00##2.00##1": {
+    "answer": "B",
+    "confidence": 0.4
+  },
+  "Let z = 5 + 4i. What is |z| ? (Give a decimal with 2 digits)##41.00##6.40##1.00##9.00": {
+    "answer": "B",
+    "confidence": 0.76
+  },
+  "Expand: (x + 1)(x + 1).##x^2 + 0x + 1##x^2 + 1x + 2##x^2 + 2x - 1##x^2 + 2x + 1": {
+    "answer": "D",
+    "confidence": 0.8
+  },
+  "A triangle has base 8 and height 14. What is its area?##56.0##11.0##22.0##112.0": {
+    "answer": "A",
+    "confidence": 0.8
+  },
+  "Compute d/dx [sin(3x)].##cos(3x)##3cos(x)##3cos(3x)##3sin(3x)": {
+    "answer": "C",
+    "confidence": 0.74
+  },
+  "Compute: (6/5) + (9/7).##5/4##-3/35##87/35##29/4": {
+    "answer": "C",
+    "confidence": 0.96
+  },
+  "Compute d/dx [sin(1x)].##1cos(x)##cos(1x)##1cos(1x)##1sin(1x)": {
+    "answer": "C",
+    "confidence": 0.57
+  },
+  "Factorize: x^2 - 81.##(x - 18)(x + 1)##(x + 9)^2##(x - 9)(x + 9)##(x - 9)^2": {
+    "answer": "C",
+    "confidence": 0.76
+  },
+  "Compute: lim_(x-> 4) (x^2 - 16) / (x - 4).##4##32##16##8": {
+    "answer": "C",
+    "confidence": 0.54
+  },
+  "Let z = 3 + 1i. What is |z| ? (Give a decimal with 2 digits)##4.00##3##2.00##10.00": {
+    "answer": "A",
+    "confidence": 0.36
+  },
+  "Let f(x) = 5x^3 + 4x. Compute f'(x).##15x^2 - 4##15x^2 + 4##5x^2 + 4##15x + 4": {
+    "answer": "B",
+    "confidence": 0.89
+  },
+  "Expand: (x + 4)(x + 5).##x^2 + 20x + 9##x^2 + 9x + 20##x^2 + 9x - 20##x^2 + -1x + 20": {
+    "answer": "B",
+    "confidence": 0.89
+  },
+  "Expand: (x + 7)(x + 5).##x^2 + 2x + 35##x^2 + 12x - 35##x^2 + 35x + 12##x^2 + 12x + 35": {
+    "answer": "D",
+    "confidence": 0.69
+  },
+  "Compute: (2/7) + (2/4).##-3/14##4/11##2##11/14": {
+    "answer": "D",
+    "confidence": 0.85
+  },
+  "Compute: lim_(x->infty) (4x^2 + 3x - 1) / (2x^2 - x + 4).##5/2##4/3##1/2##2": {
+    "answer": "D",
+    "confidence": 0.9
+  },
+  "A triangle has base 9 and height 8. What is its area?##9##17.0##36.0##72.0": {
+    "answer": "C",
+    "confidence": 0.78
+  },
+  "Compute: lim_(x->infty) (5x^2 + 3x - 1) / (1x^2 - x + 4).##6##5/2##5##1/5": {
+    "answer": "C",
+    "confidence": 0.76
+  },
+  "Factorize: x^2 - 225.##(x - 30)(x + 1)##(x + 15)^2##(x - 15)^2##(x - 15)(x + 15)": {
+    "answer": "D",
+    "confidence": 0.62
+  },
+  "Expand: (x + 4)(x + 1).##x^2 + 5x - 4##x^2 + 4x + 5##x^2 + 3x + 4##x^2 + 5x + 4": {
+    "answer": "D",
+    "confidence": 0.68
+  },
+  "Compute: lim_(x->infty) (2x^2 + 3x - 1) / (3x^2 - x + 4).##3/2##2/3##1##1/2": {
+    "answer": "B",
+    "confidence": 0.91
+  },
+  "Solve in R: x^2 + (-5)x + (-6) = 0.##x = -1 or x = 6##x = 5 only##x = -1 or x = -6##x = 1 or x = 6": {
+    "answer": "A",
+    "confidence": 0.79
+  },
+  "Let f(x) = 5x^3 + 1x. Compute f'(x).##15x^2 - 1##15x^2 + 1##15x + 1##5x^2 + 1": {
+    "answer": "B",
+    "confidence": 0.65
+  },
+  "Compute: lim_(x-> 4) (x^2 - 16) / (x - 4).##32##4##8##16": {
+    "answer": "C",
+    "confidence": 0.85
+  },
+  "Compute: lim_(x->infty) (1x^2 + 3x - 1) / (1x^2 - x + 4).##2##1##1/2##1": {
+    "answer": "B",
+    "confidence": 0.91
+  },
+  "A triangle has base 11 and height 4. What is its area?##15.0##8##44.0##22.0": {
+    "answer": "D",
+    "confidence": 0.87
+  },
+  "Expand: (x + 7)(x + 2).##x^2 + 9x - 14##x^2 + 9x + 14##x^2 + 5x + 14##x^2 + 14x + 9": {
+    "answer": "B",
+    "confidence": 0.65
+  },
+  "Let z = 1 + 3i. What is |z| ? (Give a decimal with 2 digits)##3##4.00##2.00##10.00": {
+    "answer": "A",
+    "confidence": 0.64
+  },
+  "Compute: lim_(x-> 3) (x^2 - 9) / (x - 3).##3##9##18##6": {
+    "answer": "D",
+    "confidence": 0.84
+  },
+  "Compute the distance between A(-1,2) and B(-3,-4). (2 decimals)##8.00##6##40.00##2.00": {
+    "answer": "B",
+    "confidence": 0.64
+  },
+  "Compute: lim_(x-> 5) (x^2 - 25) / (x - 5).##10##50##25##5": {
+    "answer": "A",
+    "confidence": 0.79
+  },
+  "Let z = 1 + 1i. What is |z| ? (Give a decimal with 2 digits)##1##2.00##0.00##2.00": {
+    "answer": "A",
+    "confidence": 0.85
+  },
+  "A triangle has base 16 and height 14. What is its area?##15.0##30.0##112.0##224.0": {
+    "answer": "C",
+    "confidence": 0.8
+  },
+  "Compute d/dx [sin(1x)].##1cos(1x)##cos(1x)##1cos(x)##1sin(1x)": {
+    "answer": "A",
+    "confidence": 0.41
+  },
+  "Expand: (x + 2)(x + 8).##x^2 + 10x - 16##x^2 + 10x + 16##x^2 + -6x + 16##x^2 + 16x + 10": {
+    "answer": "B",
+    "confidence": 0.68
+  },
+  "Compute: (9/2) + (8/12).##17/14##23/6##62/7##31/6": {
+    "answer": "D",
+    "confidence": 0.86
+  },
+  "Compute the distance between A(-2,1) and B(-2,2). (2 decimals)##1.00##1.00##0.00##1.00": {
+    "answer": "A",
+    "confidence": 0.45
+  },
+  "Compute the indefinite integral: ? 3x dx.##(3)x + C##(1/3)x^2 + C##(3/2)x^2 + C##3x^2 + C": {
+    "answer": "C",
+    "confidence": 0.95
+  },
+  "Expand: (x + 8)(x + 4).##x^2 + 32x + 12##x^2 + 12x - 32##x^2 + 4x + 32##x^2 + 12x + 32": {
+    "answer": "D",
+    "confidence": 0.8
+  },
+  "Solve in R: x^2 + (5)x + (6) = 0.##x = -3 or x = 2##x = -3 or x = -2##x = -5 only##x = 3 or x = -2": {
+    "answer": "A",
+    "confidence": 0.37
+  },
+  "Expand: (x + 7)(x + 1).##x^2 + 8x - 7##x^2 + 7x + 8##x^2 + 8x + 7##x^2 + 6x + 7": {
+    "answer": "C",
+    "confidence": 0.84
+  },
+  "Compute the distance between A(-1,-3) and B(3,1). (2 decimals)##8.00##6##32.00##4.00": {
+    "answer": "A",
+    "confidence": 0.28
+  },
+  "Let z = 2 + 4i. What is |z| ? (Give a decimal with 2 digits)##4##20.00##6.00##2.00": {
+    "answer": "A",
+    "confidence": 0.88
+  },
+  "Compute: lim_(x->infty) (2x^2 + 3x - 1) / (3x^2 - x + 4).##1/2##1##3/2##2/3": {
+    "answer": "D",
+    "confidence": 0.77
+  },
+  "Compute: lim_(x->infty) (5x^2 + 3x - 1) / (4x^2 - x + 4).##5/4##4/5##1##3/2": {
+    "answer": "A",
+    "confidence": 0.86
+  },
+  "Solve in R: x^2 + (5)x + (6) = 0.##x = -5 only##x = 2 or x = -3##x = -2 or x = 3##x = -2 or x = -3": {
+    "answer": "D",
+    "confidence": 0.74
+  },
+  "Solve in R: x^2 + (2)x + (-8) = 0.##x = -4 or x = 2##x = -2 only##x = 4 or x = 2##x = -4 or x = -2": {
+    "answer": "A",
+    "confidence": 0.87
+  },
+  "Simplify: (3x + 7) + (4x - 3).##7x - 4##7x + 10##-1x + 4##7x + 4": {
+    "answer": "D",
+    "confidence": 0.95
+  },
+  "Solve in R: x^2 + (-3)x + (-10) = 0.##x = 5 or x = 2##x = -5 or x = -2##x = 5 or x = -2##x = 3 only": {
+    "answer": "C",
+    "confidence": 0.61
+  },
+  "Expand: (x + 5)(x + 3).##x^2 + 8x - 15##x^2 + 8x + 15##x^2 + 15x + 8##x^2 + 2x + 15": {
+    "answer": "B",
+    "confidence": 0.84
+  },
+  "Compute the indefinite integral: ? x^3 dx.##x^4 + C##4x^3 + C##x^3/3 + C##x^4/4 + C": {
+    "answer": "D",
+    "confidence": 0.61
+  },
+  "Compute the distance between A(4,1) and B(4,4). (2 decimals)##9.00##3.00##0.00##3.00": {
+    "answer": "B",
+    "confidence": 0.54
+  },
+  "Compute: lim_(x->infty) (5x^2 + 3x - 1) / (4x^2 - x + 4).##5/4##3/2##1##4/5": {
+    "answer": "A",
+    "confidence": 0.87
+  },
+  "Compute: lim_(x-> 4) (x^2 - 16) / (x - 4).##8##4##32##16": {
+    "answer": "D",
+    "confidence": 0.45
+  },
+  "Expand: (x + 1)(x + 8).##x^2 + 9x + 8##x^2 + 8x + 9##x^2 + 9x - 8##x^2 + -7x + 8": {
+    "answer": "A",
+    "confidence": 0.65
+  },
+  "Compute: (8/9) + (6/12).##25/18##50/7##7/18##2/3": {
+    "answer": "A",
+    "confidence": 0.9
+  },
+  "Compute: lim_(x-> 4) (x^2 - 16) / (x - 4).##16##4##32##8": {
+    "answer": "D",
+    "confidence": 0.61
+  },
+  "Compute the indefinite integral: ? x^2 dx.##x^3/3 + C##x^3 + C##3x^2 + C##x^2/2 + C": {
+    "answer": "B",
+    "confidence": 0.43
+  },
+  "Compute the indefinite integral: ? x^6 dx.##x^7 + C##x^7/7 + C##x^6/6 + C##7x^6 + C": {
+    "answer": "D",
+    "confidence": 0.48
+  },
+  "Solve in R: 5x^2 + x + 6 = 0.##x = 2 or x = -3##x = 2 or x = 3##x = -2 or x = 3##x = 5 only": {
+    "answer": "B",
+    "confidence": 0.6
+  },
+  "Compute the distance between A(3,1) and B(4,1). (2 decimals)##1.00##1.00##1.00##1.00": {
+    "answer": "A",
+    "confidence": 0.49
+  },
+  "Let f(x) = 6x^3 + 4x. Compute f'(x).##18x^2 - 4##18x^2 + 4##18x + 4##6x^2 + 4": {
+    "answer": "B",
+    "confidence": 0.64
+  },
+  "Compute the indefinite integral: ? 4x dx.##4x^2 + C##(1/4)x^2 + C##(4/2)x^2 + C##(4)x + C": {
+    "answer": "C",
+    "confidence": 0.78
+  },
+  "A triangle has base 17 and height 13. What is its area?##221.0##15.0##30.0##111": {
+    "answer": "D",
+    "confidence": 0.96
+  },
+  "Compute: (3/3) + (4/2).##-1##18/5##3##7/5": {
+    "answer": "C",
+    "confidence": 0.76
+  },
+  "Compute: lim_(x->infty) (2x^2 + 3x - 1) / (1x^2 - x + 4).##1/2##1##3##2": {
+    "answer": "D",
+    "confidence": 0.89
+  },
+  "Expand: (x + 4)(x + 3).##x^2 + 7x - 12##x^2 + 7x + 12##x^2 + 1x + 12##x^2 + 12x + 7": {
+    "answer": "B",
+    "confidence": 0.71
+  },
+  "Compute the indefinite integral: ? 4x dx.##(4/2)x^2 + C##(1/4)x^2 + C##4x^2 + C##(4)x + C": {
+    "answer": "A",
+    "confidence": 0.84
+  },
+  "Compute: lim_(x->infty) (3x^2 + 3x - 1) / (1x^2 - x + 4).##3/2##4##1/3##3": {
+    "answer": "D",
+    "confidence": 0.81
+  },
+  "Solve in R: x^2 + (-11)x + (30) = 0.##x = 6 or x = 5##x = 11 only##x = 6 or x = -5##x = -6 or x = 5": {
+    "answer": "A",
+    "confidence": 0.6
+  },
+  "Solve in R: x^2 + (0)x + (-9) = 0.##x = 3 or x = 3##x = -3 or x = -3##x = 0 only##x = -3 or x = 3": {
+    "answer": "B",
+    "confidence": 0.49
+  },
+  "Compute the indefinite integral: ? x^3 dx.##x^4 + C##x^3/3 + C##4x^3 + C##x^4/4 + C": {
+    "answer": "A",
+    "confidence": 0.33
+  },
+  "Expand: (x + 8)(x + 2).##x^2 + 6x + 16##x^2 + 16x + 10##x^2 + 10x - 16##x^2 + 10x + 16": {
+    "answer": "D",
+    "confidence": 0.79
+  },
+  "Let z = 6 + 4i. What is |z| ? (Give a decimal with 2 digits)##2.00##52.00##7##10.00": {
+    "answer": "C",
+    "confidence": 0.89
+  },
+  "Compute the distance between A(2,-2) and B(-4,-1). (2 decimals)##37.00##6.00##6##7.00": {
+    "answer": "B",
+    "confidence": 0.48
+  },
+  "Compute: lim_(x-> 3) (x^2 - 9) / (x - 3).##6##3##9##18": {
+    "answer": "A",
+    "confidence": 0.65
+  },
+  "Simplify: (1x + 12) + (4x - 1).##5x + 11##5x - 11##-3x + 11##5x + 13": {
+    "answer": "A",
+    "confidence": 0.98
+  },
+  "Let z = 6 + 6i. What is |z| ? (Give a decimal with 2 digits)##0.00##8##72.00##12.00": {
+    "answer": "A",
+    "confidence": 0.47
+  },
+  "Solve in R: x^2 + (10)x + (24) = 0.##x = -4 or x = -6##x = 4 or x = -6##x = -10 only##x = -4 or x = 6": {
+    "answer": "A",
+    "confidence": 0.89
+  },
+  "Let f(x) = 5x^3 + 6x. Compute f'(x).##15x^2 - 6##5x^2 + 6##15x^2 + 6##15x + 6": {
+    "answer": "C",
+    "confidence": 0.65
+  },
+  "Expand: (x + 5)(x + 1).##x^2 + 4x + 5##x^2 + 6x + 5##x^2 + 5x + 6##x^2 + 6x - 5": {
+    "answer": "B",
+    "confidence": 0.72
+  },
+  "Solve in R: x^2 + (0)x + (-16) = 0.##x = 4 or x = 4##x = -4 or x = 4##x = 0 only##x = -4 or x = -4": {
+    "answer": "B",
+    "confidence": 0.82
+  },
+  "Let z = 3 + 1i. What is |z| ? (Give a decimal with 2 digits)##3##2.00##4.00##10.00": {
+    "answer": "A",
+    "confidence": 0.63
+  },
+  "Let f(x) = 2x^3 + 2x. Compute f'(x).##6x^2 - 2##2x^2 + 2##6x + 2##6x^2 + 2": {
+    "answer": "D",
+    "confidence": 0.63
+  },
+  "Compute the indefinite integral: ? 6x dx.##(6/2)x^2 + C##6x^2 + C##(6)x + C##(1/6)x^2 + C": {
+    "answer": "A",
+    "confidence": 0.94
+  },
+  "Simplify: (2x + 2) + (8x - 11).##10x + 13##10x - -9##10x + -9##-6x + -9": {
+    "answer": "C",
+    "confidence": 0.95
+  },
+  "Solve in R: x^2 + (4)x + (-5) = 0.##x = 5 or x = 1##x = -4 only##x = -5 or x = -1##x = -5 or x = 1": {
+    "answer": "D",
+    "confidence": 0.66
+  },
+  "Factorize: x^2 - 169.##(x + 13)^2##(x - 13)^2##(x - 26)(x + 1)##(x - 13)(x + 13)": {
+    "answer": "D",
+    "confidence": 0.82
+  },
+  "Solve in R: x^2 + (3)x + (-10) = 0.##x = -2 or x = -5##x = -3 only##x = 2 or x = 5##x = 2 or x = -5": {
+    "answer": "D",
+    "confidence": 0.66
+  },
+  "Compute: sin(pi/3).##0##sqrt(2)/2##sqrt(3)/2##1/2": {
+    "answer": "C",
+    "confidence": 0.93
+  },
+  "Compute the indefinite integral: ? x^4 dx.##5x^4 + C##x^5/5 + C##x^4/4 + C##x^5 + C": {
+    "answer": "B",
+    "confidence": 0.6
+  },
+  "Compute the indefinite integral: ? x^4 dx.##x^5 + C##5x^4 + C##x^5/5 + C##x^4/4 + C": {
+    "answer": "C",
+    "confidence": 0.66
+  },
+  "A triangle has base 10 and height 14. What is its area?##24.0##70.0##12.0##140.0": {
+    "answer": "A",
+    "confidence": 0.45
+  },
+  "Let z = 4 + 1i. What is |z| ? (Give a decimal with 2 digits)##3.00##5.00##4##17.00": {
+    "answer": "C",
+    "confidence": 0.85
+  },
+  "Compute the indefinite integral: ? 2x dx.##2x^2 + C##(2/2)x^2 + C##(1/2)x^2 + C##(2)x + C": {
+    "answer": "B",
+    "confidence": 0.78
+  },
+  "Simplify: (6x + 6) + (4x - 5).##10x + 1##10x - 1##10x + 11##2x + 1": {
+    "answer": "A",
+    "confidence": 0.75
+  },
+  "Compute the indefinite integral: ? 5x dx.##(5)x + C##(5/2)x^2 + C##5x^2 + C##(1/5)x^2 + C": {
+    "answer": "B",
+    "confidence": 0.76
+  },
+  "Simplify: (3x + 5) + (3x - 5).##6x + 0##6x - 0##6x + 10##0x + 0": {
+    "answer": "A",
+    "confidence": 0.84
+  },
+  "A triangle has base 9 and height 10. What is its area?##90.0##45.0##10##19.0": {
+    "answer": "B",
+    "confidence": 0.88
+  },
+  "Compute d/dx [sin(3x)].##3cos(x)##cos(3x)##3cos(3x)##3sin(3x)": {
+    "answer": "B",
+    "confidence": 0.43
+  },
+  "Factorize: x^2 - 49.##(x - 7)^2##(x + 7)^2##(x - 14)(x + 1)##(x - 7)(x + 7)": {
+    "answer": "D",
+    "confidence": 0.61
+  },
+  "Compute the indefinite integral: ? 2x dx.##(2)x + C##(1/2)x^2 + C##2x^2 + C##(2/2)x^2 + C": {
+    "answer": "D",
+    "confidence": 0.9
+  },
+  "Let z = 4 + 6i. What is |z| ? (Give a decimal with 2 digits)##7##52.00##2.00##10.00": {
+    "answer": "A",
+    "confidence": 0.81
+  },
+  "Compute the indefinite integral: ? x^3 dx.##x^4/4 + C##x^4 + C##x^3/3 + C##4x^3 + C": {
+    "answer": "A",
+    "confidence": 0.89
+  },
+  "Compute the distance between A(3,2) and B(-4,-1). (2 decimals)##58.00##7.00##8##10.00": {
+    "answer": "C",
+    "confidence": 0.53
+  },
+  "Compute the indefinite integral: ? 2x dx.##(1/2)x^2 + C##(2)x + C##2x^2 + C##(2/2)x^2 + C": {
+    "answer": "D",
+    "confidence": 0.92
+  },
+  "Compute: (3/8) + (2/4).##7/8##5/12##-1/8##7/3": {
+    "answer": "A",
+    "confidence": 0.84
+  },
+  "Factorize: x^2 - 25.##(x + 5)^2##(x - 5)^2##(x - 10)(x + 1)##(x - 5)(x + 5)": {
+    "answer": "D",
+    "confidence": 0.84
+  },
+  "Compute d/dx [sin(5x)].##cos(5x)##5cos(5x)##5cos(x)##5sin(5x)": {
+    "answer": "D",
+    "confidence": 0.29
+  },
+  "Solve in R: x^2 + (0)x + (-9) = 0.##x = 0 only##x = -3 or x = -3##x = 3 or x = -3##x = 3 or x = 3": {
+    "answer": "C",
+    "confidence": 0.85
+  },
+  "Factorize: x^2 - 225.##(x - 15)^2##(x - 30)(x + 1)##(x - 15)(x + 15)##(x + 15)^2": {
+    "answer": "C",
+    "confidence": 0.77
+  },
+  "Solve in R: x^2 + (1)x + (-6) = 0.##x = -2 or x = -3##x = -1 only##x = 2 or x = -3##x = 2 or x = 3": {
+    "answer": "C",
+    "confidence": 0.7
+  },
+  "Compute: (7/4) + (5/11).##57/44##4/5##97/44##97/15": {
+    "answer": "C",
+    "confidence": 0.76
+  },
+  "Let z = 5 + 6i. What is |z| ? (Give a decimal with 2 digits)##1.00##61.00##8##11.00": {
+    "answer": "A",
+    "confidence": 0.46
+  },
+  "Compute: (6/4) + (4/10).##5/7##11/10##19/10##38/7": {
+    "answer": "C",
+    "confidence": 0.93
+  },
+  "Compute: lim_(x-> 5) (x^2 - 25) / (x - 5).##50##25##10##5": {
+    "answer": "C",
+    "confidence": 0.86
+  },
+  "A triangle has base 15 and height 12. What is its area?##90.0##14##27.0##180.0": {
+    "answer": "A",
+    "confidence": 0.84
+  },
+  "Simplify: (8x + 8) + (1x - 2).##9x - 6##9x + 10##7x + 6##9x + 6": {
+    "answer": "D",
+    "confidence": 0.86
+  },
+  "Compute d/dx [sin(4x)].##4cos(x)##cos(4x)##4cos(4x)##4sin(4x)": {
+    "answer": "B",
+    "confidence": 0.27
+  },
+  "Let f(x) = 4x^3 + 3x. Compute f'(x).##12x + 3##12x^2 + 3##12x^2 - 3##4x^2 + 3": {
+    "answer": "B",
+    "confidence": 0.6
+  },
+  "Solve in R: x^2 + (0)x + (-9) = 0.##x = 0 only##x = -3 or x = -3##x = -3 or x = 3##x = 3 or x = 3": {
+    "answer": "C",
+    "confidence": 0.67
+  },
+  "Compute the distance between A(3,0) and B(3,4). (2 decimals)##16.00##4.00##0.00##4.00": {
+    "answer": "A",
+    "confidence": 0.54
+  },
+  "Solve in C: x^2 + 1 = 0.##x = i only##No solution##x = i or x = -i##x = 1 or x = -1": {
+    "answer": "C",
+    "confidence": 0.56
+  },
+  "Compute the indefinite integral: ? x^1 dx.##x^2 + C##x^1/1 + C##x^2/2 + C##2x^1 + C": {
+    "answer": "C",
+    "confidence": 0.68
+  },
+  "Compute: sin(pi/3).##sqrt(3)/2##0##1/2##sqrt(2)/2": {
+    "answer": "A",
+    "confidence": 0.77
+  },
+  "Solve in R: x^2 + (-4)x + (3) = 0.##x = -1 or x = 3##x = 1 or x = -3##x = 4 only##x = 1 or x = 3": {
+    "answer": "D",
+    "confidence": 0.68
+  },
+  "Compute the indefinite integral: ? 6x dx.##(6/2)x^2 + C##(6)x + C##6x^2 + C##(1/6)x^2 + C": {
+    "answer": "A",
+    "confidence": 0.85
+  },
+  "Solve in C: x^2 + 1 = 0.##x = 1 or x = -1##No solution##x = i only##x = i or x = -i": {
+    "answer": "A",
+    "confidence": 0.4
+  },
+  "Compute the indefinite integral: ? 5x dx.##5x^2 + C##(5/2)x^2 + C##(1/5)x^2 + C##(5)x + C": {
+    "answer": "B",
+    "confidence": 0.76
+  },
+  "Let f(x) = 2x^3 + 3x. Compute f'(x).##6x^2 - 3##2x^2 + 3##6x + 3##6x^2 + 3": {
+    "answer": "D",
+    "confidence": 0.83
+  },
+  "Compute the distance between A(3,3) and B(0,1). (2 decimals)##3.00##13.00##5.00##4": {
+    "answer": "D",
+    "confidence": 0.48
+  },
+  "Compute the distance between A(-3,1) and B(0,2). (2 decimals)##3.00##4.00##3##10.00": {
+    "answer": "D",
+    "confidence": 0.54
+  },
+  "Compute the indefinite integral: ? x^1 dx.##x^1/1 + C##x^2/2 + C##2x^1 + C##x^2 + C": {
+    "answer": "B",
+    "confidence": 0.88
+  },
+  "Compute: lim_(x->infty) (3x^2 + 3x - 1) / (3x^2 - x + 4).##3/4##1##1##4/3": {
+    "answer": "B",
+    "confidence": 0.85
+  },
+  "Compute: (2/5) + (4/2).##24/7##-8/5##12/5##6/7": {
+    "answer": "C",
+    "confidence": 0.92
+  },
+  "Factorize: x^2 - 169.##(x - 13)^2##(x + 13)^2##(x - 26)(x + 1)##(x - 13)(x + 13)": {
+    "answer": "D",
+    "confidence": 0.66
+  },
+  "Solve in R: x^2 + (1)x + (-6) = 0.##x = -1 only##x = 2 or x = 3##x = -2 or x = -3##x = 2 or x = -3": {
+    "answer": "D",
+    "confidence": 0.69
+  },
+  "Compute the indefinite integral: ? x^4 dx.##x^4/4 + C##5x^4 + C##x^5 + C##x^5/5 + C": {
+    "answer": "A",
+    "confidence": 0.3
+  },
+  "Solve in R: x^2 + (8)x + (12) = 0.##x = -2 or x = 6##x = 2 or x = -6##x = -8 only##x = -2 or x = -6": {
+    "answer": "D",
+    "confidence": 0.82
+  },
+  "Factorize: x^2 - 4.##(x + 2)^2##(x - 4)(x + 1)##(x - 2)^2##(x - 2)(x + 2)": {
+    "answer": "D",
+    "confidence": 0.63
+  },
+  "Let z = 5 + 3i. What is |z| ? (Give a decimal with 2 digits)##34.00##6##8.00##2.00": {
+    "answer": "A",
+    "confidence": 0.51
+  },
+  "Compute: lim_(x->infty) (4x^2 + 3x - 1) / (2x^2 - x + 4).##1/2##4/3##2##5/2": {
+    "answer": "C",
+    "confidence": 0.88
+  },
+  "Simplify: (8x + 10) + (9x - 11).##-1x + -1##17x - -1##17x + 21##17x + -1": {
+    "answer": "D",
+    "confidence": 0.79
+  },
+  "A triangle has base 11 and height 3. What is its area?##17##33.0##14.0##7.0": {
+    "answer": "A",
+    "confidence": 0.95
+  },
+  "Solve in R: x^2 + (0)x + (-36) = 0.##x = 6 or x = 6##x = -6 or x = 6##x = 0 only##x = -6 or x = -6": {
+    "answer": "B",
+    "confidence": 0.74
+  },
+  "Compute the indefinite integral: ? x^2 dx.##x^2/2 + C##3x^2 + C##x^3 + C##x^3/3 + C": {
+    "answer": "D",
+    "confidence": 0.8
+  },
+  "Compute: (6/7) + (9/6).##-9/14##15/13##33/14##99/13": {
+    "answer": "C",
+    "confidence": 0.8
+  },
+  "Compute: lim_(x->infty) (1x^2 + 3x - 1) / (4x^2 - x + 4).##1/5##4##1/2##1/4": {
+    "answer": "D",
+    "confidence": 0.79
+  },
+  "Expand: (x + 7)(x + 5).##x^2 + 2x + 35##x^2 + 12x + 35##x^2 + 12x - 35##x^2 + 35x + 12": {
+    "answer": "B",
+    "confidence": 0.83
+  },
+  "Expand: (x + 3)(x + 2).##x^2 + 5x - 6##x^2 + 5x + 6##x^2 + 1x + 6##x^2 + 6x + 5": {
+    "answer": "B",
+    "confidence": 0.66
+  },
+  "Expand: (x + 8)(x + 6).##x^2 + 14x - 48##x^2 + 2x + 48##x^2 + 48x + 14##x^2 + 14x + 48": {
+    "answer": "C",
+    "confidence": 0.53
+  },
+  "Let f(x) = 3x^3 + 2x. Compute f'(x).##9x^2 + 2##9x^2 - 2##3x^2 + 2##9x + 2": {
+    "answer": "A",
+    "confidence": 0.83
+  },
+  "Let z = 5 + 5i. What is |z| ? (Give a decimal with 2 digits)##7##0.00##50.00##10.00": {
+    "answer": "A",
+    "confidence": 0.77
+  },
+  "A triangle has base 14 and height 8. What is its area?##56.0##112.0##11.0##22.0": {
+    "answer": "A",
+    "confidence": 0.83
+  },
+  "Simplify: (9x + 6) + (3x - 11).##6x + -5##12x + 17##12x + -5##12x - -5": {
+    "answer": "C",
+    "confidence": 0.84
+  },
+  "Simplify: (8x + 1) + (8x - 2).##16x + 3##0x + -1##16x - -1##16x + -1": {
+    "answer": "D",
+    "confidence": 0.84
+  },
+  "A triangle has base 13 and height 10. What is its area?##23.0##130.0##12##65.0": {
+    "answer": "D",
+    "confidence": 0.85
+  },
+  "Solve in C: x^2 + 1 = 0.##No solution##x = i or x = -i##x = 1 or x = -1##x = i only": {
+    "answer": "B",
+    "confidence": 0.52
+  },
+  "Solve in C: x^2 + 1 = 0.##x = i only##x = i or x = -i##No solution##x = 1 or x = -1": {
+    "answer": "A",
+    "confidence": 0.44
+  },
+  "Compute: lim_(x->infty) (3x^2 + 3x - 1) / (1x^2 - x + 4).##3/2##4##3##1/3": {
+    "answer": "C",
+    "confidence": 0.84
+  },
+  "Expand: (x + 7)(x + 9).##x^2 + -2x + 63##x^2 + 16x - 63##x^2 + 16x + 63##x^2 + 63x + 16": {
+    "answer": "B",
+    "confidence": 0.3
+  },
+  "Compute the indefinite integral: ? x^2 dx.##x^3 + C##x^3/3 + C##x^2/2 + C##3x^2 + C": {
+    "answer": "B",
+    "confidence": 0.86
+  },
+  "Compute: lim_(x->infty) (2x^2 + 3x - 1) / (5x^2 - x + 4).##3/5##5/2##1/3##2/5": {
+    "answer": "D",
+    "confidence": 0.81
+  },
+  "Compute the distance between A(0,1) and B(-3,4). (2 decimals)##4##6.00##18.00##3.00": {
+    "answer": "A",
+    "confidence": 0.53
+  },
+  "What is the center of the circle x^2 + y^2 ? 4x + 6y = 12?##(2;-3)##(-2;3)##(2;3)##(-2;-3)": {
+    "answer": "B",
+    "confidence": 0.85
+  },
+  "What is the radius of the circle (x ? 4)^2 + (y + 1)^2 = 9?##9##4##3##5": {
+    "answer": "C",
+    "confidence": 0.95
+  }
+}

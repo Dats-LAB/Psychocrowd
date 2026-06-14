@@ -1,0 +1,7 @@
+.env
+__pycache__/
+*.pyc
+outputs/
+data/mcq_bank.csv
+data/human_responses.csv
+.DS_Store
