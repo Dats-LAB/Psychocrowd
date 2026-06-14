@@ -36,10 +36,9 @@ function App() {
     setCurrentUser(null);
   };
 
-  // ── Login gate (after ALL hooks) ──
-  if (!currentUser) {
-    return <LoginPage onLogin={handleLogin} />;
-  }
+  // ── Login gate ──
+  // We cannot early return here because hooks must be called unconditionally.
+  // Instead, we conditionally render below.
 
 
   const classifyDomain = (question) => {
@@ -157,6 +156,10 @@ function App() {
 
   // Extract unique students
   const studentIds = [...new Set(crowdData.map(d => d.student_id).filter(Boolean))];
+
+  if (!currentUser) {
+    return <LoginPage onLogin={handleLogin} />;
+  }
 
   return (
     <div className="app-container">
