@@ -6,6 +6,8 @@ import Plot from 'react-plotly.js';
 import LoginPage from './LoginPage';
 import './index.css';
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+
 function App() {
   // ── Auth (must be first hook) ──
   const [currentUser, setCurrentUser] = useState(() => {
@@ -64,7 +66,7 @@ function App() {
   }, []);
 
   const fetchMcqData = () => {
-    Papa.parse('http://localhost:8000/data/mcq_bank.csv', {
+    Papa.parse(`${API_BASE_URL}/data/mcq_bank.csv`, {
       download: true,
       header: true,
       dynamicTyping: true,
@@ -91,7 +93,7 @@ function App() {
 
   const fetchReport = async () => {
     try {
-      const res = await fetch('http://localhost:8000/api/report');
+      const res = await fetch(`${API_BASE_URL}/api/report`);
       if (res.ok) {
         const data = await res.json();
         setReport(data);
@@ -103,13 +105,13 @@ function App() {
   };
 
   const fetchDatasets = () => {
-    Papa.parse('http://localhost:8000/outputs/response_matrix.csv', {
+    Papa.parse(`${API_BASE_URL}/outputs/response_matrix.csv`, {
       download: true, header: true, dynamicTyping: true,
       complete: (results) => setCrowdData(results.data)
     });
     // Re-load MCQ bank (also triggered on startup via fetchMcqData)
     fetchMcqData();
-    Papa.parse('http://localhost:8000/outputs/rasch_comparison.csv', {
+    Papa.parse(`${API_BASE_URL}/outputs/rasch_comparison.csv`, {
       download: true, header: true, dynamicTyping: true,
       complete: (results) => setComparisonData(results.data)
     });
@@ -125,18 +127,18 @@ function App() {
       // Upload files first if provided
       if (mcqFile) {
         const fd = new FormData(); fd.append('file_type', 'mcq'); fd.append('file', mcqFile);
-        await fetch('http://localhost:8000/api/upload', { method: 'POST', body: fd });
+        await fetch(`${API_BASE_URL}/api/upload`, { method: 'POST', body: fd });
       }
       if (humanFile) {
         const fd = new FormData(); fd.append('file_type', 'human'); fd.append('file', humanFile);
-        await fetch('http://localhost:8000/api/upload', { method: 'POST', body: fd });
+        await fetch(`${API_BASE_URL}/api/upload`, { method: 'POST', body: fd });
       }
 
       const formData = new FormData();
       formData.append('use_gemini', useGemini);
       if (apiKey) formData.append('api_key', apiKey);
 
-      const res = await fetch('http://localhost:8000/api/run-pipeline', {
+      const res = await fetch(`${API_BASE_URL}/api/run-pipeline`, {
         method: 'POST',
         body: formData,
       });
@@ -608,7 +610,7 @@ function App() {
 
             <section className="chart-panel">
               <h3>Wright Map (Person-Item Distribution)</h3>
-              <img src="http://localhost:8000/outputs/plots/wright_map.png" alt="Wright Map" className="chart-image" />
+              <img src={`${API_BASE_URL}/outputs/plots/wright_map.png`} alt="Wright Map" className="chart-image" />
             </section>
           </div>
         )}
@@ -643,11 +645,11 @@ function App() {
             <div className="charts-row">
               <div className="chart-panel half">
                 <h3>Scatter Comparison</h3>
-                <img src="http://localhost:8000/outputs/plots/scatter_comparison.png" alt="Scatter Comparison" className="chart-image" />
+                <img src={`${API_BASE_URL}/outputs/plots/scatter_comparison.png`} alt="Scatter Comparison" className="chart-image" />
               </div>
               <div className="chart-panel half">
                 <h3>Difficulty Distribution</h3>
-                <img src="http://localhost:8000/outputs/plots/difficulty_distribution.png" alt="Distribution" className="chart-image" />
+                <img src={`${API_BASE_URL}/outputs/plots/difficulty_distribution.png`} alt="Distribution" className="chart-image" />
               </div>
             </div>
 
