@@ -129,3 +129,39 @@ class PsychometricComparator:
             data.append(row)
             
         return data
+
+    def plot_scatter(self, save_path):
+        import matplotlib
+        matplotlib.use('Agg')
+        import matplotlib.pyplot as plt
+        fig, ax = plt.subplots(figsize=(6, 4))
+        ax.scatter(self.b_human, self.b_art, alpha=0.6)
+        ax.set_xlabel('Human Difficulty')
+        ax.set_ylabel('Artificial Difficulty')
+        ax.set_title('Scatter Comparison')
+        fig.savefig(save_path)
+        plt.close(fig)
+
+    def plot_difficulty_distributions(self, save_path):
+        import matplotlib
+        matplotlib.use('Agg')
+        import matplotlib.pyplot as plt
+        fig, ax = plt.subplots(figsize=(6, 4))
+        ax.hist(self.b_human, bins=20, alpha=0.5, label='Human')
+        ax.hist(self.b_art, bins=20, alpha=0.5, label='Artificial')
+        ax.legend()
+        ax.set_title('Difficulty Distributions')
+        fig.savefig(save_path)
+        plt.close(fig)
+
+    def plot_wright_map(self, save_path):
+        import matplotlib
+        matplotlib.use('Agg')
+        import matplotlib.pyplot as plt
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(8, 4))
+        ax1.hist(self.human_rasch.theta, bins=20, orientation='horizontal')
+        ax1.set_title('Person Abilities')
+        ax2.hist(self.b_human, bins=20, orientation='horizontal', color='orange')
+        ax2.set_title('Item Difficulties')
+        fig.savefig(save_path)
+        plt.close(fig)

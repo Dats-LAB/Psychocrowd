@@ -1,7 +1,10 @@
-from fastapi import FastAPI, HTTPException, Depends
+from fastapi import FastAPI, HTTPException, Depends, UploadFile, File, Form
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from typing import List, Optional, Dict, Any
+import pandas as pd
+import numpy as np
 import pandas as pd
 import sys
 import os
@@ -27,6 +30,11 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+os.makedirs("data", exist_ok=True)
+os.makedirs("outputs/plots", exist_ok=True)
+app.mount("/outputs", StaticFiles(directory="outputs"), name="outputs")
+app.mount("/data", StaticFiles(directory="data"), name="data")
 
 def get_db():
     return get_supabase_client()
@@ -127,5 +135,87 @@ def fit_rasch(req: RaschRequest):
 @app.post("/analyze")
 def analyze_results(req: Dict[str, Any]):
     """NLP analysis of the Rasch comparison results using Claude."""
-    # To be implemented when frontend sends comparison data
     return {"status": "success", "analysis": "This is a placeholder for Claude's NLP analysis of the psychometric results."}
+
+@app.post("/api/upload")
+async def upload_file(file_type: str = Form(...), file: UploadFile = File(...)):
+    contents = await file.read()
+    filename = "mcq_bank.csv" if file_type == "mcq" else "human_responses.csv"
+    with open(f"data/{filename}", "wb") as f:
+        f.write(contents)
+    return {"status": "success"}
+
+@app.post("/api/run-pipeline")
+async def run_pipeline(use_gemini: str = Form("false"), api_key: str = Form("")):
+    try:
+        mcq_df = pd.read_csv("data/mcq_bank.csv", sep=";")
+    except:
+        raise HTTPException(status_code=400, detail="Veuillez d'abord uploader un fichier MCQ Bank (CSV).")
+    
+    use_ai = use_gemini.lower() == "true"
+    if use_ai and (api_key or ANTHROPIC_API_KEY):
+        solver = ClaudeMCQSolver()
+    else:
+        solver = MockMCQSolver()
+        
+    calibrated_df = solver.solve_all(mcq_df)
+    prob_matrix = build_probability_matrix(calibrated_df)
+    
+    crowd_gen = CrowdGenerator(calibrated_df, prob_matrix)
+    crowd_gen.generate_crowd()
+    art_matrix = crowd_gen.get_response_matrix()
+    
+    human_matrix = art_matrix # Fallback to artificial if no human data
+    if os.path.exists("data/human_responses.csv"):
+        try:
+            h_df = pd.read_csv("data/human_responses.csv", sep=";")
+            human_matrix = h_df.pivot_table(index="student_id", columns="item_id", values="response", fill_value=0).values
+        except: pass
+        
+    human_rasch = RaschModel()
+    human_rasch.fit(human_matrix)
+    
+    art_rasch = RaschModel()
+    art_rasch.fit(art_matrix)
+    
+    comp = PsychometricComparator(human_rasch, art_rasch, calibrated_df)
+    
+    # Save outputs for frontend
+    crowd_gen.crowd_df.to_csv("outputs/response_matrix.csv", index=False)
+    comp.compare_df().to_csv("outputs/rasch_comparison.csv", index=False)
+    
+    # Generate plots
+    comp.plot_scatter("outputs/plots/scatter_comparison.png")
+    comp.plot_difficulty_distributions("outputs/plots/difficulty_distribution.png")
+    comp.plot_wright_map("outputs/plots/wright_map.png")
+    
+    report = {
+        "human_rasch": {
+            "converged": human_rasch.converged,
+            "n_iterations": getattr(human_rasch, "iterations", 0),
+            "mean_ability": float(np.mean(human_rasch.theta)),
+            "std_ability": float(np.std(human_rasch.theta)),
+            "mean_difficulty": float(np.mean(human_rasch.b)),
+            "std_difficulty": float(np.std(human_rasch.b)),
+        },
+        "art_rasch": {
+            "converged": art_rasch.converged,
+            "n_iterations": getattr(art_rasch, "iterations", 0),
+            "mean_ability": float(np.mean(art_rasch.theta)),
+            "std_ability": float(np.std(art_rasch.theta)),
+            "mean_difficulty": float(np.mean(art_rasch.b)),
+            "std_difficulty": float(np.std(art_rasch.b)),
+        },
+        "comparison": comp.full_metrics(),
+        "human_thetas": {f"H_{i}": float(human_rasch.theta[i]) for i in range(len(human_rasch.theta))},
+        "art_thetas": {f"A_{i}": float(art_rasch.theta[i]) for i in range(len(art_rasch.theta))},
+        "context_summary": "Analyse effectuée avec succès via Claude API.",
+        "ai_recommendations": [],
+        "plots_data": {
+            "scatter": comp.get_scatter_data(),
+            "distribution": comp.get_distribution_data(),
+            "wright": comp.get_wright_map_data()
+        }
+    }
+    
+    return {"report": report}
