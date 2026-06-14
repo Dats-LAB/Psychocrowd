@@ -260,28 +260,24 @@ function App() {
                 </div>
 
                 <div className="form-group row-flex" style={{marginTop: '1.5rem'}}>
-                  <div className="toggle-switch">
-                    <input 
-                      type="checkbox" 
-                      id="gemini-toggle"
-                      checked={useGemini}
-                      onChange={(e) => setUseGemini(e.target.checked)}
-                    />
-                    <label htmlFor="gemini-toggle">Enable Google Gemini API</label>
-                  </div>
+                  <label className="toggle-switch">
+                    <input type="checkbox" checked={useGemini} onChange={(e) => setUseGemini(e.target.checked)} />
+                    <span>ENABLE CLAUDE AI API</span>
+                  </label>
                   <p className="help-text">Uses AI to estimate item difficulty. Otherwise falls back to Mock engine.</p>
-                </div>
-                
-                <div className={`form-group ${!useGemini ? 'disabled' : ''}`}>
-                  <label>Gemini API Key</label>
-                  <input 
-                    type="password" 
-                    className="form-control premium-input" 
-                    placeholder="AIzaSy..."
-                    value={apiKey}
-                    onChange={(e) => setApiKey(e.target.value)}
-                    disabled={!useGemini}
-                  />
+                  
+                  {useGemini && (
+                    <div className="form-group fade-in" style={{marginTop: '1rem'}}>
+                      <label>CLAUDE API KEY</label>
+                      <input 
+                        type="password" 
+                        className="premium-input" 
+                        placeholder="sk-ant-..." 
+                        value={apiKey}
+                        onChange={(e) => setApiKey(e.target.value)}
+                      />
+                    </div>
+                  )}
                 </div>
                 
                 <button type="submit" className="btn btn-primary btn-large" disabled={loading}>
