@@ -8,6 +8,7 @@ import numpy as np
 import pandas as pd
 import sys
 import os
+import io
 from pathlib import Path
 
 sys.path.append(str(Path(__file__).parent.parent))
@@ -146,11 +147,26 @@ async def upload_file(file_type: str = Form(...), file: UploadFile = File(...)):
     return {"status": "success"}
 
 @app.post("/api/run-pipeline")
-async def run_pipeline(use_gemini: str = Form("false"), api_key: str = Form("")):
-    try:
-        mcq_df = pd.read_csv("data/mcq_bank.csv", sep=";")
-    except:
+async def run_pipeline(
+    use_gemini: str = Form("false"), 
+    api_key: str = Form(""),
+    mcq_file: Optional[UploadFile] = File(None),
+    human_file: Optional[UploadFile] = File(None)
+):
+    if not mcq_file:
         raise HTTPException(status_code=400, detail="Veuillez d'abord uploader un fichier MCQ Bank (CSV).")
+        
+    try:
+        contents = await mcq_file.read()
+        # Try reading with semicolon first, then comma
+        try:
+            mcq_df = pd.read_csv(io.BytesIO(contents), sep=";")
+            if len(mcq_df.columns) < 2:
+                mcq_df = pd.read_csv(io.BytesIO(contents), sep=",")
+        except:
+            mcq_df = pd.read_csv(io.BytesIO(contents), sep=",")
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=f"Erreur lors de la lecture du fichier CSV: {str(e)}")
     
     use_ai = use_gemini.lower() == "true"
     if use_ai and (api_key or ANTHROPIC_API_KEY):
@@ -166,9 +182,12 @@ async def run_pipeline(use_gemini: str = Form("false"), api_key: str = Form(""))
     art_matrix = crowd_gen.get_response_matrix()
     
     human_matrix = art_matrix # Fallback to artificial if no human data
-    if os.path.exists("data/human_responses.csv"):
+    if human_file:
         try:
-            h_df = pd.read_csv("data/human_responses.csv", sep=";")
+            h_contents = await human_file.read()
+            h_df = pd.read_csv(io.BytesIO(h_contents), sep=";")
+            if len(h_df.columns) < 2:
+                h_df = pd.read_csv(io.BytesIO(h_contents), sep=",")
             human_matrix = h_df.pivot_table(index="student_id", columns="item_id", values="response", fill_value=0).values
         except: pass
         

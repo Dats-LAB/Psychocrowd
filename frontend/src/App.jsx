@@ -124,17 +124,9 @@ function App() {
     setError(null);
     
     try {
-      // Upload files first if provided
-      if (mcqFile) {
-        const fd = new FormData(); fd.append('file_type', 'mcq'); fd.append('file', mcqFile);
-        await fetch(`${API_BASE_URL}/api/upload`, { method: 'POST', body: fd });
-      }
-      if (humanFile) {
-        const fd = new FormData(); fd.append('file_type', 'human'); fd.append('file', humanFile);
-        await fetch(`${API_BASE_URL}/api/upload`, { method: 'POST', body: fd });
-      }
-
       const formData = new FormData();
+      if (mcqFile) formData.append('mcq_file', mcqFile);
+      if (humanFile) formData.append('human_file', humanFile);
       formData.append('use_gemini', useGemini);
       if (apiKey) formData.append('api_key', apiKey);
 
