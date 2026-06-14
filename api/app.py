@@ -173,7 +173,23 @@ async def run_pipeline(
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"Erreur lors de la lecture du fichier CSV: {str(e)}")
     
+    # Normalize column names: lowercase and strip whitespace
+    mcq_df.columns = [c.strip().lower() for c in mcq_df.columns]
+    
+    # Map common header variants to expected names
+    col_map = {
+        'choice_a': 'option_a', 'choice_b': 'option_b', 'choice_c': 'option_c', 'choice_d': 'option_d',
+        'correct_answer': 'correct_option', 'difficulty': 'difficulty_expert',
+        'question_text': 'question', 'q': 'question',
+    }
+    mcq_df.rename(columns=col_map, inplace=True)
+    
+    # Add item_id if not present
+    if 'item_id' not in mcq_df.columns:
+        mcq_df.insert(0, 'item_id', range(len(mcq_df)))
+    
     use_ai = use_gemini.lower() == "true"
+
     if use_ai and (api_key or ANTHROPIC_API_KEY):
         solver = ClaudeMCQSolver()
     else:

@@ -28,8 +28,13 @@ def transform_probability(p_base: float, profile: str, difficulty: str = "medium
 
 def build_probability_matrix(df: pd.DataFrame) -> pd.DataFrame:
     """Compute success probability for each profile for every item."""
+    # Ensure item_id exists
+    if 'item_id' not in df.columns:
+        df = df.copy()
+        df.insert(0, 'item_id', range(len(df)))
+    
     rows = []
-    for _, item in df.iterrows():
+    for idx, item in df.iterrows():
         p_base = item["ai_confidence"]
         difficulty = item.get("difficulty_expert", "medium")
         row = {
@@ -41,6 +46,7 @@ def build_probability_matrix(df: pd.DataFrame) -> pd.DataFrame:
             row[f"p_{profile}"] = transform_probability(p_base, profile, difficulty)
         rows.append(row)
     return pd.DataFrame(rows)
+
 
 
 def print_profile_summary(matrix_df: pd.DataFrame):

@@ -6,7 +6,8 @@ import Plot from 'react-plotly.js';
 import LoginPage from './LoginPage';
 import './index.css';
 
-const API_BASE_URL = 'https://web-production-b3e7a.up.railway.app';
+// Use VITE_API_URL if set (for Vercel), otherwise use the local network IP so mobile testing works via WiFi
+const API_BASE_URL = import.meta.env.VITE_API_URL || `http://${window.location.hostname}:8000`;
 
 function App() {
   // ── Auth (must be first hook) ──

@@ -8,11 +8,15 @@ class CrowdGenerator:
     def __init__(self, mcq_df, probability_matrix,
                  n_per_profile=N_STUDENTS_PER_PROFILE,
                  seed=MOCK_RANDOM_SEED):
-        self.mcq_df = mcq_df
+        self.mcq_df = mcq_df.copy()
+        # Ensure item_id column exists
+        if 'item_id' not in self.mcq_df.columns:
+            self.mcq_df.insert(0, 'item_id', range(len(self.mcq_df)))
         self.prob_matrix = probability_matrix
         self.n_per_profile = n_per_profile
         self.rng = np.random.RandomState(seed)
         self.crowd_df = None
+
 
     def _generate_response(self, p_correct: float, correct_opt: str,
                             distractor_weights: dict) -> tuple:
