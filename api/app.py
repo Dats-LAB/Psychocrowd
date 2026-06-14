@@ -146,6 +146,17 @@ async def upload_file(file_type: str = Form(...), file: UploadFile = File(...)):
         f.write(contents)
     return {"status": "success"}
 
+def read_csv_robust(contents: bytes) -> pd.DataFrame:
+    for enc in ["utf-8", "windows-1252", "latin1"]:
+        try:
+            df = pd.read_csv(io.BytesIO(contents), sep=";", encoding=enc)
+            if len(df.columns) < 2:
+                df = pd.read_csv(io.BytesIO(contents), sep=",", encoding=enc)
+            return df
+        except UnicodeDecodeError:
+            continue
+    raise ValueError("Format d'encodage non supporté. Veuillez sauvegarder en UTF-8.")
+
 @app.post("/api/run-pipeline")
 async def run_pipeline(
     use_gemini: str = Form("false"), 
@@ -158,13 +169,7 @@ async def run_pipeline(
         
     try:
         contents = await mcq_file.read()
-        # Try reading with semicolon first, then comma
-        try:
-            mcq_df = pd.read_csv(io.BytesIO(contents), sep=";")
-            if len(mcq_df.columns) < 2:
-                mcq_df = pd.read_csv(io.BytesIO(contents), sep=",")
-        except:
-            mcq_df = pd.read_csv(io.BytesIO(contents), sep=",")
+        mcq_df = read_csv_robust(contents)
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"Erreur lors de la lecture du fichier CSV: {str(e)}")
     
@@ -185,9 +190,7 @@ async def run_pipeline(
     if human_file:
         try:
             h_contents = await human_file.read()
-            h_df = pd.read_csv(io.BytesIO(h_contents), sep=";")
-            if len(h_df.columns) < 2:
-                h_df = pd.read_csv(io.BytesIO(h_contents), sep=",")
+            h_df = read_csv_robust(h_contents)
             human_matrix = h_df.pivot_table(index="student_id", columns="item_id", values="response", fill_value=0).values
         except: pass
         
