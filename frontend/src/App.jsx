@@ -853,35 +853,348 @@ function App() {
           </div>
         )}
 
-        {/* TAB: HELP CENTER */}
-        {activeTab === 'help' && (
-          <div className="fade-in">
-            <header className="page-header">
-              <h2>Help Center & Tutorial</h2>
-              <p>Mastering the PsychoCrowd Engine.</p>
-            </header>
-            
-            <div className="glass-panel" style={{marginBottom: '1.5rem'}}>
-              <h3>1. Data Preparation</h3>
-              <p>Upload your <strong>MCQ Bank</strong> and (optional) <strong>Human Responses</strong> in the Configuration tab. Leave blank to auto-generate mock datasets.</p>
+        {/* TAB: HELP CENTER — LEARNING CENTER */}
+        {activeTab === 'help' && (() => {
+          const [openSection, setOpenSection] = React.useState(null);
+          const toggle = (id) => setOpenSection(prev => prev === id ? null : id);
+
+          const sections = [
+            {
+              id: 'overview',
+              icon: '🎯',
+              color: '#722F37',
+              title: 'Vue d\'ensemble — Comment fonctionne PsychoCrowd ?',
+              content: (
+                <div>
+                  <p>PsychoCrowd est une plateforme de <strong>psychométrie computationnelle</strong> qui combine l'IA générative et la Théorie de Réponse à l'Item (IRT) pour analyser des banques de questions MCQ.</p>
+                  <div style={{background:'#F8FAFC', borderRadius:8, padding:'1rem', marginTop:'1rem'}}>
+                    <strong>Pipeline en 7 étapes :</strong>
+                    <ol style={{margin:'0.5rem 0 0', paddingLeft:'1.5rem', lineHeight:2}}>
+                      <li>📁 Chargement du CSV (MCQ Bank)</li>
+                      <li>🤖 Calibration IA (Claude ou Mock) → <code>P(correct)</code>, difficulté</li>
+                      <li>📊 Matrice de probabilités par profil étudiant</li>
+                      <li>👥 Génération d'une foule artificielle (200 étudiants)</li>
+                      <li>📐 Modèle de Rasch JMLE → θ (capacités), b (difficultés)</li>
+                      <li>📈 Comparaison humain vs artificiel</li>
+                      <li>🖼️ Graphiques Wright Map, scatter, distribution</li>
+                    </ol>
+                  </div>
+                </div>
+              )
+            },
+            {
+              id: 'csv',
+              icon: '📁',
+              color: '#0EA5E9',
+              title: 'Préparer votre fichier CSV (Item Bank)',
+              content: (
+                <div>
+                  <p>Le CSV peut être séparé par <strong>virgule (,)</strong> ou <strong>point-virgule (;)</strong>. L'encodage est détecté automatiquement (UTF-8, Windows-1252, Latin1).</p>
+                  <div style={{marginTop:'1rem'}}>
+                    <strong>Colonnes reconnues :</strong>
+                    <table style={{width:'100%', marginTop:'0.5rem', borderCollapse:'collapse', fontSize:'0.85rem'}}>
+                      <thead><tr style={{background:'#F1F5F9'}}><th style={{padding:'6px 10px', textAlign:'left'}}>Colonne CSV</th><th style={{padding:'6px 10px', textAlign:'left'}}>Obligatoire ?</th><th style={{padding:'6px 10px', textAlign:'left'}}>Note</th></tr></thead>
+                      <tbody>
+                        {[
+                          ['question / question_text', 'Oui', 'Texte de la question'],
+                          ['option_a / choice_a', 'Oui', 'Option A'],
+                          ['option_b / choice_b', 'Oui', 'Option B'],
+                          ['option_c / choice_c', 'Oui', 'Option C'],
+                          ['option_d / choice_d', 'Oui', 'Option D'],
+                          ['correct_option / correct_answer', 'Non ✨', 'Auto-inféré si absent'],
+                          ['difficulty_expert / difficulty', 'Non ✨', 'Auto-estimé si absent'],
+                          ['item_id', 'Non', 'Généré automatiquement'],
+                        ].map(([c,r,n],i) => (
+                          <tr key={i} style={{borderBottom:'1px solid #E2E8F0'}}>
+                            <td style={{padding:'6px 10px'}}><code>{c}</code></td>
+                            <td style={{padding:'6px 10px', color: r.includes('Non') ? '#10B981' : '#EF4444'}}>{r}</td>
+                            <td style={{padding:'6px 10px', color:'#64748B'}}>{n}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  <div style={{background:'#FFF7ED', border:'1px solid #FED7AA', borderRadius:8, padding:'0.75rem', marginTop:'1rem'}}>
+                    <strong>💡 Astuce :</strong> Si votre CSV n'a pas de colonne <code>correct_option</code> ni <code>difficulty_expert</code>, PsychoCrowd les génère automatiquement grâce à des heuristiques textuelles (Mode Mock) ou via Claude API.
+                  </div>
+                </div>
+              )
+            },
+            {
+              id: 'calibration',
+              icon: '⚡',
+              color: '#F59E0B',
+              title: 'Calibration des items — Mode Mock vs Claude API',
+              content: (
+                <div>
+                  <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:'1rem', marginBottom:'1rem'}}>
+                    <div style={{background:'#FFF7ED', borderRadius:8, padding:'1rem', borderTop:'3px solid #F59E0B'}}>
+                      <strong>🔧 Mode Mock (sans API)</strong>
+                      <ul style={{marginTop:'0.5rem', paddingLeft:'1.25rem', fontSize:'0.85rem', lineHeight:1.8}}>
+                        <li>Gratuit, instantané</li>
+                        <li><code>P(correct)</code> généré selon la difficulté</li>
+                        <li>easy → 0.75–0.95</li>
+                        <li>medium → 0.50–0.75</li>
+                        <li>hard → 0.25–0.55</li>
+                        <li>Bonne réponse inférée par heuristique (option la plus longue)</li>
+                      </ul>
+                    </div>
+                    <div style={{background:'#F5F3FF', borderRadius:8, padding:'1rem', borderTop:'3px solid #7C3AED'}}>
+                      <strong>🤖 Mode Claude API</strong>
+                      <ul style={{marginTop:'0.5rem', paddingLeft:'1.25rem', fontSize:'0.85rem', lineHeight:1.8}}>
+                        <li>Analyse le texte réel des questions</li>
+                        <li>Identifie la bonne réponse par raisonnement</li>
+                        <li>Estime la difficulté cognitive</li>
+                        <li>Classifie les erreurs par distracteur</li>
+                        <li>Attribue un quality_score pédagogique</li>
+                        <li>Détecte les problèmes de formulation</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div style={{background:'#F0FDF4', border:'1px solid #86EFAC', borderRadius:8, padding:'0.75rem'}}>
+                    <strong>✅ Bonne nouvelle :</strong> Même sans clé API, la simulation produit des résultats Rasch valides grâce au Mode Mock.
+                  </div>
+                </div>
+              )
+            },
+            {
+              id: 'profiles',
+              icon: '👥',
+              color: '#10B981',
+              title: 'Les 4 profils étudiants et la génération de foule',
+              content: (
+                <div>
+                  <p>PsychoCrowd simule <strong>200 étudiants artificiels</strong> (50 par profil) dont les réponses sont générées via un tirage de Bernoulli pondéré.</p>
+                  <table style={{width:'100%', marginTop:'0.75rem', borderCollapse:'collapse', fontSize:'0.85rem'}}>
+                    <thead><tr style={{background:'#F1F5F9'}}><th style={{padding:'6px 10px', textAlign:'left'}}>Profil</th><th style={{padding:'6px 10px', textAlign:'left'}}>Delta (δ)</th><th style={{padding:'6px 10px', textAlign:'left'}}>Signification</th></tr></thead>
+                    <tbody>
+                      {[
+                        ['🔵 Expert', '+0.35', 'Étudiant très fort, maîtrise avancée'],
+                        ['🟢 Good', '+0.15', 'Bon étudiant, au-dessus de la moyenne'],
+                        ['🟡 Medium', '0.00', 'Étudiant moyen, niveau de référence'],
+                        ['🔴 Weak', '-0.25', 'Étudiant en difficulté'],
+                      ].map(([p,d,s],i) => (
+                        <tr key={i} style={{borderBottom:'1px solid #E2E8F0'}}>
+                          <td style={{padding:'6px 10px', fontWeight:600}}>{p}</td>
+                          <td style={{padding:'6px 10px'}}><code>{d}</code></td>
+                          <td style={{padding:'6px 10px', color:'#64748B', fontSize:'0.82rem'}}>{s}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                  <div style={{background:'#F8FAFC', borderRadius:8, padding:'0.75rem', marginTop:'1rem'}}>
+                    <strong>Formule de probabilité :</strong><br/>
+                    <code style={{fontSize:'0.9rem'}}>P_profil = clip(P_IA + δ × coeff_difficulté, 0.05, 0.99)</code><br/>
+                    <span style={{fontSize:'0.8rem', color:'#64748B'}}>Coefficients : easy=1.10 | medium=1.00 | hard=0.75</span>
+                  </div>
+                </div>
+              )
+            },
+            {
+              id: 'rasch',
+              icon: '📐',
+              color: '#7C3AED',
+              title: 'Le Modèle de Rasch (IRT 1PL) — Comprendre θ et b',
+              content: (
+                <div>
+                  <p>Le <strong>Modèle de Rasch</strong> est un modèle psychométrique qui représente chaque interaction étudiant-item par une probabilité logistique.</p>
+                  <div style={{background:'#F5F3FF', borderRadius:8, padding:'1rem', marginTop:'0.75rem', textAlign:'center'}}>
+                    <strong>Formule fondamentale :</strong><br/>
+                    <code style={{fontSize:'1.1rem', display:'block', marginTop:'0.5rem'}}>P(X=1 | θ, b) = 1 / (1 + e^-(θ - b))</code>
+                  </div>
+                  <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:'1rem', marginTop:'1rem'}}>
+                    <div style={{background:'#EFF6FF', borderRadius:8, padding:'0.75rem'}}>
+                      <strong>θ (Theta) — Capacité</strong>
+                      <ul style={{marginTop:'0.25rem', paddingLeft:'1.25rem', fontSize:'0.82rem', lineHeight:1.8}}>
+                        <li>Mesure le niveau de l'étudiant en logits</li>
+                        <li>θ {'>'} 0 → au-dessus de la moyenne</li>
+                        <li>θ {'<'} 0 → en dessous de la moyenne</li>
+                        <li>θ = 0 → niveau médian</li>
+                      </ul>
+                    </div>
+                    <div style={{background:'#FFF7ED', borderRadius:8, padding:'0.75rem'}}>
+                      <strong>b — Difficulté item</strong>
+                      <ul style={{marginTop:'0.25rem', paddingLeft:'1.25rem', fontSize:'0.82rem', lineHeight:1.8}}>
+                        <li>Mesure la difficulté en logits</li>
+                        <li>b {'>'} 0 → item difficile</li>
+                        <li>b {'<'} 0 → item facile</li>
+                        <li>θ = b → P(succès) = 50%</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div style={{background:'#F8FAFC', borderRadius:8, padding:'0.75rem', marginTop:'1rem'}}>
+                    <strong>🗺️ Wright Map :</strong> Visualise la distribution des θ étudiants (gauche) face aux b items (droite). Idéalement, les deux distributions se chevauchent — cela indique que les items sont bien calibrés pour le niveau de la classe.
+                  </div>
+                </div>
+              )
+            },
+            {
+              id: 'validation',
+              icon: '📈',
+              color: '#0EA5E9',
+              title: 'Validation psychométrique — Interpréter les métriques',
+              content: (
+                <div>
+                  <p>L'onglet Validation compare les paramètres b des données humaines vs artificielles.</p>
+                  <table style={{width:'100%', marginTop:'0.75rem', borderCollapse:'collapse', fontSize:'0.85rem'}}>
+                    <thead><tr style={{background:'#F1F5F9'}}><th style={{padding:'6px 10px', textAlign:'left'}}>Métrique</th><th style={{padding:'6px 10px', textAlign:'left'}}>Bonne valeur</th><th style={{padding:'6px 10px', textAlign:'left'}}>Signification</th></tr></thead>
+                    <tbody>
+                      {[
+                        ['Pearson r', '> 0.85', 'Corrélation linéaire des difficultés'],
+                        ['Spearman ρ', '> 0.80', 'Corrélation de rang (robuste aux outliers)'],
+                        ['MAE', '< 0.3', 'Erreur absolue moyenne en logits'],
+                        ['RMSE', '< 0.5', 'Erreur quadratique moyenne'],
+                        ['Verdict', '"Excellent"', 'Interprétation globale automatique'],
+                      ].map(([m,v,s],i) => (
+                        <tr key={i} style={{borderBottom:'1px solid #E2E8F0'}}>
+                          <td style={{padding:'6px 10px'}}><strong>{m}</strong></td>
+                          <td style={{padding:'6px 10px', color:'#10B981', fontWeight:600}}>{v}</td>
+                          <td style={{padding:'6px 10px', color:'#64748B', fontSize:'0.82rem'}}>{s}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                  <div style={{background:'#EFF6FF', borderRadius:8, padding:'0.75rem', marginTop:'1rem'}}>
+                    <strong>💡 Interpretation :</strong> Un Pearson r {'>'} 0.85 signifie que votre foule artificielle reproduit fidèlement l'ordre de difficulté des items humains. La simulation est validée !
+                  </div>
+                </div>
+              )
+            },
+            {
+              id: 'student',
+              icon: '🔍',
+              color: '#F43F5E',
+              title: 'Student Lookup — Analyse individuelle et prédiction',
+              content: (
+                <div>
+                  <p>Sélectionnez un étudiant pour obtenir son <strong>profil complet</strong> et une <strong>prédiction de réussite par item</strong>.</p>
+                  <div style={{display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:'0.75rem', marginTop:'0.75rem'}}>
+                    {[
+                      {label:'Accuracy réelle', desc:'Taux de bonnes réponses observées dans la simulation', color:'#10B981'},
+                      {label:'Profil', desc:'Expert / Good / Medium / Weak selon la foule générée', color:'#7C3AED'},
+                      {label:'θ (Theta IRT)', desc:'Capacité latente estimée en logits par le modèle Rasch', color:'#2563EB'},
+                    ].map((c,i)=>(
+                      <div key={i} style={{background:'#F8FAFC', borderRadius:8, padding:'0.75rem', borderTop:`3px solid ${c.color}`}}>
+                        <div style={{fontWeight:700, fontSize:'0.85rem', marginBottom:'0.25rem'}}>{c.label}</div>
+                        <div style={{fontSize:'0.78rem', color:'#64748B'}}>{c.desc}</div>
+                      </div>
+                    ))}
+                  </div>
+                  <div style={{background:'#F8FAFC', borderRadius:8, padding:'0.75rem', marginTop:'1rem'}}>
+                    <strong>Prédiction de réussite :</strong><br/>
+                    <code>P = 1 / (1 + e^-(θ_étudiant - b_item))</code><br/>
+                    <span style={{fontSize:'0.8rem', color:'#64748B'}}>Calculée pour chaque item selon le θ de l'étudiant et le b de l'item. Les 5 items à plus haut risque d'échec sont listés avec des recommandations de remédiation.</span>
+                  </div>
+                </div>
+              )
+            },
+            {
+              id: 'claude_studio',
+              icon: '✨',
+              color: '#8B5CF6',
+              title: 'Claude AI Studio — 6 fonctionnalités avancées',
+              content: (
+                <div>
+                  <p>L'onglet <strong>Claude AI Studio</strong> centralise toutes les fonctionnalités alimentées par Claude API d'Anthropic.</p>
+                  <div style={{display:'flex', flexDirection:'column', gap:'0.75rem', marginTop:'0.75rem'}}>
+                    {[
+                      {label:'⚡ Calibration MCQ', desc:'Analyse IA du texte des questions pour estimer P(correct), difficulté et types d\'erreurs. Activé automatiquement dans le pipeline si une clé API est fournie.'},
+                      {label:'⚠️ Classification d\'erreurs', desc:'Identifie les erreurs cognitives typiques (confusion de signe, formule incorrecte…) pour chaque distracteur et pondère leur probabilité de sélection.'},
+                      {label:'✅ Contrôle qualité items', desc:'Attribue un quality_score (0-10) à chaque item et détecte les problèmes de formulation pédagogique.'},
+                      {label:'🟣 Interprétation Rasch', desc:'Génère une analyse pédagogique complète des résultats Rasch : capacités étudiantes, calibration des items, et qualité de la simulation.'},
+                      {label:'📄 Rédaction article', desc:'Produit automatiquement la section "Résultats" de votre article scientifique au format APA, avec toutes les statistiques intégrées.'},
+                      {label:'💬 Chat analytique PSYCHO', desc:'Assistant conversationnel expert en psychométrie, contextualisé avec vos données de session. Posez n\'importe quelle question sur vos résultats.'},
+                    ].map((f,i)=>(
+                      <div key={i} style={{background:'#FAFAFA', border:'1px solid #E2E8F0', borderRadius:8, padding:'0.75rem'}}>
+                        <div style={{fontWeight:700, marginBottom:'0.25rem'}}>{f.label}</div>
+                        <div style={{fontSize:'0.82rem', color:'#64748B'}}>{f.desc}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )
+            },
+            {
+              id: 'faq',
+              icon: '❓',
+              color: '#64748B',
+              title: 'FAQ — Questions fréquentes',
+              content: (
+                <div style={{display:'flex', flexDirection:'column', gap:'0.75rem'}}>
+                  {[
+                    {q:'Mon CSV sans entête "correct_option" va-t-il fonctionner ?', a:'Oui ! PsychoCrowd détecte les colonnes manquantes et les génère automatiquement. En Mode Mock, la réponse correcte est inférée par heuristique (option la plus longue). Avec Claude API, elle est déduite par raisonnement IA.'},
+                    {q:'Pourquoi le modèle Rasch ne converge pas toujours ?', a:'La convergence dépend de la taille et de la structure de votre banque d\'items. Avec peu d\'items (< 5) ou une matrice trop homogène (tous les étudiants répondent pareil), l\'algorithme JMLE peut ne pas converger. Les résultats sont quand même fournis.'},
+                    {q:'Failed to fetch — que faire ?', a:'Vérifiez que le backend est bien démarré. En local, lancez "uvicorn api.app:app --host 0.0.0.0 --port 8000" dans le terminal. Sur Railway, vérifiez que le service est actif sur votre tableau de bord.'},
+                    {q:'Quelle est la différence entre le Wright Map et le Scatter Comparison ?', a:'Le Wright Map montre la distribution des θ étudiants face aux b items sur une même échelle de logits. Le Scatter Comparison compare les b estimés depuis les données humaines vs les données artificielles pour mesurer la fidélité de la simulation.'},
+                    {q:'Puis-je utiliser n\'importe quel format de CSV ?', a:'Oui. Le système accepte les séparateurs virgule et point-virgule, et détecte automatiquement les encodages UTF-8, Windows-1252 et Latin1. Les noms de colonnes sont aussi normalisés (majuscules/minuscules ignorées, tirets et underscores interchangeables).'},
+                    {q:'Comment obtenir une clé API Claude ?', a:'Rendez-vous sur console.anthropic.com, créez un compte, et générez une clé API dans la section "API Keys". La clé commence par "sk-ant-api03-". Les plans gratuits permettent de tester. Chaque appel dans PsychoCrowd consomme environ 500-1500 tokens.'},
+                  ].map((faq,i)=>(
+                    <div key={i} style={{background:'#F8FAFC', borderRadius:8, padding:'0.875rem', border:'1px solid #E2E8F0'}}>
+                      <div style={{fontWeight:600, marginBottom:'0.35rem', fontSize:'0.9rem'}}>Q : {faq.q}</div>
+                      <div style={{fontSize:'0.83rem', color:'#475569', lineHeight:1.6}}>→ {faq.a}</div>
+                    </div>
+                  ))}
+                </div>
+              )
+            },
+          ];
+
+          return (
+            <div className="fade-in">
+              <header className="page-header">
+                <h2 style={{display:'flex', alignItems:'center', gap:'0.5rem'}}><BookOpen size={24} color="#722F37"/> Centre d'Apprentissage</h2>
+                <p>Guide complet de la plateforme PsychoCrowd — de la préparation CSV à l'interprétation Rasch.</p>
+              </header>
+
+              {/* Quick nav pills */}
+              <div style={{display:'flex', flexWrap:'wrap', gap:'0.5rem', marginBottom:'2rem'}}>
+                {sections.map(s => (
+                  <button
+                    key={s.id}
+                    onClick={() => toggle(s.id)}
+                    style={{
+                      background: openSection === s.id ? s.color : '#F1F5F9',
+                      color: openSection === s.id ? 'white' : '#475569',
+                      border: 'none', borderRadius: 20, padding: '0.35rem 0.9rem',
+                      fontSize: '0.78rem', fontWeight: 600, cursor: 'pointer',
+                      transition: 'all 0.2s'
+                    }}
+                  >
+                    {s.icon} {s.title.split('—')[0].trim()}
+                  </button>
+                ))}
+              </div>
+
+              {/* Accordion sections */}
+              <div style={{display:'flex', flexDirection:'column', gap:'0.75rem'}}>
+                {sections.map(s => (
+                  <div key={s.id} style={{border:`1px solid ${openSection === s.id ? s.color : '#E2E8F0'}`, borderRadius:10, overflow:'hidden', transition:'border-color 0.2s'}}>
+                    <button
+                      onClick={() => toggle(s.id)}
+                      style={{
+                        width:'100%', display:'flex', alignItems:'center', gap:'0.75rem',
+                        padding:'1rem 1.25rem', background: openSection === s.id ? `${s.color}08` : 'white',
+                        border:'none', cursor:'pointer', textAlign:'left',
+                        borderLeft: `4px solid ${openSection === s.id ? s.color : 'transparent'}`,
+                        transition:'all 0.2s'
+                      }}
+                    >
+                      <span style={{fontSize:'1.25rem'}}>{s.icon}</span>
+                      <span style={{fontWeight:700, fontSize:'0.95rem', color:'#1E293B', flex:1}}>{s.title}</span>
+                      <span style={{color:'#94A3B8', fontSize:'1.2rem', transition:'transform 0.2s', transform: openSection === s.id ? 'rotate(180deg)' : 'none'}}>▾</span>
+                    </button>
+                    {openSection === s.id && (
+                      <div style={{padding:'1.25rem', background:'white', borderTop:'1px solid #F1F5F9', fontSize:'0.88rem', lineHeight:1.7, color:'#334155'}}>
+                        {s.content}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
-            
-            <div className="glass-panel" style={{marginBottom: '1.5rem'}}>
-              <h3>2. Engine Configuration</h3>
-              <p>Enable the <strong>Google Gemini API</strong> for AI-driven psychometrics. Responses are cached locally to save API quota on subsequent runs.</p>
-            </div>
-            
-            <div className="glass-panel" style={{marginBottom: '1.5rem'}}>
-              <h3>3. Rasch Analysis (IRT)</h3>
-              <p>The 1PL model calculates Latent Ability (θ) and Item Difficulty (b). Use the <strong>Wright Map</strong> to visualize alignment between students and questions.</p>
-            </div>
-            
-            <div className="glass-panel">
-              <h3>4. Predictive Forecasting</h3>
-              <p>In the <strong>Student Lookup</strong> tab, the engine predicts future success rates across domains using the logistic IRT formula: <code>P = 1 / (1 + exp(-(θ - b)))</code>, and identifies the highest risk areas for failure.</p>
-            </div>
-          </div>
-        )}
+          );
+        })()}
+
 
         {/* TAB: CLAUDE AI STUDIO */}
         {activeTab === 'claude_studio' && (() => {
