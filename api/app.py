@@ -257,3 +257,139 @@ async def run_pipeline(
     }
     
     return {"report": report}
+
+
+# ── CLAUDE AI STUDIO ENDPOINTS ──────────────────────────────────────────────
+
+class ChatMessage(BaseModel):
+    role: str   # "user" or "assistant"
+    content: str
+
+class ChatRequest(BaseModel):
+    messages: List[ChatMessage]
+    report_context: Optional[Dict] = None
+    api_key: Optional[str] = ""
+
+class InterpretRequest(BaseModel):
+    report: Dict
+    api_key: Optional[str] = ""
+
+class ArticleRequest(BaseModel):
+    report: Dict
+    api_key: Optional[str] = ""
+
+
+def _get_claude_client(api_key: str = ""):
+    import anthropic
+    key = api_key or ANTHROPIC_API_KEY
+    if not key:
+        raise HTTPException(status_code=400, detail="Clé API Claude requise pour cette fonctionnalité.")
+    return anthropic.Anthropic(api_key=key)
+
+
+@app.post("/api/claude/interpret-rasch")
+async def interpret_rasch(req: InterpretRequest):
+    """Génère une interprétation pédagogique des résultats Rasch via Claude."""
+    client = _get_claude_client(req.api_key)
+    r = req.report
+    prompt = f"""Tu es un expert en psychométrie et en pédagogie. 
+Voici les résultats d'une calibration par le Modèle de Rasch (1PL) sur une banque de questions MCQ.
+
+=== RÉSULTATS HUMAINS ===
+- Convergence : {r.get('human_rasch', {}).get('converged', False)}
+- Capacité moyenne (θ) : {r.get('human_rasch', {}).get('mean_ability', 0):.3f} logits
+- Écart-type des capacités : {r.get('human_rasch', {}).get('std_ability', 0):.3f}
+- Difficulté moyenne (b) : {r.get('human_rasch', {}).get('mean_difficulty', 0):.3f} logits
+- Écart-type des difficultés : {r.get('human_rasch', {}).get('std_difficulty', 0):.3f}
+
+=== RÉSULTATS FOULE ARTIFICIELLE ===
+- Convergence : {r.get('art_rasch', {}).get('converged', False)}
+- Capacité moyenne (θ) : {r.get('art_rasch', {}).get('mean_ability', 0):.3f} logits
+- Écart-type des capacités : {r.get('art_rasch', {}).get('std_ability', 0):.3f}
+- Difficulté moyenne (b) : {r.get('art_rasch', {}).get('mean_difficulty', 0):.3f} logits
+
+=== MÉTRIQUES DE COMPARAISON ===
+- Pearson r : {r.get('comparison', {}).get('pearson_r', 0):.4f}
+- Spearman ρ : {r.get('comparison', {}).get('spearman_r', 0):.4f}
+- MAE : {r.get('comparison', {}).get('mae', 0):.4f}
+- Verdict : {r.get('comparison', {}).get('interpretation', 'N/A')}
+
+Rédige une interprétation pédagogique complète en français (400-600 mots) structurée en 3 parties :
+1. **Analyse des capacités étudiantes** : que révèle la distribution θ sur le niveau général de la classe ?
+2. **Analyse des difficultés des items** : les items sont-ils bien calibrés pour ce niveau ?
+3. **Qualité de la simulation artificielle** : que signifient les métriques de corrélation ? La foule artificielle est-elle représentative ?
+
+Conclus avec 2-3 recommandations concrètes pour l'enseignant."""
+
+    msg = client.messages.create(
+        model="claude-opus-4-5",
+        max_tokens=1500,
+        messages=[{"role": "user", "content": prompt}]
+    )
+    return {"interpretation": msg.content[0].text}
+
+
+@app.post("/api/claude/generate-article")
+async def generate_article(req: ArticleRequest):
+    """Génère une section 'Résultats' pour un article scientifique à partir du rapport Rasch."""
+    client = _get_claude_client(req.api_key)
+    r = req.report
+    prompt = f"""Tu es un chercheur en sciences de l'éducation spécialisé en psychométrie.
+Rédige la section "Résultats" d'un article scientifique académique (format APA) en français,
+basée sur les données de calibration Rasch suivantes :
+
+Capacité humaine moyenne : θ̄ = {r.get('human_rasch', {}).get('mean_ability', 0):.3f} (σ={r.get('human_rasch', {}).get('std_ability', 0):.3f})
+Difficulté humaine moyenne : b̄ = {r.get('human_rasch', {}).get('mean_difficulty', 0):.3f} (σ={r.get('human_rasch', {}).get('std_difficulty', 0):.3f})
+Capacité artificielle moyenne : θ̄ = {r.get('art_rasch', {}).get('mean_ability', 0):.3f} (σ={r.get('art_rasch', {}).get('std_ability', 0):.3f})
+Corrélation de Pearson (humain/artificiel) : r = {r.get('comparison', {}).get('pearson_r', 0):.4f}
+Corrélation de Spearman : ρ = {r.get('comparison', {}).get('spearman_r', 0):.4f}
+MAE : {r.get('comparison', {}).get('mae', 0):.4f}
+Verdict : {r.get('comparison', {}).get('interpretation', 'N/A')}
+
+La section doit :
+- Être rédigée au passé, en style académique neutre
+- Inclure les statistiques descriptives dans le corps du texte
+- Commenter la convergence du modèle et la signification des paramètres Rasch
+- Comparer systématiquement les données humaines aux données artificielles
+- Se terminer par une phrase de transition vers la section Discussion
+- Faire environ 400-500 mots"""
+
+    msg = client.messages.create(
+        model="claude-opus-4-5",
+        max_tokens=1500,
+        messages=[{"role": "user", "content": prompt}]
+    )
+    return {"article_section": msg.content[0].text}
+
+
+@app.post("/api/claude/chat")
+async def analytical_chat(req: ChatRequest):
+    """Chat analytique NLP sur les données psychométriques."""
+    client = _get_claude_client(req.api_key)
+
+    system_prompt = """Tu es PSYCHO, l'assistant analytique de PsychoCrowd, expert en psychométrie, 
+modèle de Rasch, théorie de réponse à l'item (IRT), et analyse de données éducatives.
+Tu réponds en français, de manière précise et pédagogique.
+Si des données de rapport sont fournies, base-toi sur elles pour répondre.
+Si une question sort du domaine psychométrique/éducatif, redirige poliment vers le domaine."""
+
+    if req.report_context:
+        r = req.report_context
+        context = f"""
+=== DONNÉES DE LA SESSION EN COURS ===
+Capacité humaine moyenne : {r.get('human_rasch', {}).get('mean_ability', 'N/A')}
+Difficulté humaine moyenne : {r.get('human_rasch', {}).get('mean_difficulty', 'N/A')}
+Pearson r (humain/artificiel) : {r.get('comparison', {}).get('pearson_r', 'N/A')}
+Verdict : {r.get('comparison', {}).get('interpretation', 'N/A')}
+==="""
+        system_prompt += context
+
+    messages = [{"role": m.role, "content": m.content} for m in req.messages]
+
+    msg = client.messages.create(
+        model="claude-opus-4-5",
+        max_tokens=1000,
+        system=system_prompt,
+        messages=messages
+    )
+    return {"reply": msg.content[0].text}

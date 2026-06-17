@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Papa from 'papaparse';
-import { Settings, BarChart2, Users, FileBarChart, PlayCircle, Search, HelpCircle, Activity, Upload, AlertTriangle, BookOpen, Lightbulb, Database, Download, LogOut } from 'lucide-react';
+import { Settings, BarChart2, Users, FileBarChart, PlayCircle, Search, HelpCircle, Activity, Upload, AlertTriangle, BookOpen, Lightbulb, Database, Download, LogOut, Sparkles, MessageCircle, FileText, Zap, Bot, Send, Copy, CheckCheck } from 'lucide-react';
 import { BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, Tooltip as RechartsTooltip, ResponsiveContainer } from 'recharts';
 import Plot from 'react-plotly.js';
 import LoginPage from './LoginPage';
@@ -31,6 +31,16 @@ function App() {
   const [selectedStudent, setSelectedStudent] = useState('');
   const [mcqData, setMcqData]             = useState([]);
   const [comparisonData, setComparisonData] = useState([]);
+  // ── Claude AI Studio state ──
+  const [claudeApiKey, setClaudeApiKey]   = useState('');
+  const [chatMessages, setChatMessages]   = useState([]);
+  const [chatInput, setChatInput]         = useState('');
+  const [chatLoading, setChatLoading]     = useState(false);
+  const [interpretation, setInterpretation] = useState('');
+  const [interpretLoading, setInterpretLoading] = useState(false);
+  const [articleSection, setArticleSection] = useState('');
+  const [articleLoading, setArticleLoading] = useState(false);
+  const [copiedId, setCopiedId]           = useState(null);
 
   // ── Auth handlers ──
   const handleLogin  = (username) => setCurrentUser(username);
@@ -199,6 +209,14 @@ function App() {
             </div>
             <div className={`nav-item ${activeTab === 'student' ? 'active' : ''}`} onClick={() => setActiveTab('student')}>
               <Search size={18} /> Student Lookup
+            </div>
+          </div>
+
+          <div className="nav-group">
+            <div className="nav-label" style={{color:'#C4A35A'}}>Claude AI</div>
+            <div className={`nav-item ${activeTab === 'claude_studio' ? 'active' : ''}`} onClick={() => setActiveTab('claude_studio')} style={{position:'relative'}}>
+              <Sparkles size={18} /> Claude AI Studio
+              <span style={{marginLeft:'auto', background:'linear-gradient(135deg,#722F37,#C4A35A)', color:'white', fontSize:'0.6rem', padding:'1px 6px', borderRadius:'10px', fontWeight:700}}>NEW</span>
             </div>
           </div>
 
@@ -864,6 +882,240 @@ function App() {
             </div>
           </div>
         )}
+
+        {/* TAB: CLAUDE AI STUDIO */}
+        {activeTab === 'claude_studio' && (() => {
+          const copyToClipboard = (text, id) => {
+            navigator.clipboard.writeText(text);
+            setCopiedId(id);
+            setTimeout(() => setCopiedId(null), 2000);
+          };
+
+          const handleInterpret = async () => {
+            if (!report) return;
+            setInterpretLoading(true);
+            try {
+              const res = await fetch(`${API_BASE_URL}/api/claude/interpret-rasch`, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ report, api_key: claudeApiKey || apiKey })
+              });
+              const data = await res.json();
+              if (!res.ok) throw new Error(data.detail);
+              setInterpretation(data.interpretation);
+            } catch(e) { alert('Erreur: ' + e.message); }
+            finally { setInterpretLoading(false); }
+          };
+
+          const handleGenerateArticle = async () => {
+            if (!report) return;
+            setArticleLoading(true);
+            try {
+              const res = await fetch(`${API_BASE_URL}/api/claude/generate-article`, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ report, api_key: claudeApiKey || apiKey })
+              });
+              const data = await res.json();
+              if (!res.ok) throw new Error(data.detail);
+              setArticleSection(data.article_section);
+            } catch(e) { alert('Erreur: ' + e.message); }
+            finally { setArticleLoading(false); }
+          };
+
+          const handleSendChat = async () => {
+            if (!chatInput.trim()) return;
+            const newMessages = [...chatMessages, { role: 'user', content: chatInput }];
+            setChatMessages(newMessages);
+            setChatInput('');
+            setChatLoading(true);
+            try {
+              const res = await fetch(`${API_BASE_URL}/api/claude/chat`, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                  messages: newMessages,
+                  report_context: report || null,
+                  api_key: claudeApiKey || apiKey
+                })
+              });
+              const data = await res.json();
+              if (!res.ok) throw new Error(data.detail);
+              setChatMessages([...newMessages, { role: 'assistant', content: data.reply }]);
+            } catch(e) { alert('Erreur: ' + e.message); }
+            finally { setChatLoading(false); }
+          };
+
+          const features_info = [
+            { icon: <Zap size={20} color="#722F37"/>, label: 'Calibration MCQ', desc: 'Solve + P(correct) + confidence + difficulté estimée', suffix: `× ${mcqData.length || 'N'} items`, done: true },
+            { icon: <AlertTriangle size={20} color="#F59E0B"/>, label: "Classification d'erreurs", desc: 'error_types + distractor_weights par distracteur', suffix: `× ${mcqData.length || 'N'} items (addon)`, done: true },
+            { icon: <CheckCheck size={20} color="#10B981"/>, label: 'Contrôle qualité items', desc: 'Quality score + flags + détection anomalies', suffix: `× ${mcqData.length || 'N'} items`, done: true },
+          ];
+
+          return (
+            <div className="fade-in">
+              <header className="page-header">
+                <h2 style={{display:'flex',alignItems:'center',gap:'0.5rem'}}><Sparkles size={24} color="#722F37"/> Claude AI Studio</h2>
+                <p>Fonctionnalités avancées propulsées par Claude API d'Anthropic.</p>
+              </header>
+
+              {/* API Key input */}
+              <section className="glass-panel" style={{marginBottom:'2rem', borderLeft:'4px solid #722F37'}}>
+                <div style={{display:'flex', alignItems:'center', gap:'0.75rem', marginBottom:'0.75rem'}}>
+                  <Bot size={20} color="#722F37"/>
+                  <h3 style={{margin:0}}>Clé API Claude</h3>
+                </div>
+                <div style={{display:'flex', gap:'0.75rem', alignItems:'center'}}>
+                  <input
+                    type="password"
+                    className="premium-input"
+                    placeholder="sk-ant-api03-..."
+                    value={claudeApiKey}
+                    onChange={e => setClaudeApiKey(e.target.value)}
+                    style={{maxWidth:'400px'}}
+                  />
+                  <span style={{fontSize:'0.8rem', color: claudeApiKey ? '#10B981' : '#94A3B8', fontWeight:600}}>
+                    {claudeApiKey ? '✓ Clé configurée' : 'Requis pour toutes les fonctionnalités ci-dessous'}
+                  </span>
+                </div>
+              </section>
+
+              {/* Feature cards row 1 — already done by pipeline */}
+              <h3 style={{marginBottom:'1rem', color:'var(--text-muted)', fontSize:'0.8rem', textTransform:'uppercase', letterSpacing:'0.1em'}}>Inclus dans le pipeline de calibration</h3>
+              <div className="stats-grid" style={{marginBottom:'2rem'}}>
+                {features_info.map((f, i) => (
+                  <div key={i} className="glass-panel" style={{borderTop:'3px solid var(--border)', padding:'1.25rem', position:'relative'}}>
+                    <div style={{display:'flex', alignItems:'center', gap:'0.5rem', marginBottom:'0.5rem'}}>
+                      {f.icon}
+                      <span style={{fontWeight:700, fontSize:'0.9rem'}}>{f.label}</span>
+                      <span style={{marginLeft:'auto', background:'#DCFCE7', color:'#15803D', fontSize:'0.65rem', padding:'2px 7px', borderRadius:'10px', fontWeight:700}}>ACTIF</span>
+                    </div>
+                    <p style={{margin:0, fontSize:'0.82rem', color:'var(--text-muted)'}}>{f.desc}</p>
+                    <p style={{margin:'0.25rem 0 0', fontSize:'0.75rem', color:'#94A3B8', fontStyle:'italic'}}>{f.suffix}</p>
+                  </div>
+                ))}
+              </div>
+
+              <h3 style={{marginBottom:'1rem', color:'var(--text-muted)', fontSize:'0.8rem', textTransform:'uppercase', letterSpacing:'0.1em'}}>Fonctionnalités interactives</h3>
+
+              {/* Interpretation Rasch */}
+              <section className="glass-panel" style={{marginBottom:'1.5rem'}}>
+                <div style={{display:'flex', alignItems:'center', justifyContent:'space-between', flexWrap:'wrap', gap:'1rem', marginBottom:'1rem'}}>
+                  <div style={{display:'flex', alignItems:'center', gap:'0.75rem'}}>
+                    <Activity size={20} color="#7C3AED"/>
+                    <div>
+                      <div style={{fontWeight:700}}>Interprétation Rasch</div>
+                      <div style={{fontSize:'0.8rem', color:'var(--text-muted)'}}>Explication pédagogique des résultats de calibration — une fois par session</div>
+                    </div>
+                  </div>
+                  <button
+                    className="btn btn-primary"
+                    onClick={handleInterpret}
+                    disabled={interpretLoading || !report}
+                    style={{background:'linear-gradient(135deg, #7C3AED, #4C1D95)'}}
+                  >
+                    {interpretLoading ? <span className="spinner"/> : <Sparkles size={16}/>}
+                    {interpretLoading ? 'Génération...' : 'Générer'}
+                  </button>
+                </div>
+                {!report && <p style={{color:'#94A3B8', fontSize:'0.85rem', margin:0}}>⚠️ Lancez d'abord une simulation depuis l'onglet Configuration.</p>}
+                {interpretation && (
+                  <div style={{background:'#F8FAFC', borderRadius:8, padding:'1.25rem', marginTop:'1rem', position:'relative'}}>
+                    <button onClick={() => copyToClipboard(interpretation, 'interp')} style={{position:'absolute',top:'0.75rem',right:'0.75rem', background:'none', border:'none', cursor:'pointer', color:'#94A3B8'}}>
+                      {copiedId === 'interp' ? <CheckCheck size={16} color="#10B981"/> : <Copy size={16}/>}
+                    </button>
+                    <pre style={{margin:0, whiteSpace:'pre-wrap', fontFamily:'inherit', fontSize:'0.88rem', lineHeight:1.7, color:'#334155'}}>{interpretation}</pre>
+                  </div>
+                )}
+              </section>
+
+              {/* Article Section */}
+              <section className="glass-panel" style={{marginBottom:'1.5rem'}}>
+                <div style={{display:'flex', alignItems:'center', justifyContent:'space-between', flexWrap:'wrap', gap:'1rem', marginBottom:'1rem'}}>
+                  <div style={{display:'flex', alignItems:'center', gap:'0.75rem'}}>
+                    <FileText size={20} color="#059669"/>
+                    <div>
+                      <div style={{fontWeight:700}}>Rédaction section article</div>
+                      <div style={{fontSize:'0.8rem', color:'var(--text-muted)'}}>Section Résultats auto-générée à partir du rapport Rasch — format APA académique</div>
+                    </div>
+                  </div>
+                  <button
+                    className="btn btn-primary"
+                    onClick={handleGenerateArticle}
+                    disabled={articleLoading || !report}
+                    style={{background:'linear-gradient(135deg, #059669, #065F46)'}}
+                  >
+                    {articleLoading ? <span className="spinner"/> : <FileText size={16}/>}
+                    {articleLoading ? 'Rédaction...' : 'Générer'}
+                  </button>
+                </div>
+                {!report && <p style={{color:'#94A3B8', fontSize:'0.85rem', margin:0}}>⚠️ Lancez d'abord une simulation depuis l'onglet Configuration.</p>}
+                {articleSection && (
+                  <div style={{background:'#F0FDF4', border:'1px solid #86EFAC', borderRadius:8, padding:'1.25rem', marginTop:'1rem', position:'relative'}}>
+                    <button onClick={() => copyToClipboard(articleSection, 'article')} style={{position:'absolute',top:'0.75rem',right:'0.75rem', background:'none', border:'none', cursor:'pointer', color:'#94A3B8'}}>
+                      {copiedId === 'article' ? <CheckCheck size={16} color="#10B981"/> : <Copy size={16}/>}
+                    </button>
+                    <pre style={{margin:0, whiteSpace:'pre-wrap', fontFamily:'inherit', fontSize:'0.88rem', lineHeight:1.7, color:'#14532D'}}>{articleSection}</pre>
+                  </div>
+                )}
+              </section>
+
+              {/* Analytical Chat */}
+              <section className="glass-panel">
+                <div style={{display:'flex', alignItems:'center', gap:'0.75rem', marginBottom:'1rem'}}>
+                  <MessageCircle size={20} color="#0EA5E9"/>
+                  <div>
+                    <div style={{fontWeight:700}}>Chat analytique PSYCHO</div>
+                    <div style={{fontSize:'0.8rem', color:'var(--text-muted)'}}>Questions NLP sur vos données psychométriques — contextualisé avec votre session</div>
+                  </div>
+                </div>
+                {/* Messages */}
+                <div style={{minHeight:180, maxHeight:360, overflowY:'auto', background:'#F8FAFC', borderRadius:8, padding:'1rem', marginBottom:'1rem', display:'flex', flexDirection:'column', gap:'0.75rem'}}>
+                  {chatMessages.length === 0 && (
+                    <div style={{textAlign:'center', color:'#94A3B8', padding:'2rem 0'}}>
+                      <Bot size={32} style={{marginBottom:'0.5rem', opacity:0.4}}/>
+                      <p style={{margin:0, fontSize:'0.85rem'}}>Posez une question sur vos données Rasch ou sur la psychométrie en général.</p>
+                    </div>
+                  )}
+                  {chatMessages.map((m, i) => (
+                    <div key={i} style={{
+                      alignSelf: m.role === 'user' ? 'flex-end' : 'flex-start',
+                      background: m.role === 'user' ? '#722F37' : 'white',
+                      color: m.role === 'user' ? 'white' : '#1E293B',
+                      borderRadius: m.role === 'user' ? '12px 12px 0 12px' : '12px 12px 12px 0',
+                      padding:'0.75rem 1rem',
+                      maxWidth:'85%',
+                      fontSize:'0.88rem',
+                      lineHeight:1.6,
+                      boxShadow: '0 1px 4px rgba(0,0,0,0.08)',
+                      border: m.role === 'assistant' ? '1px solid var(--border)' : 'none',
+                      whiteSpace:'pre-wrap'
+                    }}>{m.content}</div>
+                  ))}
+                  {chatLoading && (
+                    <div style={{alignSelf:'flex-start', display:'flex', gap:'4px', padding:'0.75rem 1rem', background:'white', borderRadius:'12px 12px 12px 0', border:'1px solid var(--border)'}}>
+                      {[0,1,2].map(i => <span key={i} style={{width:6,height:6,background:'#94A3B8',borderRadius:'50%',animation:`bounce 1s ${i*0.2}s infinite`}}/>)}
+                    </div>
+                  )}
+                </div>
+                {/* Input */}
+                <div style={{display:'flex', gap:'0.75rem'}}>
+                  <input
+                    className="premium-input"
+                    placeholder="Ex: Que signifie un θ négatif ? Mes items sont-ils trop difficiles ?"
+                    value={chatInput}
+                    onChange={e => setChatInput(e.target.value)}
+                    onKeyDown={e => e.key === 'Enter' && !e.shiftKey && handleSendChat()}
+                    disabled={chatLoading}
+                  />
+                  <button className="btn btn-primary" onClick={handleSendChat} disabled={chatLoading || !chatInput.trim()} style={{padding:'0 1.25rem', whiteSpace:'nowrap'}}>
+                    <Send size={16}/>
+                  </button>
+                </div>
+              </section>
+            </div>
+          );
+        })()}
 
       </main>
     </div>
