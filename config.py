@@ -1,3 +1,4 @@
+
 # config.py
 """Central configuration for the PsychoCrowd project."""
 
@@ -15,13 +16,25 @@ PLOTS_DIR         = OUTPUTS_DIR / "plots"
 MCQ_PATH          = DATA_DIR / "mcq_bank.csv"
 HUMAN_PATH        = DATA_DIR / "human_responses.csv"
 
-# ── Claude API ──────────────────────────────────────────────────────────
-ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
-CLAUDE_MODEL      = "claude-3-5-sonnet-20241022"
-CLAUDE_MAX_TOKENS = 512
-CLAUDE_DELAY_SEC  = 1.0
-CLAUDE_MAX_RETRY  = 3
-CLAUDE_RETRY_WAIT = 10
+# ── LLM API Keys & Endpoints ───────────────────────────────────────────
+# Load from environment variables. They are NOT hardcoded.
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
+N8N_WEBHOOK_URL    = os.getenv("N8N_WEBHOOK_URL", "")
+
+# ── Model Configuration ─────────────────────────────────────────────────
+# This allows easy switching and holds model-specific details
+SOLVER_CONFIG = {
+    "n8n": {
+        "api_key": OPENROUTER_API_KEY, # The n8n solver will use this key
+        "webhook_url": N8N_WEBHOOK_URL,
+        "available_models": {
+            "DeepSeek Coder V2": "deepseek/deepseek-coder-v2-lite-instruct",
+            "Kimi (Moonshot)": "moonshot/moonshot-v1-8k",
+            "Claude 3.5 Sonnet": "anthropic/claude-3.5-sonnet",
+            "GPT-4o": "openai/gpt-4o"
+        }
+    }
+}
 
 # ── Supabase ────────────────────────────────────────────────────────────
 SUPABASE_URL      = os.getenv("SUPABASE_URL", "")
