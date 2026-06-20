@@ -21,6 +21,15 @@ HUMAN_PATH        = DATA_DIR / "human_responses.csv"
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
 N8N_WEBHOOK_URL    = os.getenv("N8N_WEBHOOK_URL", "")
 
+GEMINI_API_KEY    = os.getenv("GEMINI_API_KEY", "")
+GEMINI_MODEL      = "gemini-2.5-flash"
+GEMINI_DELAY_SEC  = 1.0
+GEMINI_MAX_RETRY  = 3
+GEMINI_RETRY_WAIT = 10
+
+DEEPSEEK_API_KEY  = os.getenv("DEEPSEEK_API_KEY", "")
+DEEPSEEK_MODEL    = "deepseek-chat"
+
 # ── Model Configuration ─────────────────────────────────────────────────
 # This allows easy switching and holds model-specific details
 SOLVER_CONFIG = {

@@ -14,13 +14,13 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).parent.parent))
 
 from src.supabase_client import get_supabase_client
-from src.claude_solver import ClaudeMCQSolver
+from src.gemini_solver import GeminiMCQSolver
 from src.mock_solver import MockMCQSolver
 from src.profile_generator import build_probability_matrix
 from src.crowd_generator import CrowdGenerator
 from src.rasch_model import RaschModel
 from src.comparator import PsychometricComparator
-from config import ANTHROPIC_API_KEY
+from config import GEMINI_API_KEY, DEEPSEEK_API_KEY, DEEPSEEK_MODEL
 
 app = FastAPI(title="PsychoCrowd API - V3")
 
@@ -54,7 +54,7 @@ class MCQItem(BaseModel):
 
 class CalibrateRequest(BaseModel):
     items: List[dict]
-    use_claude: bool = True
+    use_gemini: bool = True
 
 class SimulateRequest(BaseModel):
     items: List[dict] # Calibrated items (with ai_confidence, distractor_weights etc)
@@ -85,11 +85,11 @@ def create_item(item: MCQItem, db=Depends(get_db)):
 
 @app.post("/calibrate")
 def calibrate_items(req: CalibrateRequest):
-    """Calibrate items using Claude or Mock Solver."""
+    """Calibrate items using Gemini or Mock Solver."""
     df = pd.DataFrame(req.items)
     
-    if req.use_claude and ANTHROPIC_API_KEY:
-        solver = ClaudeMCQSolver()
+    if req.use_gemini and GEMINI_API_KEY:
+        solver = GeminiMCQSolver()
     else:
         solver = MockMCQSolver()
         
@@ -190,8 +190,8 @@ async def run_pipeline(
     
     use_ai = use_gemini.lower() == "true"
 
-    if use_ai and (api_key or ANTHROPIC_API_KEY):
-        solver = ClaudeMCQSolver()
+    if use_ai and (api_key or GEMINI_API_KEY):
+        solver = GeminiMCQSolver(api_key=api_key or GEMINI_API_KEY)
     else:
         solver = MockMCQSolver()
         
@@ -247,7 +247,7 @@ async def run_pipeline(
         "comparison": comp.full_metrics(),
         "human_thetas": {f"H_{i}": float(human_rasch.theta[i]) for i in range(len(human_rasch.theta))},
         "art_thetas": {f"A_{i}": float(art_rasch.theta[i]) for i in range(len(art_rasch.theta))},
-        "context_summary": "Analyse effectuée avec succès via Claude API.",
+        "context_summary": "Analyse effectuée avec succès via Gemini API.",
         "ai_recommendations": [],
         "plots_data": {
             "scatter": comp.get_scatter_data(),
@@ -259,7 +259,7 @@ async def run_pipeline(
     return {"report": report}
 
 
-# ── CLAUDE AI STUDIO ENDPOINTS ──────────────────────────────────────────────
+# ── AI STUDIO ENDPOINTS (DEEPSEEK) ────────────────────────────────────────
 
 class ChatMessage(BaseModel):
     role: str   # "user" or "assistant"
@@ -279,18 +279,18 @@ class ArticleRequest(BaseModel):
     api_key: Optional[str] = ""
 
 
-def _get_claude_client(api_key: str = ""):
-    import anthropic
-    key = api_key or ANTHROPIC_API_KEY
+def _get_deepseek_client(api_key: str = ""):
+    import openai
+    key = api_key or DEEPSEEK_API_KEY
     if not key:
-        raise HTTPException(status_code=400, detail="Clé API Claude requise pour cette fonctionnalité.")
-    return anthropic.Anthropic(api_key=key)
+        raise HTTPException(status_code=400, detail="Clé API DeepSeek requise pour cette fonctionnalité.")
+    return openai.OpenAI(api_key=key, base_url="https://api.deepseek.com")
 
 
-@app.post("/api/claude/interpret-rasch")
+@app.post("/api/ai/interpret-rasch")
 async def interpret_rasch(req: InterpretRequest):
-    """Génère une interprétation pédagogique des résultats Rasch via Claude."""
-    client = _get_claude_client(req.api_key)
+    """Génère une interprétation pédagogique des résultats Rasch via DeepSeek."""
+    client = _get_deepseek_client(req.api_key)
     r = req.report
     prompt = f"""Tu es un expert en psychométrie et en pédagogie. 
 Voici les résultats d'une calibration par le Modèle de Rasch (1PL) sur une banque de questions MCQ.
@@ -321,18 +321,17 @@ Rédige une interprétation pédagogique complète en français (400-600 mots) s
 
 Conclus avec 2-3 recommandations concrètes pour l'enseignant."""
 
-    msg = client.messages.create(
-        model="claude-opus-4-5",
-        max_tokens=1500,
+    response = client.chat.completions.create(
+        model=DEEPSEEK_MODEL,
         messages=[{"role": "user", "content": prompt}]
     )
-    return {"interpretation": msg.content[0].text}
+    return {"interpretation": response.choices[0].message.content}
 
 
-@app.post("/api/claude/generate-article")
+@app.post("/api/ai/generate-article")
 async def generate_article(req: ArticleRequest):
-    """Génère une section 'Résultats' pour un article scientifique à partir du rapport Rasch."""
-    client = _get_claude_client(req.api_key)
+    """Génère une section 'Résultats' pour un article scientifique à partir du rapport Rasch via DeepSeek."""
+    client = _get_deepseek_client(req.api_key)
     r = req.report
     prompt = f"""Tu es un chercheur en sciences de l'éducation spécialisé en psychométrie.
 Rédige la section "Résultats" d'un article scientifique académique (format APA) en français,
@@ -354,18 +353,17 @@ La section doit :
 - Se terminer par une phrase de transition vers la section Discussion
 - Faire environ 400-500 mots"""
 
-    msg = client.messages.create(
-        model="claude-opus-4-5",
-        max_tokens=1500,
+    response = client.chat.completions.create(
+        model=DEEPSEEK_MODEL,
         messages=[{"role": "user", "content": prompt}]
     )
-    return {"article_section": msg.content[0].text}
+    return {"article_section": response.choices[0].message.content}
 
 
-@app.post("/api/claude/chat")
+@app.post("/api/ai/chat")
 async def analytical_chat(req: ChatRequest):
-    """Chat analytique NLP sur les données psychométriques."""
-    client = _get_claude_client(req.api_key)
+    """Chat analytique NLP sur les données psychométriques via DeepSeek."""
+    client = _get_deepseek_client(req.api_key)
 
     system_prompt = """Tu es PSYCHO, l'assistant analytique de PsychoCrowd, expert en psychométrie, 
 modèle de Rasch, théorie de réponse à l'item (IRT), et analyse de données éducatives.
@@ -384,12 +382,11 @@ Verdict : {r.get('comparison', {}).get('interpretation', 'N/A')}
 ==="""
         system_prompt += context
 
-    messages = [{"role": m.role, "content": m.content} for m in req.messages]
+    messages = [{"role": "system", "content": system_prompt}]
+    messages.extend([{"role": m.role, "content": m.content} for m in req.messages])
 
-    msg = client.messages.create(
-        model="claude-opus-4-5",
-        max_tokens=1000,
-        system=system_prompt,
+    response = client.chat.completions.create(
+        model=DEEPSEEK_MODEL,
         messages=messages
     )
-    return {"reply": msg.content[0].text}
+    return {"reply": response.choices[0].message.content}

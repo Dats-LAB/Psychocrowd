@@ -31,8 +31,8 @@ function App() {
   const [selectedStudent, setSelectedStudent] = useState('');
   const [mcqData, setMcqData]             = useState([]);
   const [comparisonData, setComparisonData] = useState([]);
-  // ── Claude AI Studio state ──
-  const [claudeApiKey, setClaudeApiKey]   = useState('');
+  // ── AI Studio state ──
+  const [deepseekApiKey, setDeepseekApiKey]   = useState('');
   const [chatMessages, setChatMessages]   = useState([]);
   const [chatInput, setChatInput]         = useState('');
   const [chatLoading, setChatLoading]     = useState(false);
@@ -213,9 +213,9 @@ function App() {
           </div>
 
           <div className="nav-group">
-            <div className="nav-label" style={{color:'#C4A35A'}}>Claude AI</div>
+            <div className="nav-label" style={{color:'#C4A35A'}}>AI Studio</div>
             <div className={`nav-item ${activeTab === 'claude_studio' ? 'active' : ''}`} onClick={() => setActiveTab('claude_studio')} style={{position:'relative'}}>
-              <Sparkles size={18} /> Claude AI Studio
+              <Sparkles size={18} /> AI Studio
               <span style={{marginLeft:'auto', background:'linear-gradient(135deg,#722F37,#C4A35A)', color:'white', fontSize:'0.6rem', padding:'1px 6px', borderRadius:'10px', fontWeight:700}}>NEW</span>
             </div>
           </div>
@@ -273,17 +273,17 @@ function App() {
                 <div className="form-group row-flex" style={{marginTop: '1.5rem'}}>
                   <label className="toggle-switch">
                     <input type="checkbox" checked={useGemini} onChange={(e) => setUseGemini(e.target.checked)} />
-                    <span>ENABLE CLAUDE AI API</span>
+                    <span>ENABLE GEMINI API</span>
                   </label>
                   <p className="help-text">Uses AI to estimate item difficulty. Otherwise falls back to Mock engine.</p>
                   
                   {useGemini && (
                     <div className="form-group fade-in" style={{marginTop: '1rem'}}>
-                      <label>CLAUDE API KEY</label>
+                      <label>GEMINI API KEY</label>
                       <input 
                         type="password" 
                         className="premium-input" 
-                        placeholder="sk-ant-..." 
+                        placeholder="AIzaSy..." 
                         value={apiKey}
                         onChange={(e) => setApiKey(e.target.value)}
                       />
@@ -915,7 +915,7 @@ function App() {
                     </table>
                   </div>
                   <div style={{background:'#FFF7ED', border:'1px solid #FED7AA', borderRadius:8, padding:'0.75rem', marginTop:'1rem'}}>
-                    <strong>💡 Astuce :</strong> Si votre CSV n'a pas de colonne <code>correct_option</code> ni <code>difficulty_expert</code>, PsychoCrowd les génère automatiquement grâce à des heuristiques textuelles (Mode Mock) ou via Claude API.
+                    <strong>💡 Astuce :</strong> Si votre CSV n'a pas de colonne <code>correct_option</code> ni <code>difficulty_expert</code>, PsychoCrowd les génère automatiquement grâce à des heuristiques textuelles (Mode Mock) ou via Gemini API.
                   </div>
                 </div>
               )
@@ -924,7 +924,7 @@ function App() {
               id: 'calibration',
               icon: '⚡',
               color: '#F59E0B',
-              title: 'Calibration des items — Mode Mock vs Claude API',
+              title: 'Calibration des items — Mode Mock vs Gemini API',
               content: (
                 <div>
                   <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:'1rem', marginBottom:'1rem'}}>
@@ -940,7 +940,7 @@ function App() {
                       </ul>
                     </div>
                     <div style={{background:'#F5F3FF', borderRadius:8, padding:'1rem', borderTop:'3px solid #7C3AED'}}>
-                      <strong>🤖 Mode Claude API</strong>
+                      <strong>🤖 Mode Gemini API</strong>
                       <ul style={{marginTop:'0.5rem', paddingLeft:'1.25rem', fontSize:'0.85rem', lineHeight:1.8}}>
                         <li>Analyse le texte réel des questions</li>
                         <li>Identifie la bonne réponse par raisonnement</li>
@@ -1092,10 +1092,10 @@ function App() {
               id: 'claude_studio',
               icon: '✨',
               color: '#8B5CF6',
-              title: 'Claude AI Studio — 6 fonctionnalités avancées',
+              title: 'AI Studio — 6 fonctionnalités avancées',
               content: (
                 <div>
-                  <p>L'onglet <strong>Claude AI Studio</strong> centralise toutes les fonctionnalités alimentées par Claude API d'Anthropic.</p>
+                  <p>L'onglet <strong>AI Studio</strong> centralise toutes les fonctionnalités alimentées par les APIs Gemini et DeepSeek.</p>
                   <div style={{display:'flex', flexDirection:'column', gap:'0.75rem', marginTop:'0.75rem'}}>
                     {[
                       {label:'⚡ Calibration MCQ', desc:'Analyse IA du texte des questions pour estimer P(correct), difficulté et types d\'erreurs. Activé automatiquement dans le pipeline si une clé API est fournie.'},
@@ -1127,7 +1127,7 @@ function App() {
                     {q:'Failed to fetch — que faire ?', a:'Vérifiez que le backend est bien démarré. En local, lancez "uvicorn api.app:app --host 0.0.0.0 --port 8000" dans le terminal. Sur Railway, vérifiez que le service est actif sur votre tableau de bord.'},
                     {q:'Quelle est la différence entre le Wright Map et le Scatter Comparison ?', a:'Le Wright Map montre la distribution des θ étudiants face aux b items sur une même échelle de logits. Le Scatter Comparison compare les b estimés depuis les données humaines vs les données artificielles pour mesurer la fidélité de la simulation.'},
                     {q:'Puis-je utiliser n\'importe quel format de CSV ?', a:'Oui. Le système accepte les séparateurs virgule et point-virgule, et détecte automatiquement les encodages UTF-8, Windows-1252 et Latin1. Les noms de colonnes sont aussi normalisés (majuscules/minuscules ignorées, tirets et underscores interchangeables).'},
-                    {q:'Comment obtenir une clé API Claude ?', a:'Rendez-vous sur console.anthropic.com, créez un compte, et générez une clé API dans la section "API Keys". La clé commence par "sk-ant-api03-". Les plans gratuits permettent de tester. Chaque appel dans PsychoCrowd consomme environ 500-1500 tokens.'},
+                    {q:'Comment obtenir une clé API ?', a:'Rendez-vous sur Google AI Studio (Gemini) ou la plateforme DeepSeek, créez un compte, et générez vos clés API. Les plans gratuits permettent de tester.'},
                   ].map((faq,i)=>(
                     <div key={i} style={{background:'#F8FAFC', borderRadius:8, padding:'0.875rem', border:'1px solid #E2E8F0'}}>
                       <div style={{fontWeight:600, marginBottom:'0.35rem', fontSize:'0.9rem'}}>Q : {faq.q}</div>
@@ -1208,10 +1208,10 @@ function App() {
             if (!report) return;
             setInterpretLoading(true);
             try {
-              const res = await fetch(`${API_BASE_URL}/api/claude/interpret-rasch`, {
+              const res = await fetch(`${API_BASE_URL}/api/ai/interpret-rasch`, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({ report, api_key: claudeApiKey || apiKey })
+                body: JSON.stringify({ report, api_key: deepseekApiKey })
               });
               const data = await res.json();
               if (!res.ok) throw new Error(data.detail);
@@ -1224,10 +1224,10 @@ function App() {
             if (!report) return;
             setArticleLoading(true);
             try {
-              const res = await fetch(`${API_BASE_URL}/api/claude/generate-article`, {
+              const res = await fetch(`${API_BASE_URL}/api/ai/generate-article`, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({ report, api_key: claudeApiKey || apiKey })
+                body: JSON.stringify({ report, api_key: deepseekApiKey })
               });
               const data = await res.json();
               if (!res.ok) throw new Error(data.detail);
@@ -1243,13 +1243,13 @@ function App() {
             setChatInput('');
             setChatLoading(true);
             try {
-              const res = await fetch(`${API_BASE_URL}/api/claude/chat`, {
+              const res = await fetch(`${API_BASE_URL}/api/ai/chat`, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({
                   messages: newMessages,
                   report_context: report || null,
-                  api_key: claudeApiKey || apiKey
+                  api_key: deepseekApiKey
                 })
               });
               const data = await res.json();
@@ -1268,27 +1268,27 @@ function App() {
           return (
             <div className="fade-in">
               <header className="page-header">
-                <h2 style={{display:'flex',alignItems:'center',gap:'0.5rem'}}><Sparkles size={24} color="#722F37"/> Claude AI Studio</h2>
-                <p>Fonctionnalités avancées propulsées par Claude API d'Anthropic.</p>
+                <h2 style={{display:'flex',alignItems:'center',gap:'0.5rem'}}><Sparkles size={24} color="#722F37"/> AI Studio (DeepSeek)</h2>
+                <p>Fonctionnalités avancées propulsées par l'API DeepSeek.</p>
               </header>
 
               {/* API Key input */}
               <section className="glass-panel" style={{marginBottom:'2rem', borderLeft:'4px solid #722F37'}}>
                 <div style={{display:'flex', alignItems:'center', gap:'0.75rem', marginBottom:'0.75rem'}}>
                   <Bot size={20} color="#722F37"/>
-                  <h3 style={{margin:0}}>Clé API Claude</h3>
+                  <h3 style={{margin:0}}>Clé API DeepSeek</h3>
                 </div>
                 <div style={{display:'flex', gap:'0.75rem', alignItems:'center'}}>
                   <input
                     type="password"
                     className="premium-input"
-                    placeholder="sk-ant-api03-..."
-                    value={claudeApiKey}
-                    onChange={e => setClaudeApiKey(e.target.value)}
+                    placeholder="sk-..."
+                    value={deepseekApiKey}
+                    onChange={e => setDeepseekApiKey(e.target.value)}
                     style={{maxWidth:'400px'}}
                   />
-                  <span style={{fontSize:'0.8rem', color: claudeApiKey ? '#10B981' : '#94A3B8', fontWeight:600}}>
-                    {claudeApiKey ? '✓ Clé configurée' : 'Requis pour toutes les fonctionnalités ci-dessous'}
+                  <span style={{fontSize:'0.8rem', color: deepseekApiKey ? '#10B981' : '#94A3B8', fontWeight:600}}>
+                    {deepseekApiKey ? '✓ Clé configurée' : 'Requis pour toutes les fonctionnalités ci-dessous'}
                   </span>
                 </div>
               </section>
