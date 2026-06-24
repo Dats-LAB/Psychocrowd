@@ -1,51 +1,58 @@
-# Standard Operating Procedure (SOP) - PsychoCrowd
+# Standard Operating Procedure (SOP) - PsychoCrowd V3
 
 ## 1. Objectif (Purpose)
-PsychoCrowd est un moteur psychométrique propulsé par l'IA. Son objectif est de simuler des foules d'étudiants artificiels passant des évaluations sous forme de QCM de mathématiques, et de comparer leur comportement psychométrique avec celui d'étudiants humains réels en utilisant le modèle de Rasch (IRT 1PL).
+PsychoCrowd est un moteur de simulation psychométrique propulsé par l'IA. Son objectif est de simuler des foules d'étudiants artificiels passant des évaluations (QCM de mathématiques) et de comparer leur comportement avec celui d'étudiants humains réels via le modèle de Rasch (IRT 1PL). Cela permet de valider le réalisme des modèles d'IA et de fournir des diagnostics pédagogiques avancés.
 
-## 2. Prérequis (Prerequisites)
-- Environnement Python 3.9+
-- Dépendances installées : `pip install -r requirements.txt` (inclut Streamlit, Pandas, Numpy, Plotly, etc.)
-- (Optionnel) Une clé API Google Gemini si vous souhaitez utiliser l'IA générative pour résoudre les questions au lieu du solveur par défaut (Mock).
+## 2. Architecture Technique (V3)
+La plateforme a évolué vers une architecture robuste "Full-Stack" :
+- **Backend** : FastAPI (Python) gérant l'orchestration, les calculs IRT et les intégrations LLM.
+- **Frontend Premium** : Interface React moderne (Vite) avec tableaux de bord interactifs (Plotly/Recharts).
+- **Core Engine** : Suite de modules Python (`src/`) pour le traitement statistique et la simulation de Monte Carlo.
+- **Modèles d'IA** : Intégration de Google Gemini (Calibration) et DeepSeek (Analyse & Chat).
 
-## 3. Préparation des Données (Data Preparation)
-Pour utiliser vos propres données, préparez deux fichiers CSV :
-1. **Banque QCM (`mcq_bank.csv`)** : Doit contenir au minimum les colonnes `item_id`, `question`, `option_a`, `option_b`, `option_c`, `option_d`, `correct_option` (A, B, C, ou D), et `difficulty_expert` (easy, medium, hard).
-2. **Réponses Humaines (`human_responses.csv`)** : Doit contenir les colonnes `student_id`, `item_id`, et `response` (1 pour juste, 0 pour faux).
+## 3. Le Pipeline de Traitement (8 Étapes)
+PsychoCrowd exécute un flux de travail automatisé :
+1. **Chargement** : Lecture des QCM et des réponses humaines (si disponibles).
+2. **Normalisation** : Nettoyage des symboles mathématiques et normalisation des colonnes CSV.
+3. **Calibration IA** : Le LLM (Gemini) résout les questions, estime la difficulté et identifie les distracteurs.
+4. **Matrice de Profils** : Création de 4 profils (Expert, Bon, Moyen, Faible) avec des deltas de performance.
+5. **Génération de Foule** : Simulation de 200 étudiants synthétiques.
+6. **Modélisation de Rasch (Humain)** : Calcul des paramètres $\theta$ et $b$ sur les données réelles.
+7. **Modélisation de Rasch (IA)** : Calcul identique sur les données simulées.
+8. **Validation & Comparaison** : Calcul des corrélations de Pearson/Spearman et production du rapport final.
 
-*Note : Si aucun fichier n'est fourni, PsychoCrowd générera automatiquement des données fictives pour vous permettre de tester l'outil.*
+## 4. Fonctionnalités Clés
 
-## 4. Procédure d'Utilisation (Step-by-Step Workflow)
+### 4.1 AI Studio (Interprétation & Rédaction)
+Grâce à l'intégration de DeepSeek, la plateforme propose :
+- **Interprétation Rasch** : Analyse textuelle détaillée de la convergence et des résultats.
+- **Rédaction d'Articles** : Génération d'une section "Résultats" au format académique APA.
+- **Chat "PSYCHO"** : Assistant conversationnel expert capable d'analyser les données de la session en cours.
 
-### Étape 4.1 : Lancement de l'Interface
-Ouvrez un terminal, placez-vous dans le dossier du projet et exécutez :
-```bash
-streamlit run dashboard.py
-```
-Ouvrez ensuite le lien local dans votre navigateur (généralement `http://localhost:8501`).
+### 4.2 Moteur de Recherche Élève (Pronostics)
+- **Compétence Latente** : Mesure du niveau réel ($\theta$) en unités Logit.
+- **Prédictions IRT** : Estimation de la probabilité de réussite sur chaque question via la formule logistique de Rasch.
+- **Alertes de Risque** : Identification des 5 items les plus critiques pour un élève avec recommandations de remédiation ciblées par domaine (Algèbre, Calcul, Géométrie, etc.).
 
-### Étape 4.2 : Importation
-Dans la barre latérale gauche (Sidebar) :
-- Glissez-déposez votre fichier de QCM dans "Banque QCM (CSV)".
-- Glissez-déposez vos réponses d'élèves dans "Réponses Humaines (CSV)".
+## 5. Guide d'Utilisation
 
-### Étape 4.3 : Configuration de l'IA
-- Réglez le "Nombre d'étudiants par profil" (par défaut : 10). Cela déterminera la taille de la foule synthétique générée.
-- Activez "Google Gemini API" si vous possédez une clé API, sinon laissez l'option désactivée pour utiliser la simulation locale ultrarapide.
+### Étape 5.1 : Importation
+Dans l'onglet **Configuration** :
+- Déposez votre banque QCM (`mcq_bank.csv`).
+- (Optionnel) Déposez les réponses humaines (`human_responses.csv`).
+- Activez l'API Gemini pour une calibration haute fidélité.
 
-### Étape 4.4 : Exécution
-Cliquez sur le bouton **"🚀 LANCER LA SIMULATION"**. 
-Attendez que l'indicateur de progression disparaisse. L'opération prend généralement entre 5 et 15 secondes.
+### Étape 5.2 : Exécution
+Cliquez sur **"Launch Simulation"**. Le backend va orchestrer le pipeline (durée : 1-2 min selon la taille du test).
 
-## 5. Analyse des Résultats (Analyzing Results)
-Naviguez à travers les onglets du tableau de bord :
-- **Banque d'Items** : Vérifiez que vos questions ont été correctement importées et classées.
-- **Foule Synthétique** : Observez la matrice de réponse générée par l'IA et vérifiez que les profils (Expert, Bon, Moyen, Faible) respectent les probabilités de réussite attendues.
-- **Moteur Rasch** : Vérifiez la "Convergence" du modèle (qui doit être à "Oui"). Analysez la Carte de Wright pour voir l'alignement entre la difficulté des questions et le niveau des élèves.
-- **Validation** : Vérifiez la corrélation de Pearson et de Spearman. Un coefficient > 0.8 indique une excellente concordance entre le comportement humain et artificiel.
-- **Recherche Élève** : Utilisez cet onglet pour faire un audit granulaire sur un étudiant spécifique (humain ou artificiel) et voir ses réponses item par item.
+### Étape 5.3 : Analyse
+Naviguez dans les onglets :
+- **Item Bank** : Vérifiez la distribution des difficultés.
+- **Rasch Model** : Observez la **Wright Map** pour l'alignement personne-item.
+- **Validation** : Confirmez la fidélité de la simulation (Pearson $r > 0.85$ recommandé).
+- **Student Lookup** : Effectuez un diagnostic individuel.
 
-## 6. Dépannage (Troubleshooting)
-- **Erreur de chargement CSV** : Vérifiez que vos fichiers CSV utilisent bien la virgule `,` comme séparateur et respectent strictement le nom des colonnes requises.
-- **Modèle Rasch non convergent** : Cela arrive si les données sont trop extrêmes (étudiants qui ont 100% ou 0%). L'algorithme applique une correction, mais assurez-vous d'avoir une variance suffisante dans vos données réelles.
-- **Boutons inactifs** : Assurez-vous que le serveur Streamlit tourne toujours dans le terminal de fond.
+## 6. Dépannage
+- **Erreur de chargement CSV** : Le système accepte les délimiteurs `,` et `;`. Vérifiez l'encodage (UTF-8 conseillé).
+- **API Key** : Assurez-vous d'avoir une clé valide pour Gemini (Calibration) et DeepSeek (Studio).
+- **Non-convergence** : Si le modèle ne converge pas, augmentez le nombre d'étudiants par profil ou vérifiez la variance de vos données.
