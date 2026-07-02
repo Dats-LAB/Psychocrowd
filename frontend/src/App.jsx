@@ -145,9 +145,17 @@ function App() {
         method: 'POST',
         body: formData,
       });
-      
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.detail || 'Pipeline failed');
+
+      // Safely parse JSON — the response may be empty or non-JSON on server errors
+      let data;
+      try {
+        const text = await res.text();
+        data = text ? JSON.parse(text) : {};
+      } catch {
+        throw new Error(`Réponse invalide du serveur (statut ${res.status}). Vérifiez que le backend est bien démarré.`);
+      }
+
+      if (!res.ok) throw new Error(data.detail || `Erreur serveur (${res.status})`);
       
       setReport(data.report);
       fetchDatasets();

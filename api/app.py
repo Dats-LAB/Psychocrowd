@@ -188,75 +188,83 @@ async def run_pipeline(
     if 'item_id' not in mcq_df.columns:
         mcq_df.insert(0, 'item_id', range(len(mcq_df)))
     
-    use_ai = use_gemini.lower() == "true"
+    try:
+        use_ai = use_gemini.lower() == "true"
 
-    if use_ai and (api_key or GEMINI_API_KEY):
-        solver = GeminiMCQSolver(api_key=api_key or GEMINI_API_KEY)
-    else:
-        solver = MockMCQSolver()
+        if use_ai and (api_key or GEMINI_API_KEY):
+            solver = GeminiMCQSolver(api_key=api_key or GEMINI_API_KEY)
+        else:
+            solver = MockMCQSolver()
+            
+        calibrated_df = solver.solve_all(mcq_df)
+        prob_matrix = build_probability_matrix(calibrated_df)
         
-    calibrated_df = solver.solve_all(mcq_df)
-    prob_matrix = build_probability_matrix(calibrated_df)
-    
-    crowd_gen = CrowdGenerator(calibrated_df, prob_matrix)
-    crowd_gen.generate_crowd()
-    art_matrix = crowd_gen.get_response_matrix()
-    
-    human_matrix = art_matrix # Fallback to artificial if no human data
-    if human_file:
-        try:
-            h_contents = await human_file.read()
-            h_df = read_csv_robust(h_contents)
-            human_matrix = h_df.pivot_table(index="student_id", columns="item_id", values="response", fill_value=0).values
-        except: pass
+        crowd_gen = CrowdGenerator(calibrated_df, prob_matrix)
+        crowd_gen.generate_crowd()
+        art_matrix = crowd_gen.get_response_matrix()
         
-    human_rasch = RaschModel()
-    human_rasch.fit(human_matrix)
-    
-    art_rasch = RaschModel()
-    art_rasch.fit(art_matrix)
-    
-    comp = PsychometricComparator(human_rasch, art_rasch, calibrated_df)
-    
-    # Save outputs for frontend
-    crowd_gen.crowd_df.to_csv("outputs/response_matrix.csv", index=False)
-    comp.compare_df().to_csv("outputs/rasch_comparison.csv", index=False)
-    
-    # Generate plots
-    comp.plot_scatter("outputs/plots/scatter_comparison.png")
-    comp.plot_difficulty_distributions("outputs/plots/difficulty_distribution.png")
-    comp.plot_wright_map("outputs/plots/wright_map.png")
-    
-    report = {
-        "human_rasch": {
-            "converged": human_rasch.converged,
-            "n_iterations": getattr(human_rasch, "iterations", 0),
-            "mean_ability": float(np.mean(human_rasch.theta)),
-            "std_ability": float(np.std(human_rasch.theta)),
-            "mean_difficulty": float(np.mean(human_rasch.b)),
-            "std_difficulty": float(np.std(human_rasch.b)),
-        },
-        "art_rasch": {
-            "converged": art_rasch.converged,
-            "n_iterations": getattr(art_rasch, "iterations", 0),
-            "mean_ability": float(np.mean(art_rasch.theta)),
-            "std_ability": float(np.std(art_rasch.theta)),
-            "mean_difficulty": float(np.mean(art_rasch.b)),
-            "std_difficulty": float(np.std(art_rasch.b)),
-        },
-        "comparison": comp.full_metrics(),
-        "human_thetas": {f"H_{i}": float(human_rasch.theta[i]) for i in range(len(human_rasch.theta))},
-        "art_thetas": {f"A_{i}": float(art_rasch.theta[i]) for i in range(len(art_rasch.theta))},
-        "context_summary": "Analyse effectuée avec succès via Gemini API.",
-        "ai_recommendations": [],
-        "plots_data": {
-            "scatter": comp.get_scatter_data(),
-            "distribution": comp.get_distribution_data(),
-            "wright": comp.get_wright_map_data()
+        human_matrix = art_matrix # Fallback to artificial if no human data
+        if human_file:
+            try:
+                h_contents = await human_file.read()
+                h_df = read_csv_robust(h_contents)
+                human_matrix = h_df.pivot_table(index="student_id", columns="item_id", values="response", fill_value=0).values
+            except Exception as e:
+                print(f"[WARNING] Could not parse human_file: {e}") # fallback to art_matrix
+            
+        human_rasch = RaschModel()
+        human_rasch.fit(human_matrix)
+        
+        art_rasch = RaschModel()
+        art_rasch.fit(art_matrix)
+        
+        comp = PsychometricComparator(human_rasch, art_rasch, calibrated_df)
+        
+        # Save outputs for frontend
+        crowd_gen.crowd_df.to_csv("outputs/response_matrix.csv", index=False)
+        comp.compare_df().to_csv("outputs/rasch_comparison.csv", index=False)
+        
+        # Generate plots
+        comp.plot_scatter("outputs/plots/scatter_comparison.png")
+        comp.plot_difficulty_distributions("outputs/plots/difficulty_distribution.png")
+        comp.plot_wright_map("outputs/plots/wright_map.png")
+        
+        report = {
+            "human_rasch": {
+                "converged": human_rasch.converged,
+                "n_iterations": getattr(human_rasch, "iterations", 0),
+                "mean_ability": float(np.mean(human_rasch.theta)),
+                "std_ability": float(np.std(human_rasch.theta)),
+                "mean_difficulty": float(np.mean(human_rasch.b)),
+                "std_difficulty": float(np.std(human_rasch.b)),
+            },
+            "art_rasch": {
+                "converged": art_rasch.converged,
+                "n_iterations": getattr(art_rasch, "iterations", 0),
+                "mean_ability": float(np.mean(art_rasch.theta)),
+                "std_ability": float(np.std(art_rasch.theta)),
+                "mean_difficulty": float(np.mean(art_rasch.b)),
+                "std_difficulty": float(np.std(art_rasch.b)),
+            },
+            "comparison": comp.full_metrics(),
+            "human_thetas": {f"H_{i}": float(human_rasch.theta[i]) for i in range(len(human_rasch.theta))},
+            "art_thetas": {f"A_{i}": float(art_rasch.theta[i]) for i in range(len(art_rasch.theta))},
+            "context_summary": "Analyse effectuée avec succès via Gemini API.",
+            "ai_recommendations": [],
+            "plots_data": {
+                "scatter": comp.get_scatter_data(),
+                "distribution": comp.get_distribution_data(),
+                "wright": comp.get_wright_map_data()
+            }
         }
-    }
-    
-    return {"report": report}
+        
+        return {"report": report}
+
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=f"Erreur pipeline: {str(e)}")
+
 
 
 # ── AI STUDIO ENDPOINTS (DEEPSEEK) ────────────────────────────────────────
